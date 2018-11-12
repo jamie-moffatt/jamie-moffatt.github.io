@@ -1,3 +1,8 @@
+---
+show_posts: true
+---
+
+
 ## Jamie Moffatt on Github
 
 You can use the [editor on GitHub](https://github.com/jamie-moffatt/jamie-moffatt.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.

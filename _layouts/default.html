@@ -36,6 +36,9 @@
     </header>
 
     <main id="content" class="main-content" role="main">
+
+
+      {% if page.show_posts %}
       <ul>
         {% for post in site.posts %}
         <li>
@@ -44,6 +47,7 @@
         </li>
         {% endfor %}
       </ul>
+      {% endif %}
 
       {{ content }}
 
