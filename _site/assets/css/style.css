@@ -322,4 +322,4 @@ a:hover { text-decoration: underline; }
 
 #post_container li { margin: 0 0 3em 0; }
 
-#post_container a { display: block; text-decoration: none; border-bottom: 1px solid #4d4d4d; }
+#post_container a { color: #159957; display: block; text-decoration: none; border-bottom: 1px solid #4d4d4d; }
