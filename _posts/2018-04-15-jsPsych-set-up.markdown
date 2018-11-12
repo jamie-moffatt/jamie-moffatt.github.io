@@ -4,7 +4,9 @@ title: "Setting up jsPsych"
 date: 2018-04-15 20:30:00 +0100
 ---
 
-This short tutorial will guide you through the first steps of downloading and using jsPsych, a JavaScript plugin that allows for fully customisable online psychology experiments. 
+This short tutorial will guide you through the first steps of downloading and using jsPsych, a JavaScript plugin that allows for fully customisable online psychology experiments.
+
+<!--more-->
 
 # 1. Download and organise jsPsych
 
