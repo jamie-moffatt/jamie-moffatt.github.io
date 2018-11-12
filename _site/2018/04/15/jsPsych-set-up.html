@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Setting up jsPsych | Jamie Moffatt on Github</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Setting up jsPsych" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This short tutorial will guide you through the first steps of downloading and using jsPsych, a JavaScript plugin that allows for fully customisable online psychology experiments." />
+<meta property="og:description" content="This short tutorial will guide you through the first steps of downloading and using jsPsych, a JavaScript plugin that allows for fully customisable online psychology experiments." />
+<link rel="canonical" href="http://localhost:4000/2018/04/15/jsPsych-set-up.html" />
+<meta property="og:url" content="http://localhost:4000/2018/04/15/jsPsych-set-up.html" />
+<meta property="og:site_name" content="Jamie Moffatt on Github" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-04-15T20:30:00+01:00" />
+<script type="application/ld+json">
+{"description":"This short tutorial will guide you through the first steps of downloading and using jsPsych, a JavaScript plugin that allows for fully customisable online psychology experiments.","@type":"BlogPosting","url":"http://localhost:4000/2018/04/15/jsPsych-set-up.html","headline":"Setting up jsPsych","dateModified":"2018-04-15T20:30:00+01:00","datePublished":"2018-04-15T20:30:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2018/04/15/jsPsych-set-up.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=858a735a7547a4f365980c46a73f84388424dee5">
+  </head>
+
+
+  <body>
+    <header class="page-header" role="banner">
+      <h1 class="project-name">Jamie Moffatt on Github</h1>
+      <h2 class="project-tagline">Jamie is a PhD student in Psychology, based at the University of Sussex.</h2>
+      <a href = "/about.html" class = "btn">About</a>
+      
+        <a href="http://github.com/jamie-moffatt/jamie-moffatt.github.io" class="btn">View on GitHub</a>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+
+
+      
+
+      <p>This short tutorial will guide you through the first steps of downloading and using jsPsych, a JavaScript plugin that allows for fully customisable online psychology experiments.</p>
+
+<!--more-->
+
+<h1 id="1-download-and-organise-jspsych">1. Download and organise jsPsych</h1>
+
+<p>Download the latest version of jsPsych</p>
+
+<p>Go to the following link: <a href="https://github.com/jspsych/jsPsych/releases">jsPsych Latest Releases</a> and download the latest version of jsPsych. The .zip file is the most straightforward to download and install.</p>
+
+<p>Once it is finished downloading, go to the zipped folder (usually in your “Downloads” folder). Right click the folder and select “Extract all”. Choose somewhere on your computer where you would like to create your experiments. I created a folder called “My-Experiments” and placed the jsPsych files within this folder. Whichever folder you choose, it should look something like this:</p>
+
+<p><img src="/assets/img/jsPsych-folder-structure.png" alt="jsPsych Folder Structure" /></p>
+
+<ul>
+  <li><strong>css</strong>: This folder contains some default css stylesheets, to make your website look pretty!</li>
+  <li><strong>examples</strong>: This folder contains (you guessed it) examples of things to do in jsPsych. If you ever find yourself stuck trying to do something, I’d recommend having a look in here for some inspiration.</li>
+  <li><strong>plugins</strong>: This folder contains the plugins for jsPsych. I’ll explain in a bit more detail later what these do, but plugins are what make jsPsych tick, along with…</li>
+  <li><strong>jspsych.js</strong>: This is the master JavaScript file for jsPsych. You should never need to edit this, unless you really know what you’re doing!</li>
+</ul>
+
+<h1 id="2-get-a-good-text-editor">2. Get a good text editor</h1>
+
+<p>You’ll be writing your experiments with a mixture of HTML, CSS and JavaScript. To write and edit these files, you will need a text editor such as Atom, or Notepad++. Avoid using Microsoft Word. The way Word documents are saved means they come with a lot hidden formatting, which could make your code unreadable. Writing in coding languages is much easier in a text editor, such as those listed below.</p>
+
+<p>To install a text editor, select one of the following links and follow the download instructions:</p>
+<ul>
+  <li><a href="https://atom.io/">Atom</a></li>
+  <li><a href="https://notepad-plus-plus.org/">Notepad++</a></li>
+</ul>
+
+<h1 id="3-create-an-html-file">3. Create an HTML file</h1>
+
+<p>You’ll be creating your first jsPsych script in HTML. Open up your text editor and create a new file. Then, save it as something memorable (e.g. “my-first-file.html”) in the folder with your jsPsych files. Make sure to include the “.html”!</p>
+
+<p>In the file, type or copy over the following:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;title&gt;</span>My title<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+<span class="nt">&lt;/script&gt;</span>
+
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>The <code class="highlighter-rouge"><span class="nt">&lt;html&gt;</span></code> tags tell any program that this script is in HTML. The <code class="highlighter-rouge">&lt;head&gt;</code> tags are where to put general information about the script - for example, you would put your title here in <code class="highlighter-rouge">&lt;title&gt;</code> tags. The <code class="highlighter-rouge">&lt;body&gt;</code> tags are where to put the actual content of the html page - any paragraphs, images or links. There are plenty of resources available online to learn HTML, and not much knowledge of the language is needed to design experiments in jsPsych, so I won’t go into much more detail here.</p>
+
+<h1 id="4-prepare-the-html-file-for-jspsych">4. Prepare the HTML file for jsPsych</h1>
+
+<p>Before you begin creating your experiment, you will need to import the jsPsych library. This is done by entering <code class="highlighter-rouge">&lt;script&gt;</code> tags in your <code class="highlighter-rouge">&lt;head&gt;</code> section. Within the <code class="highlighter-rouge">&lt;script&gt;</code> tag, you need to specify the path to your jsPsych master script with <code class="highlighter-rouge">src="jspsych.js"</code>. See the example below:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;title&gt;</span>My title<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jspsych.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+</code></pre></div></div>
+
+<p>You might also want to import the default jsPsych stylesheet. This will make your experiment look good, with minimal effort on your part. Just add the following in <code class="highlighter-rouge">&lt;link&gt;</code> tags:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;title&gt;</span>My title<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jspsych.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"css/jspsych.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;&lt;/link&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+</code></pre></div></div>
+
+<h1 id="5-create-a-jspsych-trial">5. Create a jsPsych Trial</h1>
+
+<p>Trials in jsPsych are defined using plugins. Most of your experiment will be written using jsPsych plugins, so I’ll briefly explain what they are. If you look in your plugins folder, you will see a range of JavaScript files. Each of these files provides functionality for a specific thing that you might want to do in a trial. For example:</p>
+<ul>
+  <li>The “jspsych-instructions” plugin is for displaying pages of instructions to a participant.</li>
+  <li>The “jspsych-survey-likert” plugin is for creating likert-style surveys.</li>
+  <li>The “jspsych-image-keyboard-response” plugin is for displaying an image, and waiting for a keyboard response.</li>
+</ul>
+
+<p>For this tutorial, we are going to use the “jspsych-instructions” plugin to write out some text on the screen.</p>
+
+<p>Whenever you want to use a specific plugin, you will need to import it at the beginning of your script, in the same way that you imported the jsPsych library. In your <code class="highlighter-rouge">&lt;head&gt;</code>, write <code class="highlighter-rouge">&lt;script&gt;&lt;/script&gt;</code> tags and define the source (<code class="highlighter-rouge">src</code>) as the path to the instructions plugin, like so:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;title&gt;</span>My title<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jspsych.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"plugins/jspsych-instructions.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"css/jspsych.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;&lt;/link&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+</code></pre></div></div>
+<p>We are now going to create your first trial, using the instructions plugin. Within your <code class="highlighter-rouge">&lt;script&gt;&lt;/script&gt;</code> tags (the ones <em>after</em> your <code class="highlighter-rouge">&lt;body&gt;&lt;/body&gt;</code> tags), write out the following:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+
+<span class="kd">var</span> <span class="nx">instructions_page</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>This code creates a new variable (<code class="highlighter-rouge">var</code>) called instructions_page. This variable defines a single trial of our experiment. Within this variable, we can define certain parameters which will affect how the trial will run. These should be written in <code class="highlighter-rouge">{}</code> tags, with a comma separating each parameter.</p>
+
+<p>The first parameter of any trial should always be <code class="highlighter-rouge">type:</code> followed by the name of plugin you wish to use, in quotation marks. Here we set <code class="highlighter-rouge">type: 'instructions'</code>.</p>
+
+<p>In the instructions plugin, text is defined using <code class="highlighter-rouge">pages:</code>, with the text you want to write in quotation marks, within [] brackets. So here we set <code class="highlighter-rouge">pages: ['Hello! Welcome to the experiment.']</code>.</p>
+
+<p>This should look something like this (don’t forget the comma to separate each line!):</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+
+<span class="kd">var</span> <span class="nx">instructions_page</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">type</span><span class="p">:</span> <span class="s1">'instructions'</span><span class="p">,</span>
+  <span class="na">pages</span><span class="p">:</span> <span class="p">[</span><span class="s1">'Hello! Welcome to the experiment.'</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>Some parameters are consistent across all plugins (like <code class="highlighter-rouge">type:</code>), while others are unique to specific plugins (like <code class="highlighter-rouge">pages:</code>). A list of parameters that each plugin uses, along with explanations on what they do, can be found on the <a href="http://www.jspsych.org/plugins/overview/">jsPsych website</a>.</p>
+
+<h1 id="6-run-your-experiment">6. Run your experiment</h1>
+
+<p>After your new variable, write out the following code:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">jsPsych</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
+  <span class="na">timeline</span><span class="p">:</span> <span class="p">[</span><span class="nx">instructions_page</span><span class="p">]</span>
+<span class="p">})</span>
+</code></pre></div></div>
+<p>The <code class="highlighter-rouge">jsPsych.init({})</code> function tells jsPsych to run the trials that you have created, and is a requirement for every experiment you will write. The <code class="highlighter-rouge">timeline</code> parameter is where you define your trials, and in what order they will play out. For now, the timeline will consist of just the <code class="highlighter-rouge">instructions_page</code> variable.</p>
+
+<p>And that should be that! Open your folder in your preferred web browser to see your first jsPsych experiment! This can be done by double clicking the file or, if that doesn’t work, right click the file and select “Open with” and choose your browser.</p>
+
+<p>At the bottom of the page, I’ve written exactly what the script should look like. If your experiment isn’t working, check it against this script. Make sure to check closely that it matches - 99% of my coding mistakes come from simple things, like writing a full stop instead of a comma.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;title&gt;</span>My title<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jspsych.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"plugins/jspsych-instructions.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"css/jspsych.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;&lt;/link&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+
+<span class="kd">var</span> <span class="nx">instructions_page</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">type</span><span class="p">:</span> <span class="s2">"instructions"</span><span class="p">,</span>
+  <span class="na">pages</span><span class="p">:</span> <span class="p">[</span><span class="s1">'Hello! Welcome to the experiment.'</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="nx">jsPsych</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
+  <span class="na">timeline</span><span class="p">:</span> <span class="p">[</span><span class="nx">instructions_page</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="nt">&lt;/script&gt;</span>
+
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+
+      <footer class="site-footer">
+        
+          <span class="site-footer-owner"><a href="http://github.com/jamie-moffatt/jamie-moffatt.github.io">jamie-moffatt.github.io</a> is maintained by <a href="http://github.com/jamie-moffatt">jamie-moffatt</a>.</span>
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+      </footer>
+    </main>
+  </body>
+</html>
