@@ -318,4 +318,8 @@ a:hover { text-decoration: underline; }
 
 .site-footer-credits { color: #819198; }
 
-.post_list { list-style-type: none; padding: 0; margin: 0; }
+#post_container ul { list-style-type: none; padding: 0; margin: 0; }
+
+#post_container li { margin: 0 0 3em 0; }
+
+#post_container a { display: block; text-decoration: none; border-bottom: 1px solid #4d4d4d; }
