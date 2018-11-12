@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Setting up jsPsych"
 date: 2018-04-15 20:30:00 +0100
 ---
