@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Testing out Github Pages"
 ---
 
-# Welcome
+## Welcome
 
 This is a proper test of my github post.
