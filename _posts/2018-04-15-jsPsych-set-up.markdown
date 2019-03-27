@@ -6,7 +6,7 @@ date: 2018-04-15 20:30:00 +0100
 
 This short tutorial will guide you through the first steps of downloading and using jsPsych, a JavaScript plugin that allows for fully customisable online psychology experiments.
 
-
+<!--more-->
 
 # 1. Download and organise jsPsych
 
@@ -17,8 +17,6 @@ Go to the following link: [jsPsych Latest Releases](https://github.com/jspsych/j
 Once it is finished downloading, go to the zipped folder (usually in your "Downloads" folder). Right click the folder and select "Extract all". Choose somewhere on your computer where you would like to create your experiments. I created a folder called "My-Experiments" and placed the jsPsych files within this folder. Whichever folder you choose, it should look something like this:
 
 ![jsPsych Folder Structure](/assets/img/jsPsych-folder-structure.png)
-
-<!--more-->
 
 * __css__: This folder contains some default css stylesheets, to make your website look pretty!
 * __examples__: This folder contains (you guessed it) examples of things to do in jsPsych. If you ever find yourself stuck trying to do something, I'd recommend having a look in here for some inspiration.
