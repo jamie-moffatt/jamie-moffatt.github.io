@@ -27,8 +27,10 @@
       <h1 class="project-name">{{ site.title | default: site.github.repository_name }}</h1>
       <h2 class="project-tagline">{{ site.description | default: site.github.project_tagline }}</h2>
       <!-- The pages -->
+      <!-- May be able to edit this in the future with liquid, to have it automatically load in pages as buttons -->
       <a href = 'https://jamie-moffatt.github.io' class = "btn">Home</a>
       <a href = "/about.html" class = "btn">About</a>
+      <a href = "/contact.html" class = "btn">Contact</a>
       {% if site.github.is_project_page %}
         <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
       {% endif %}
