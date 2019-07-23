@@ -24,10 +24,16 @@
   background-color: #157878;
   background-image: unset; // Remove the gradient
   display: inline-block;
+  width: 100%;
 }
 
 .header-img {
   border: 1px solid #ddd;
   border-radius: 5px;
   padding: 5px;
+  width: 25%;
+}
+
+.header-txt {
+  width: 75%;
 }
