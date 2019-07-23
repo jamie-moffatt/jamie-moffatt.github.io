@@ -43,8 +43,7 @@
   display: inline-block;
   vertical-align: middle;
   text-align: left;
-}
-
-.page-btns {
-
+  @include small {
+    text-align: center;
+  }
 }
