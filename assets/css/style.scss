@@ -31,6 +31,9 @@
   width: 33%;
   display: inline-block;
   vertical-align: middle;
+  @include small {
+    display: block;
+  }
 }
 
 .header-txt {
@@ -41,5 +44,5 @@
 }
 
 .page-btns {
-  
+
 }
