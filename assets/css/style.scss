@@ -26,24 +26,3 @@
   display: inline-block;
   width: 100%;
 }
-
-.header-img {
-  width: 33%;
-  display: inline-block;
-  vertical-align: middle;
-  @include small {
-    display: block;
-    width: 100%;
-    margin: auto;
-  }
-}
-
-.header-txt {
-  width: 66%;
-  display: inline-block;
-  vertical-align: middle;
-  text-align: left;
-  @include small {
-    text-align: center;
-  }
-}
