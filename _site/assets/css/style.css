@@ -272,9 +272,14 @@ section #title .credits.right { float: right; }
 @media print, screen and (max-width: 720px) { #title .credits { display: block; width: 100%; line-height: 30px; text-align: center; }
   #title .credits .left { float: none; display: block; }
   #title .credits .right { float: none; display: block; } }
-@media print, screen and (max-width: 480px) { #header { margin-top: -20px; }
-  section { margin-top: 40px; }
-  nav { display: none; } }
+@media print, screen and (max-width: 480px) { section { margin-top: 40px; }
+  #header li:first-child { float: left; }
+  #header nav li:not(:first-child) { display: none; }
+  #header nav li.icon { float: right; display: block; }
+  #header nav.responsive { position: relative; }
+  #header nav.responsive li.icon { position: absolute; right: 0; top: 0; }
+  #header nav.responsive li { float: none; display: block; text-align: left; }
+  #header { height: auto; } }
 * { box-sizing: border-box; }
 
 #header nav { background: unset; text-align: center; }
@@ -294,3 +299,5 @@ section #title p { text-align: left; }
 .profile { border-radius: 50%; width: 100px; height: 100px; border: 1px solid black; }
 
 .profile_container { text-align: center; }
+
+#header nav .icon { display: none; }

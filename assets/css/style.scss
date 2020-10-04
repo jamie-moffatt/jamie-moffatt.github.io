@@ -56,3 +56,8 @@ section #title p {
 .profile_container {
   text-align: center;
 }
+
+// Hide the icon normally
+#header nav .icon {
+  display: none;
+}

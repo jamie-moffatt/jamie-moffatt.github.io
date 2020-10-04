@@ -18,8 +18,9 @@
 {"@type":"WebSite","headline":"About Me","url":"http://localhost:4000/","name":"Jamie Moffatt","description":"Jamie is a psychology PhD student based at the University of Sussex.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-  <link rel="stylesheet" href="/assets/css/style.css?v=0531c929f770edfa9fff8e51fea09d01311bb63e">
+  <link rel="stylesheet" href="/assets/css/style.css?v=5f465e3f6af0c58a9149a2630195f9ce65dd7fb0">
   <link rel="stylesheet" href="assets/css/social-circles.min.css"> <!-- Social media buttons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- icons -->
   <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
   <script src="/assets/js/respond.js"></script>
   <!--[if lt IE 9]>
@@ -30,17 +31,28 @@
   <![endif]-->
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
+  <script>
+  function verticalNav() {
+    var x = document.getElementById("mytopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+</script>
+
 
 
 </head>
 <body>
   <div id="header">
-    <nav>
-      <li class="page-btn"><a href = 'https://jamie-moffatt.github.io'>Home</a></li>
-      <li class="page-btn"><a href = "/publications">Publications</a></li>
-      <li class="page-btn"><a href = "/jspsych">jsPsych Tutorials</a></li>
-      <li class="page-btn"><a href = "https://gitlab.pavlovia.org/JAMoff">Pavlovia</a></li>
-      <li class="page-btn"><a href="https://github.com/jamie-moffatt/jamie-moffatt.github.io">View On GitHub</a></li>
+    <nav id = "mytopnav" class = "topnav">
+      <li class = "active"><a href = 'https://jamie-moffatt.github.io'>Home</a></li>
+      <li><a href = "/publications">Publications</a></li>
+      <li><a href = "/jspsych">jsPsych Tutorials</a></li>
+      <li><a href="https://github.com/jamie-moffatt/jamie-moffatt.github.io">View On GitHub</a></li>
+      <li class="icon"><a href="javascript:void(0);" onclick="verticalNav()"><i class="fa fa-bars"></i></a></li>
       
     </nav>
   </div><!-- end header -->
