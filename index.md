@@ -1,5 +1,6 @@
 ---
 show_posts: false
+title: "Jamie Moffatt"
 ---
 ## About Me
 My research aims to understand the cognitive, behavioural and neural mechanisms underlying unusual experiences that often occur in the context of psychosis, such as feelings of dissociation from oneself or from reality, or perceptions that have no real-world basis.
