@@ -18,13 +18,12 @@ The first step is easy - head to the [Pavlovia](https:/pavlovia.org) website and
 
 Assuming you have your jsPsych code all [written and in working order](/2018/04/15/jsPsych-set-up), editing the code to work with Pavlovia takes two simple steps.
 
-Firstly add the pavlovia plugin to your list of plugins to load in at the start of the experiment. Note that this plugin also requires jQuery - you can load this in similarly.
+Firstly use `<script>` tags to add the Pavlovia plugin to your list of plugins in the html header. This will load in the plugin at the start of the experiment. Note that this plugin also requires jQuery - a popular library for Javascript - you can load this in using a similar method.
 
 ```html
 <head>
   <title>My title</title>
   <script src="jspsych.js"></script>
-  <script src="plugins/jspsych-instructions.js"></script>
   <link href="css/jspsych.css" rel="stylesheet" type="text/css"></link>
 
   <!-- the Pavlovia plugin -->
@@ -38,7 +37,7 @@ Firstly add the pavlovia plugin to your list of plugins to load in at the start 
 
 Secondly, use the Pavlovia plugin to open and close a connection with Pavlovia. This requires a trial for initiating the connection, which should go at the beginning of your experiment timeline, and a trial for finishing the connection, which should go at the end of your experiment timeline.
 
-```js
+```javascript
 var timeline = [];
 
 // Trial for opening the link with Pavlovia
@@ -56,20 +55,42 @@ var pavlovia_finish = {
 // You should add this to the beginning of your timeline
 var timeline.push(pavlovia_init);
 
+// The rest of your experiment should be added to the timeline here
+
+
 // You should add this to the end of your timeline
 var timeline.push(pavlovia_finish);
 
 ```
 
 # 3. Create a new project on Pavlovia
-
-Signing up for Pavlovia will also have given you an account on [Gitlab](https://gitlab.pavlovia.org/).
+Signing up for Pavlovia will also have given you an account on [Pavlovia's Gitlab Repository](https://gitlab.pavlovia.org/). You can think of this section as a place to store and manage the code for your experiment.
 
 Login to your account, and click the "New Project" button. You'll have a lot of options for your project, including giving it a name, description and setting the privacy level for the project.
 
-Once you have created the project, the project page will automatically open. The page will be blank, and will give you some instructions for how to move your jsPsych project from you computer to your project repository on Pavlovia.
+Once you have created the project, you will be taken automatically to t the new repository for your project. This is the space where the code for your experiment will be stored.
 
-# 4. Testing out your experiment on Pavlovia
+# 4. Upload the experiment to your project
+
+At this point, you will have the experiment files on your local computer, with the project repository on Gitlab. Now, we need to get the local files uploaded into the project repository. Unfortunately, it's not quite so simple as clicking a button to upload the files.
+
+Luckily, your project repository will have some instructions for how to upload your files.
+
+First, you will need to download the git version control program, which can be downloaded for free [here](https://git-scm.com/).
+
+Second, navigate to your experiment files on your computer. Right click on the folder and select "Git Bash Here". Enter in the commands below:
+
+```
+git init
+git remote add origin https://gitlab.pavlovia.org/username/project-name.git
+git add .
+git commit -m "Initial commit"
+git push -u origin master
+```
+
+If you return to your project repository, the files should now be there!
+
+# 5. Piloting and running your experiment on Pavlovia
 
 Once you have uploaded your project to Pavlovia, you can pilot the task on your [Pavlovia dashboard](https://pavlovia.org/dashboard). Click on the "Experiments" tab, and you will see a list of your experiments. If the preceding steps have worked, your project will appear here. Click on your project and you will see a host of options for managing your experiment.
 
