@@ -12,6 +12,5 @@ My other research interests include coding and developing behavioural tasks for 
 
 ## Contact Me
 
-:speech_balloon:
-
-<a class="icon-twitter social-button color" href="http://twitter.com/JAMoffatt"></a>
+<a class="icon-twitter social-button borderless" href="http://twitter.com/JAMoffatt"></a>
+<!-- <a href="mailto:jamie.moffatt@sussex.ac.uk">Email</a> -->
