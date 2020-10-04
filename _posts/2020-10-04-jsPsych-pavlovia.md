@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "jsPsych and Pavlovia"
-date: 2018-04-15 20:30:00 +0100
+date: 2020-10-04 15:47:00 +0100
 ---
 
 This tutorial will guide you through how to setup your study on [Pavlovia](https://pavlovia.org). Pavlovia is a website for hosting behavioural experiments online. It was orginally created by the people who made PsychoPy, an experimental software. Originally it was designed for hosting online experiments made in PsychoPy, but it also has functionality to support jsPsych experiments.
@@ -75,4 +75,4 @@ Once you have uploaded your project to Pavlovia, you can pilot the task on your 
 
 Change the project status to "Piloting" and click the "Pilot" button to test out the experiment.
 
-When you are ready to recruit participants, you can change the status to "Running", and you will be provided with a participation link. Provided you have Pavlovia credits, or a license, you will then be able to recruit participants for your study by sending them this link. 
+When you are ready to recruit participants, you can change the status to "Running", and you will be provided with a participation link. Provided you have Pavlovia credits, or a license, you will then be able to recruit participants for your study by sending them this link.
