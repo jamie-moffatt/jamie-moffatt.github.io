@@ -3,16 +3,20 @@
 
 @import "{{ site.theme }}";
 
+* {
+  box-sizing: border-box;
+}
+
 // Need to edit the nav bar colour, otherwise there's a blue background placed over the nav
 #header nav {
   background: unset;
   text-align: center; // centers the buttons on the page
 }
 
+
 #header nav li a {
-  background: linear-gradient(#007EA7, #00A7E1);
+  background: #1B4079;
   border: 1px solid black;
-  background-color: #007EA7;
 
   &:hover {
 

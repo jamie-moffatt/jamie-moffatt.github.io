@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>html-button-response | Jamie Moffatt on Github</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="html-button-response" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="PhD student at Sussex." />
+<meta property="og:description" content="PhD student at Sussex." />
+<link rel="canonical" href="http://localhost:4000/2020/10/04/image-button-response.html" />
+<meta property="og:url" content="http://localhost:4000/2020/10/04/image-button-response.html" />
+<meta property="og:site_name" content="Jamie Moffatt on Github" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-10-04T00:00:00+01:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","headline":"html-button-response","dateModified":"2020-10-04T00:00:00+01:00","datePublished":"2020-10-04T00:00:00+01:00","url":"http://localhost:4000/2020/10/04/image-button-response.html","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2020/10/04/image-button-response.html"},"description":"PhD student at Sussex.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/assets/css/style.css?v=8bacac4ca5b5e0f3bd050b50eae652790b43a7e9">
+  <link rel="stylesheet" href="assets/css/social-circles.min.css"> <!-- Social media buttons -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <script src="/assets/js/respond.js"></script>
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 8]>
+  <link rel="stylesheet" href="/assets/css/ie.css">
+  <![endif]-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+
+
+</head>
+<body>
+  <div id="header">
+    <nav>
+      <li class="page-btn"><a href = 'https://jamie-moffatt.github.io'>Home</a></li>
+      <li class="page-btn"><a href = "/about.html">About Me</a></li>
+      <li class="page-btn"><a href = "/publications.html">Publications</a></li>
+      <li class="page-btn"><a href = "https://gitlab.pavlovia.org/JAMoff">Pavlovia</a></li>
+      <li class="page-btn"><a href = "/contact.html">Contact Me</a></li>
+      <li class="page-btn"><a href="https://github.com/jamie-moffatt/jamie-moffatt.github.io">View On GitHub</a></li>
+      
+    </nav>
+  </div><!-- end header -->
+
+  <div class="wrapper">
+
+    <section>
+      <div id="title">
+        <h1>Jamie Moffatt on Github</h1>
+        <p>PhD student at Sussex.</p>
+        <a class="icon-twitter social-button borderless" href="http://twitter.com/JAMoffatt"></a>
+        <hr>
+        <span class="credits left">Project maintained by <a href="https://github.com/jamie-moffatt">jamie-moffatt</a></span>
+        <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></span>
+      </div>
+
+      
+
+      <!--more-->
+
+<p>See below for the code:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!doctype HTML&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="c">&lt;!-- Page title, will appear on the tab of the webpage --&gt;</span>
+  <span class="nt">&lt;title&gt;</span>Image Button Test<span class="nt">&lt;/title&gt;</span>
+
+  <span class="c">&lt;!-- links to the master jsPsych file --&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jsPsych-master-6.1/jspsych.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+  <span class="c">&lt;!-- Link to the html-button-response plugin --&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jsPsych-master-6.1/plugins/jspsych-image-button-response.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+  <span class="c">&lt;!-- Link to the default jsPsych css file - for making it look pretty! --&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"jsPsych-master-6.1/css/jspsych.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;&lt;/link&gt;</span>
+
+  <span class="c">&lt;!-- Link to jQuery --&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src = </span><span class="s">"https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+<span class="nt">&lt;/head&gt;</span>
+
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+
+<span class="c1">// Variable holding the trial information</span>
+<span class="kd">var</span> <span class="nx">trial</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="c1">// Type of jsPsych plugin to use</span>
+  <span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">image-button-response</span><span class="dl">"</span><span class="p">,</span>
+  <span class="c1">// Path to the image that you want to use</span>
+  <span class="na">stimulus</span><span class="p">:</span> <span class="dl">'</span><span class="s1">img/dog.png</span><span class="dl">'</span><span class="p">,</span>
+  <span class="c1">// List of choices that the participant will have in responding</span>
+  <span class="na">choices</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">Yes</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">No</span><span class="dl">"</span><span class="p">],</span>
+  <span class="c1">// Text that will appear above the Image - can put in a question here</span>
+  <span class="na">prompt</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Is this a dog?</span><span class="dl">"</span><span class="p">,</span>
+  <span class="c1">// Length of the trial</span>
+  <span class="na">trial_duration</span><span class="p">:</span> <span class="mi">5000</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">timeline</span> <span class="o">=</span> <span class="p">[</span><span class="nx">trial</span><span class="p">]</span>
+
+
+<span class="c1">// Function for initiating the experiment</span>
+<span class="nx">jsPsych</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
+  <span class="na">timeline</span><span class="p">:</span> <span class="nx">timeline</span>
+<span class="p">})</span>
+
+
+<span class="nt">&lt;/script&gt;</span>
+
+</code></pre></div></div>
+
+
+    </section>
+
+  </div>
+
+  
+</body>
+</html>
