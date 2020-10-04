@@ -1,4 +1,73 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-10-04T14:10:11+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jamie Moffatt</title><subtitle>Jamie is a psychology PHD student based at the University of Sussex.</subtitle><entry><title type="html">html-button-response</title><link href="http://localhost:4000/2020/10/04/image-button-response.html" rel="alternate" type="text/html" title="html-button-response" /><published>2020-10-04T00:00:00+01:00</published><updated>2020-10-04T00:00:00+01:00</updated><id>http://localhost:4000/2020/10/04/image-button-response</id><content type="html" xml:base="http://localhost:4000/2020/10/04/image-button-response.html">&lt;!--more--&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-10-04T15:50:27+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jamie Moffatt</title><subtitle>Jamie is a psychology PhD student based at the University of Sussex.</subtitle><entry><title type="html">jsPsych and Pavlovia</title><link href="http://localhost:4000/2020/10/04/jsPsych-pavlovia.html" rel="alternate" type="text/html" title="jsPsych and Pavlovia" /><published>2020-10-04T15:47:00+01:00</published><updated>2020-10-04T15:47:00+01:00</updated><id>http://localhost:4000/2020/10/04/jsPsych-pavlovia</id><content type="html" xml:base="http://localhost:4000/2020/10/04/jsPsych-pavlovia.html">&lt;p&gt;This tutorial will guide you through how to setup your study on &lt;a href=&quot;https://pavlovia.org&quot;&gt;Pavlovia&lt;/a&gt;. Pavlovia is a website for hosting behavioural experiments online. It was orginally created by the people who made PsychoPy, an experimental software. Originally it was designed for hosting online experiments made in PsychoPy, but it also has functionality to support jsPsych experiments.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Pavlovia is free to use, up until you start recruiting participants. It uses a credit system, where one credit = one participant, and each credit costs 20p. Alternatively, if you are part of an institution that has purchased a license with Pavlovia you should be able to recruit participant’s for free.&lt;/p&gt;
+
+&lt;h1 id=&quot;1-create-an-account-on-pavlovia&quot;&gt;1. Create an account on Pavlovia&lt;/h1&gt;
+
+&lt;p&gt;The first step is easy - head to the &lt;a href=&quot;https:/pavlovia.org&quot;&gt;Pavlovia&lt;/a&gt; website and create an account! For now you can have a look around at the website and the available documentation to get used to the website.&lt;/p&gt;
+
+&lt;h1 id=&quot;2-edit-your-jspsych-code-to-work-with-pavlovia&quot;&gt;2. Edit your jsPsych code to work with Pavlovia&lt;/h1&gt;
+
+&lt;p&gt;Assuming you have your jsPsych code all &lt;a href=&quot;/2018/04/15/jsPsych-set-up&quot;&gt;written and in working order&lt;/a&gt;, editing the code to work with Pavlovia takes two simple steps.&lt;/p&gt;
+
+&lt;p&gt;Firstly add the pavlovia plugin to your list of plugins to load in at the start of the experiment. Note that this plugin also requires jQuery - you can load this in similarly.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;My title&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;jspsych.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;plugins/jspsych-instructions.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;css/jspsych.css&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/css&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/link&amp;gt;&lt;/span&gt;
+
+  &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- the Pavlovia plugin --&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;lib/vendors/jspsych-6.1.0/jspsych.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+
+  &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- link to jQuery --&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;lib/vendors/jquery-2.2.0.min.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Secondly, use the Pavlovia plugin to open and close a connection with Pavlovia. This requires a trial for initiating the connection, which should go at the beginning of your experiment timeline, and a trial for finishing the connection, which should go at the end of your experiment timeline.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;timeline&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Trial for opening the link with Pavlovia&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;pavlovia_init&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;pavlovia&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;command&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Trial for closing the link with Pavlovia&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;pavlovia_finish&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;pavlovia&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;command&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;finish&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// You should add this to the beginning of your timeline&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;timeline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pavlovia_init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// You should add this to the end of your timeline&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;timeline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pavlovia_finish&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;3-create-a-new-project-on-pavlovia&quot;&gt;3. Create a new project on Pavlovia&lt;/h1&gt;
+
+&lt;p&gt;Signing up for Pavlovia will also have given you an account on &lt;a href=&quot;https://gitlab.pavlovia.org/&quot;&gt;Gitlab&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Login to your account, and click the “New Project” button. You’ll have a lot of options for your project, including giving it a name, description and setting the privacy level for the project.&lt;/p&gt;
+
+&lt;p&gt;Once you have created the project, the project page will automatically open. The page will be blank, and will give you some instructions for how to move your jsPsych project from you computer to your project repository on Pavlovia.&lt;/p&gt;
+
+&lt;h1 id=&quot;4-testing-out-your-experiment-on-pavlovia&quot;&gt;4. Testing out your experiment on Pavlovia&lt;/h1&gt;
+
+&lt;p&gt;Once you have uploaded your project to Pavlovia, you can pilot the task on your &lt;a href=&quot;https://pavlovia.org/dashboard&quot;&gt;Pavlovia dashboard&lt;/a&gt;. Click on the “Experiments” tab, and you will see a list of your experiments. If the preceding steps have worked, your project will appear here. Click on your project and you will see a host of options for managing your experiment.&lt;/p&gt;
+
+&lt;p&gt;Change the project status to “Piloting” and click the “Pilot” button to test out the experiment.&lt;/p&gt;
+
+&lt;p&gt;When you are ready to recruit participants, you can change the status to “Running”, and you will be provided with a participation link. Provided you have Pavlovia credits, or a license, you will then be able to recruit participants for your study by sending them this link.&lt;/p&gt;</content><author><name></name></author><summary type="html">This tutorial will guide you through how to setup your study on Pavlovia. Pavlovia is a website for hosting behavioural experiments online. It was orginally created by the people who made PsychoPy, an experimental software. Originally it was designed for hosting online experiments made in PsychoPy, but it also has functionality to support jsPsych experiments.</summary></entry><entry><title type="html">html-button-response</title><link href="http://localhost:4000/2020/10/04/image-button-response.html" rel="alternate" type="text/html" title="html-button-response" /><published>2020-10-04T00:00:00+01:00</published><updated>2020-10-04T00:00:00+01:00</updated><id>http://localhost:4000/2020/10/04/image-button-response</id><content type="html" xml:base="http://localhost:4000/2020/10/04/image-button-response.html">&lt;!--more--&gt;
 
 &lt;p&gt;See below for the code:&lt;/p&gt;
 

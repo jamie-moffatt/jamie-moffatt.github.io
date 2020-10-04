@@ -31,7 +31,7 @@ Firstly add the pavlovia plugin to your list of plugins to load in at the start 
   <script type="text/javascript" src="lib/vendors/jspsych-6.1.0/jspsych.js"></script>
 
   <!-- link to jQuery -->
-  <link rel="stylesheet" type="text/css" href="lib/vendors/jspsych-6.1.0/css/jspsych.css"/>
+  <script type="text/javascript" src="lib/vendors/jquery-2.2.0.min.js"></script>
 
 </head>
 ```
