@@ -26,3 +26,33 @@
 
   }
 }
+
+/* Move title texts to the left */
+section #title h1 {
+  text-align: left;
+}
+
+section #title p {
+  text-align: left;
+}
+
+//* allows flexbox for the title image and text */
+#title-container {
+  display: flex;
+}
+
+#title-img {
+  min-width: 100px;
+}
+
+
+.profile {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+}
+
+.profile_container {
+  text-align: center;
+}

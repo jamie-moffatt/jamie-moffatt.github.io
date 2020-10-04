@@ -24,7 +24,6 @@
   <div id="header">
     <nav>
       <li class="page-btn"><a href = 'https://jamie-moffatt.github.io'>Home</a></li>
-      <li class="page-btn"><a href = "/about.html">About Me</a></li>
       <li class="page-btn"><a href = "/publications.html">Publications</a></li>
       <li class="page-btn"><a href = "https://gitlab.pavlovia.org/JAMoff">Pavlovia</a></li>
       <li class="page-btn"><a href = "/contact.html">Contact Me</a></li>
@@ -41,14 +40,19 @@
 
     <section>
       <div id="title">
+        <div id = "title-container">
+        <div id="title-text">
         <h1>{{ site.title | default: site.github.repository_name }}</h1>
         <p>{{ site.description | default: site.github.project_tagline }}</p>
-        <a class="icon-twitter social-button borderless" href="http://twitter.com/JAMoffatt"></a>
+      </div>
+      <div id = "title-img">
+        <img src="assets/img/test_profile.jpg" class = "profile">
+      </div>
+    </div>
         <hr>
         <span class="credits left">Project maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
         <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></span>
       </div>
-
       {% if page.show_posts %}
       <div id = "post_container">
         <ul>
