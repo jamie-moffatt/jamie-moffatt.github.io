@@ -1,0 +1,770 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>jsPsych.pluginAPI | Jamie Moffatt</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="jsPsych.pluginAPI" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Jamie is a psychology PhD student based at the University of Sussex." />
+<meta property="og:description" content="Jamie is a psychology PhD student based at the University of Sussex." />
+<link rel="canonical" href="http://localhost:4000/Digit%20Span/jsPsych-master-6.1/docs/core_library/jspsych-pluginAPI.html" />
+<meta property="og:url" content="http://localhost:4000/Digit%20Span/jsPsych-master-6.1/docs/core_library/jspsych-pluginAPI.html" />
+<meta property="og:site_name" content="Jamie Moffatt" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="jsPsych.pluginAPI" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"jsPsych.pluginAPI","description":"Jamie is a psychology PhD student based at the University of Sussex.","url":"http://localhost:4000/Digit%20Span/jsPsych-master-6.1/docs/core_library/jspsych-pluginAPI.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/assets/css/style.css?v=">
+  <link rel="stylesheet" href="assets/css/social-circles.min.css"> <!-- Social media buttons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- icons -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <script src="/assets/js/respond.js"></script>
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 8]>
+  <link rel="stylesheet" href="/assets/css/ie.css">
+  <![endif]-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  <script>
+  function verticalNav() {
+    var x = document.getElementById("mytopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+</script>
+
+
+
+</head>
+<body>
+  <div id="header">
+    <nav id = "mytopnav" class = "topnav">
+      <li class = "active"><a href = 'https://jamie-moffatt.github.io'>Home</a></li>
+      <li><a href = "/publications">Publications</a></li>
+      <li><a href = "/jspsych">jsPsych Tutorials</a></li>
+      <li><a href="">View On GitHub</a></li>
+      <li class="icon"><a href="javascript:void(0);" onclick="verticalNav()"><i class="fa fa-bars"></i></a></li>
+      
+    </nav>
+  </div><!-- end header -->
+
+  <div class="wrapper">
+
+    <section>
+      <div id="title">
+        <div id = "title-container">
+        <div id="title-text">
+        <h1>Jamie Moffatt</h1>
+        <p>Jamie is a psychology PhD student based at the University of Sussex.</p>
+      </div>
+      <div id = "title-img">
+        <img src="/assets/img/test_profile.jpg" class = "profile">
+      </div>
+    </div>
+        <hr>
+        <span class="credits left">Project maintained by <a href=""></a></span>
+        <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></span>
+      </div>
+      
+
+      <h1 id="jspsychpluginapi">jsPsych.pluginAPI</h1>
+
+<p>The pluginAPI module contains functions that are useful when developing new plugins.</p>
+
+<hr />
+<h2 id="jspsychpluginapiautopreload">jsPsych.pluginAPI.autoPreload</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jsPsych.pluginAPI.autoPreload(timeline, callback)
+</code></pre></div></div>
+
+<h3 id="parameters">Parameters</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>timeline</td>
+      <td>TimelineNode object</td>
+      <td>A TimelineNode object that contains an arbitrary set of trials.</td>
+    </tr>
+    <tr>
+      <td>callback</td>
+      <td>function</td>
+      <td>A function to execute when loading is complete</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="return-value">Return value</h3>
+
+<p>Returns nothing.</p>
+
+<h3 id="description">Description</h3>
+
+<p>Attempts to preload all image files and audio files that will be used to run the trials on the timeline. Content will only preload from plugins that have used the <code class="language-plaintext highlighter-rouge">registerPreload</code> method to define the media types of their parameters.</p>
+
+<p>The callback function executes once all of the files are preloaded.</p>
+
+<p>This method is used internally by the core jsPsych code. It is not recommended that you call it manually.</p>
+
+<h3 id="examples">Examples</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// you probably shouldn't use this method</span>
+</code></pre></div></div>
+
+<hr />
+<h2 id="jspsychpluginapicancelallkeyboardresponses">jsPsych.pluginAPI.cancelAllKeyboardResponses</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jsPsych.pluginAPI.cancelAllKeyboardResponses()
+</code></pre></div></div>
+
+<h3 id="parameters-1">Parameters</h3>
+
+<p>None.</p>
+
+<h3 id="return-value-1">Return value</h3>
+
+<p>Returns nothing.</p>
+
+<h3 id="description-1">Description</h3>
+
+<p>Cancels all currently active keyboard listeners created by <code class="language-plaintext highlighter-rouge">jsPsych.pluginAPI.getKeyboardResponse</code>.</p>
+
+<h3 id="examples-1">Examples</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">jsPsych</span><span class="p">.</span><span class="nx">pluginAPI</span><span class="p">.</span><span class="nx">cancelAllKeyboardResponses</span><span class="p">();</span>
+</code></pre></div></div>
+
+<hr />
+<h2 id="jspsychpluginapicancelkeyboardresponse">jsPsych.pluginAPI.cancelKeyboardResponse</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jsPsych.pluginAPI.cancelKeyboardResponse(listener_id)
+</code></pre></div></div>
+
+<h3 id="parameters-2">Parameters</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>listener_id</td>
+      <td>object</td>
+      <td>The listener_id object generated by the call to <code class="language-plaintext highlighter-rouge">jsPsych.pluginAPI.getKeyboardResponse</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="return-value-2">Return value</h3>
+
+<p>Returns nothing.</p>
+
+<h3 id="description-2">Description</h3>
+
+<p>Cancels a specific keyboard listener created by <code class="language-plaintext highlighter-rouge">jsPsych.pluginAPI.getKeyboardResponse</code>.</p>
+
+<h3 id="examples-2">Examples</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// create a persistent keyboard listener</span>
+<span class="kd">var</span> <span class="nx">listener_id</span> <span class="o">=</span> <span class="nx">jsPsych</span><span class="p">.</span><span class="nx">pluginAPI</span><span class="p">.</span><span class="nx">getKeyboardResponse</span><span class="p">(</span><span class="nx">after_response</span><span class="p">,</span> <span class="p">[</span><span class="dl">'</span><span class="s1">p</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">q</span><span class="dl">'</span><span class="p">],</span> <span class="dl">'</span><span class="s1">date</span><span class="dl">'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+
+<span class="c1">// cancel keyboard listener</span>
+<span class="nx">jsPsych</span><span class="p">.</span><span class="nx">pluginAPI</span><span class="p">.</span><span class="nx">cancelKeyboardResponse</span><span class="p">(</span><span class="nx">listener_id</span><span class="p">);</span>
+</code></pre></div></div>
+
+<hr />
+<h2 id="jspsychpluginapiclearalltimeouts">jsPsych.pluginAPI.clearAllTimeouts</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jsPsych.pluginAPI.clearAllTimeouts()
+</code></pre></div></div>
+
+<h3 id="parameters-3">Parameters</h3>
+
+<p>None.</p>
+
+<h3 id="return-value-3">Return value</h3>
+
+<p>Returns nothing.</p>
+
+<h3 id="description-3">Description</h3>
+
+<p>Clears any pending timeouts that were set using jsPsych.pluginAPI.setTimeout()</p>
+
+<hr />
+<h2 id="jspsychpluginapicomparekeys">jsPsych.pluginAPI.compareKeys</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jsPsych.pluginAPI.compareKeys(key1, key2)
+</code></pre></div></div>
+
+<h3 id="parameters-4">Parameters</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>key1</td>
+      <td>string or numeric</td>
+      <td>The representation of a key, either string or keycode</td>
+    </tr>
+    <tr>
+      <td>key2</td>
+      <td>string or numeric</td>
+      <td>The representation of a key, either string or keycode</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="return-value-4">Return value</h3>
+
+<p>Returns true if keycodes or strings refer to the same key, regardless of type.</p>
+
+<h3 id="description-4">Description</h3>
+
+<p>Compares two keys to see if they are the same, ignoring differences in representational type.</p>
+
+<h3 id="examples-3">Examples</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">jsPsych</span><span class="p">.</span><span class="nx">pluginAPI</span><span class="p">.</span><span class="nx">compareKeys</span><span class="p">(</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">,</span> <span class="mi">65</span><span class="p">);</span>
+<span class="c1">// returns true</span>
+
+<span class="nx">jsPsych</span><span class="p">.</span><span class="nx">pluginAPI</span><span class="p">.</span><span class="nx">convertKeyCharacterToKeyCode</span><span class="p">(</span><span class="dl">'</span><span class="s1">space</span><span class="dl">'</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
+<span class="c1">// returns false</span>
+</code></pre></div></div>
+
+<hr />
+<h2 id="jspsychpluginapiconvertkeycharactertokeycode">jsPsych.pluginAPI.convertKeyCharacterToKeyCode</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jsPsych.pluginAPI.convertKeyCharacterToKeyCode(character)
+</code></pre></div></div>
+
+<h3 id="parameters-5">Parameters</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>character</td>
+      <td>string</td>
+      <td>The string representation of keyboard key.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="return-value-5">Return value</h3>
+
+<p>Returns the numeric keycode associated with the <code class="language-plaintext highlighter-rouge">character</code> parameter.</p>
+
+<h3 id="description-5">Description</h3>
+
+<p>Converts between the string representation of a key and the numeric key code associated with that key.</p>
+
+<h3 id="examples-4">Examples</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">keycode</span> <span class="o">=</span> <span class="nx">jsPsych</span><span class="p">.</span><span class="nx">pluginAPI</span><span class="p">.</span><span class="nx">convertKeyCharacterToKeyCode</span><span class="p">(</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">)</span>
+<span class="c1">// keycode is 65</span>
+
+<span class="nx">keycode</span> <span class="o">=</span> <span class="nx">jsPsych</span><span class="p">.</span><span class="nx">pluginAPI</span><span class="p">.</span><span class="nx">convertKeyCharacterToKeyCode</span><span class="p">(</span><span class="dl">'</span><span class="s1">space</span><span class="dl">'</span><span class="p">)</span>
+<span class="c1">// keycode is 32</span>
+</code></pre></div></div>
+
+<hr />
+<h2 id="jspsychpluginapiconvertkeycodetokeycharacter">jsPsych.pluginAPI.convertKeyCodeToKeyCharacter</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jsPsych.pluginAPI.convertKeyCodeToKeyCharacter(character)
+</code></pre></div></div>
+
+<h3 id="parameters-6">Parameters</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>code</td>
+      <td>numeric</td>
+      <td>The numeric representation of keyboard key.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="return-value-6">Return value</h3>
+
+<p>Returns the string representation of the key associated with the <code class="language-plaintext highlighter-rouge">code</code> parameter.</p>
+
+<h3 id="description-6">Description</h3>
+
+<p>Converts between the numeric key code of a key and the string representation associated with that key.</p>
+
+<h3 id="examples-5">Examples</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">keycode</span> <span class="o">=</span> <span class="nx">jsPsych</span><span class="p">.</span><span class="nx">pluginAPI</span><span class="p">.</span><span class="nx">convertKeyCharacterToKeyCode</span><span class="p">(</span><span class="mi">65</span><span class="p">)</span>
+<span class="c1">// key is 'a'</span>
+
+<span class="nx">keycode</span> <span class="o">=</span> <span class="nx">jsPsych</span><span class="p">.</span><span class="nx">pluginAPI</span><span class="p">.</span><span class="nx">convertKeyCharacterToKeyCode</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>
+<span class="c1">// keycode is 'space'</span>
+</code></pre></div></div>
+
+<hr />
+<h2 id="jspsychpluginapigetaudiobuffer">jsPsych.pluginAPI.getAudioBuffer</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jsPsych.pluginAPI.getAudioBuffer(filepath)
+</code></pre></div></div>
+
+<h3 id="parameters-7">Parameters</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>filepath</td>
+      <td>string</td>
+      <td>The path to the audio file that was preloaded.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="return-value-7">Return value</h3>
+
+<p>Returns buffered audio file for playback. If the browser supports it the buffer will be playable with the WebAudio API. Otherwise, the returned buffer will be an HTML5 Audio object.</p>
+
+<h3 id="description-7">Description</h3>
+
+<p>Gets an AudioBuffer that can be played with the WebAudio API or an Audio object that can be played with HTML5 Audio. The file must be preloaded with <code class="language-plaintext highlighter-rouge">preloadAudioFiles</code> or the automatic preload (<code class="language-plaintext highlighter-rouge">autoPreload</code>).</p>
+
+<h3 id="examples-6">Examples</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// the code below is used to play audio in the audio-keyboard-response plugin</span>
+<span class="kd">var</span> <span class="nx">source</span> <span class="o">=</span> <span class="nx">context</span><span class="p">.</span><span class="nx">createBufferSource</span><span class="p">();</span>
+<span class="nx">source</span><span class="p">.</span><span class="nx">buffer</span> <span class="o">=</span> <span class="nx">jsPsych</span><span class="p">.</span><span class="nx">pluginAPI</span><span class="p">.</span><span class="nx">getAudioBuffer</span><span class="p">(</span><span class="nx">trial</span><span class="p">.</span><span class="nx">stimulus</span><span class="p">);</span>
+<span class="nx">source</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">destination</span><span class="p">);</span>
+<span class="nx">startTime</span> <span class="o">=</span> <span class="nx">context</span><span class="p">.</span><span class="nx">currentTime</span><span class="p">;</span>
+<span class="nx">source</span><span class="p">.</span><span class="nx">start</span><span class="p">(</span><span class="nx">startTime</span><span class="p">);</span>
+</code></pre></div></div>
+
+<hr />
+<h2 id="jspsychpluginapigetkeyboardresponse">jsPsych.pluginAPI.getKeyboardResponse</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jsPsych.pluginAPI.getKeyboardResponse(parameters)
+</code></pre></div></div>
+
+<h3 id="parameters-8">Parameters</h3>
+
+<p>The method accepts an object of parameter values (see example below). The valid keys for this object are listed in the table below.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>callback_function</td>
+      <td>function</td>
+      <td>The function to execute whenever a valid keyboard response is generated.</td>
+    </tr>
+    <tr>
+      <td>valid_responses</td>
+      <td>array</td>
+      <td>An array of key codes or character strings representing valid responses. Responses not on the list will be ignored. An empty array indicates that all responses are acceptable.</td>
+    </tr>
+    <tr>
+      <td>rt_method</td>
+      <td>string</td>
+      <td>Indicates which method of recording time to use. The <code class="language-plaintext highlighter-rouge">'date'</code> method uses calls to <code class="language-plaintext highlighter-rouge">(new Date()).getTime()</code> to record timing information. The <code class="language-plaintext highlighter-rouge">'performance'</code> method uses calls to <code class="language-plaintext highlighter-rouge">performance.now()</code>, which is a more modern JavaScript feature. The <code class="language-plaintext highlighter-rouge">'performance'</code> approach is <a href="http://caniuse.com/#search=performance">not supported by all the major browsers yet</a>, but adoption rates are increasing. The <code class="language-plaintext highlighter-rouge">audio</code> method is used in conjuction with an <code class="language-plaintext highlighter-rouge">audio_context</code> (set as an additional parameter). This uses the clock time of the <code class="language-plaintext highlighter-rouge">audio_context</code> when audio stimuli are being played.</td>
+    </tr>
+    <tr>
+      <td>audio_context</td>
+      <td>AudioContext object</td>
+      <td>The AudioContext of the audio file that is being played.</td>
+    </tr>
+    <tr>
+      <td>audio_context_start_time</td>
+      <td>numeric</td>
+      <td>The scheduled time of the sound file in the AudioContext. This will be used as the start time.</td>
+    </tr>
+    <tr>
+      <td>allow_held_key</td>
+      <td>boolean</td>
+      <td>If <code class="language-plaintext highlighter-rouge">true</code>, then responses will be registered from keys that are being held down. If <code class="language-plaintext highlighter-rouge">false</code>, then a held key can only register a response the first time that <code class="language-plaintext highlighter-rouge">getKeyboardResponse</code> is called for that key. For example, if a participant holds down the <code class="language-plaintext highlighter-rouge">A</code> key before the experiment starts, then the first time <code class="language-plaintext highlighter-rouge">getKeyboardResponse</code> is called, the <code class="language-plaintext highlighter-rouge">A</code> will register as a key press. However, any future calls to <code class="language-plaintext highlighter-rouge">getKeyboardResponse</code> will not register the <code class="language-plaintext highlighter-rouge">A</code> until the participant releases the key and presses it again.</td>
+    </tr>
+    <tr>
+      <td>persist</td>
+      <td>boolean</td>
+      <td>If false, then the keyboard listener will only trigger the first time a valid key is pressed. If true, then it will trigger every time a valid key is pressed until it is explicitly cancelled by <code class="language-plaintext highlighter-rouge">jsPsych.pluginAPI.cancelKeyboardResponse</code> or <code class="language-plaintext highlighter-rouge">jsPsych.pluginAPI.cancelAllKeyboardResponses</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="return-value-8">Return value</h3>
+
+<p>Return an object that uniquely identifies the keyboard listener. This object can be passed to <code class="language-plaintext highlighter-rouge">jsPsych.pluginAPI.cancelKeyboardResponse</code> to cancel the keyboard listener.</p>
+
+<h3 id="description-8">Description</h3>
+
+<p>Gets a keyboard response from the subject, recording the response time from when the function is first called until a valid response is generated.</p>
+
+<p>The keyboard event listener will be bound to the <code class="language-plaintext highlighter-rouge">display_element</code> declared in <code class="language-plaintext highlighter-rouge">jsPsych.init()</code> (or the <code class="language-plaintext highlighter-rouge">&lt;body&gt;</code> element if no <code class="language-plaintext highlighter-rouge">display_element</code> is specified). This allows jsPsych experiments to be embedded in websites with other content without disrupting the functionality of other UI elements.</p>
+
+<p>A valid response triggers the <code class="language-plaintext highlighter-rouge">callback_function</code> specified in the parameters. A single argument is passed to the callback function. The argument contains an object with the properties <code class="language-plaintext highlighter-rouge">key</code> and <code class="language-plaintext highlighter-rouge">rt</code>. <code class="language-plaintext highlighter-rouge">key</code> contains the numeric key code of the response, and <code class="language-plaintext highlighter-rouge">rt</code> contains the response time.</p>
+
+<h3 id="examples-7">Examples</h3>
+
+<h4 id="get-a-single-response-from-any-key">Get a single response from any key</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">var</span> <span class="nx">after_response</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">info</span><span class="p">){</span>
+	<span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">You pressed key </span><span class="dl">'</span><span class="o">+</span><span class="nx">info</span><span class="p">.</span><span class="nx">key</span><span class="o">+</span><span class="dl">'</span><span class="s1"> after </span><span class="dl">'</span><span class="o">+</span><span class="nx">info</span><span class="p">.</span><span class="nx">rt</span><span class="o">+</span><span class="dl">'</span><span class="s1">ms</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">jsPsych</span><span class="p">.</span><span class="nx">pluginAPI</span><span class="p">.</span><span class="nx">getKeyboardResponse</span><span class="p">({</span>
+  <span class="na">callback_function</span><span class="p">:</span><span class="nx">after_response</span><span class="p">,</span>
+  <span class="na">valid_responses</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="na">rt_method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">date</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">persist</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h4 id="get-a-responses-from-a-key-until-the-letter-q-is-pressed">Get a responses from a key until the letter Q is pressed</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">var</span> <span class="nx">after_response</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">info</span><span class="p">){</span>
+	<span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">You pressed key </span><span class="dl">'</span><span class="o">+</span><span class="nx">info</span><span class="p">.</span><span class="nx">key</span><span class="o">+</span><span class="dl">'</span><span class="s1"> after </span><span class="dl">'</span><span class="o">+</span><span class="nx">info</span><span class="p">.</span><span class="nx">rt</span><span class="o">+</span><span class="dl">'</span><span class="s1">ms</span><span class="dl">'</span><span class="p">);</span>
+
+	<span class="k">if</span><span class="p">(</span><span class="nx">info</span><span class="p">.</span><span class="nx">key</span> <span class="o">==</span> <span class="mi">81</span><span class="p">){</span> <span class="c1">// the key code for 'Q' is 81.</span>
+		<span class="nx">jsPsych</span><span class="p">.</span><span class="nx">pluginAPI</span><span class="p">.</span><span class="nx">cancelKeyboardResponse</span><span class="p">(</span><span class="nx">listener</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">listener</span> <span class="o">=</span> <span class="nx">jsPsych</span><span class="p">.</span><span class="nx">pluginAPI</span><span class="p">.</span><span class="nx">getKeyboardResponse</span><span class="p">({</span>
+  <span class="na">callback_function</span><span class="p">:</span><span class="nx">after_response</span><span class="p">,</span>
+  <span class="na">valid_responses</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="na">rt_method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">date</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">persist</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<hr />
+<h2 id="jspsychpluginapipreloadaudiofiles">jsPsych.pluginAPI.preloadAudioFiles</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jsPsych.pluginAPI.preloadAudioFiles(files, callback_complete, callback_load)
+</code></pre></div></div>
+
+<h3 id="parameters-9">Parameters</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>files</td>
+      <td>array</td>
+      <td>An array of audio file paths to load. The array can be nested (e.g., if images are in multiple arrays to help sort by condition or task).</td>
+    </tr>
+    <tr>
+      <td>callback_complete</td>
+      <td>function</td>
+      <td>A function to execute when all the files have been loaded.</td>
+    </tr>
+    <tr>
+      <td>callback_load</td>
+      <td>function</td>
+      <td>A function to execute after each file has been loaded. A single parameter is passed to this function which contains the number of files that have been loaded so far.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="return-value-9">Return value</h3>
+
+<p>Returns nothing.</p>
+
+<h3 id="description-9">Description</h3>
+
+<p>Use this function to preload audio files that are not part of a plugin with automatic preloading. Audio files in official plugins will automatically preload. See <a href="../overview/media-preloading.md">Media Preloading</a> for more information.</p>
+
+<p>It is possible to run this function without specifying a callback function. However, in this case the code will continue executing while the files are loaded. Thus, it is possible that an audio file would be required for playing before it is done preloading. The <code class="language-plaintext highlighter-rouge">callback_complete</code> function will only execute after all the audio files are loaded, and can be used to control the flow of the experiment (e.g., by starting the experiment in the <code class="language-plaintext highlighter-rouge">callback_complete</code> function).</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">callback_load</code> function can be used to indicate progress. See example below.</p>
+
+<h3 id="examples-8">Examples</h3>
+
+<h4 id="basic-use">Basic use</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">var</span> <span class="nx">sounds</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">file1.mp3</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">file2.mp3</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">file3.mp3</span><span class="dl">'</span><span class="p">];</span>
+
+<span class="nx">jsPsych</span><span class="p">.</span><span class="nx">pluginAPI</span><span class="p">.</span><span class="nx">preloadAudioFiles</span><span class="p">(</span><span class="nx">sounds</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span> <span class="nx">startExperiment</span><span class="p">();</span> <span class="p">});</span>
+
+<span class="kd">function</span> <span class="nx">startExperiment</span><span class="p">(){</span>
+    <span class="nx">jsPsych</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
+        <span class="na">timeline</span><span class="p">:</span> <span class="nx">exp</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<h4 id="show-progress-of-loading">Show progress of loading</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">sounds</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">file1.mp3</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">file2.mp3</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">file3.mp3</span><span class="dl">'</span><span class="p">];</span>
+
+<span class="nx">jsPsych</span><span class="p">.</span><span class="nx">pluginAPI</span><span class="p">.</span><span class="nx">preloadAudioFiles</span><span class="p">(</span><span class="nx">sounds</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span> <span class="nx">startExperiment</span><span class="p">();</span> <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">nLoaded</span><span class="p">)</span> <span class="p">{</span> <span class="nx">updateLoadedCount</span><span class="p">(</span><span class="nx">nLoaded</span><span class="p">);</span> <span class="p">});</span>
+
+<span class="kd">function</span> <span class="nx">updateLoadedCount</span><span class="p">(</span><span class="nx">nLoaded</span><span class="p">){</span>
+	<span class="kd">var</span> <span class="nx">percentcomplete</span> <span class="o">=</span> <span class="nx">nLoaded</span> <span class="o">/</span> <span class="nx">sounds</span><span class="p">.</span><span class="nx">length</span> <span class="o">*</span> <span class="mi">100</span><span class="p">;</span>
+
+	<span class="c1">// could put something fancier here, like a progress bar</span>
+	<span class="c1">// or updating text in the DOM.</span>
+	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Loaded </span><span class="dl">'</span><span class="o">+</span><span class="nx">percentcomplete</span><span class="o">+</span><span class="dl">'</span><span class="s1">% of audio files</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">startExperiment</span><span class="p">(){</span>
+    <span class="nx">jsPsych</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
+        <span class="na">timeline</span><span class="p">:</span> <span class="nx">exp</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+<h2 id="jspsychpluginapipreloadimages">jsPsych.pluginAPI.preloadImages</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jsPsych.pluginAPI.preloadImages(images, callback_complete, callback_load)
+</code></pre></div></div>
+
+<h3 id="parameters-10">Parameters</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>images</td>
+      <td>array</td>
+      <td>An array of image paths to load. The array can be nested (e.g., if images are in multiple arrays to help sort by condition or task).</td>
+    </tr>
+    <tr>
+      <td>callback_complete</td>
+      <td>function</td>
+      <td>A function to execute when all the images have been loaded.</td>
+    </tr>
+    <tr>
+      <td>callback_load</td>
+      <td>function</td>
+      <td>A function to execute after each image has been loaded. A single parameter is passed to this function which contains the number of images that have been loaded so far.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="return-value-10">Return value</h3>
+
+<p>Returns nothing.</p>
+
+<h3 id="description-10">Description</h3>
+
+<p>Use this function to preload image files that are not part of a plugin with automatic preloading. Image files in official plugins will automatically preload. See <a href="../overview/media-preloading.md">Media Preloading</a> for more information.</p>
+
+<p>It is possible to run this function without specifying a callback function. However, in this case the code will continue executing while the images are loaded. Thus, it is possible that an image would be required for display before it is done preloading. The <code class="language-plaintext highlighter-rouge">callback_complete</code> function will only execute after all the images are loaded, and can be used to control the flow of the experiment (e.g., by starting the experiment in the <code class="language-plaintext highlighter-rouge">callback_complete</code> function).</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">callback_load</code> function can be used to indicate progress, if the number of images to be loaded is known ahead of time. See example below.</p>
+
+<h3 id="examples-9">Examples</h3>
+
+<h4 id="basic-use-1">Basic use</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">var</span> <span class="nx">images</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">img/file1.png</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">img/file2.png</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">img/file3.png</span><span class="dl">'</span><span class="p">];</span>
+
+<span class="nx">jsPsych</span><span class="p">.</span><span class="nx">pluginAPI</span><span class="p">.</span><span class="nx">preloadImages</span><span class="p">(</span><span class="nx">images</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span> <span class="nx">startExperiment</span><span class="p">();</span> <span class="p">});</span>
+
+<span class="kd">function</span> <span class="nx">startExperiment</span><span class="p">(){</span>
+    <span class="nx">jsPsych</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
+        <span class="na">timeline</span><span class="p">:</span> <span class="nx">exp</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<h4 id="show-progress-of-loading-1">Show progress of loading</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">images</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">img/file1.png</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">img/file2.png</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">img/file3.png</span><span class="dl">'</span><span class="p">];</span>
+
+<span class="nx">jsPsych</span><span class="p">.</span><span class="nx">pluginAPI</span><span class="p">.</span><span class="nx">preloadImages</span><span class="p">(</span><span class="nx">images</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span> <span class="nx">startExperiment</span><span class="p">();</span> <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">nLoaded</span><span class="p">)</span> <span class="p">{</span> <span class="nx">updateLoadedCount</span><span class="p">(</span><span class="nx">nLoaded</span><span class="p">);</span> <span class="p">});</span>
+
+<span class="kd">function</span> <span class="nx">updateLoadedCount</span><span class="p">(</span><span class="nx">nLoaded</span><span class="p">){</span>
+	<span class="kd">var</span> <span class="nx">percentcomplete</span> <span class="o">=</span> <span class="nx">nLoaded</span> <span class="o">/</span> <span class="nx">images</span><span class="p">.</span><span class="nx">length</span> <span class="o">*</span> <span class="mi">100</span><span class="p">;</span>
+
+	<span class="c1">// could put something fancier here, like a progress bar</span>
+	<span class="c1">// or updating text in the DOM.</span>
+	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Loaded </span><span class="dl">'</span><span class="o">+</span><span class="nx">percentcomplete</span><span class="o">+</span><span class="dl">'</span><span class="s1">% of images</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">startExperiment</span><span class="p">(){</span>
+    <span class="nx">jsPsych</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
+        <span class="na">timeline</span><span class="p">:</span> <span class="nx">exp</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+<h2 id="jspsychpluginapiregisterpreload">jsPsych.pluginAPI.registerPreload</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jsPsych.pluginAPI.registerPreload(plugin_name, parameter, media_type, conditional_function)
+</code></pre></div></div>
+
+<h3 id="parameters-11">Parameters</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>plugin_name</td>
+      <td>string</td>
+      <td>The name of the plugin. e.g., ‘image-keyboard-response’.</td>
+    </tr>
+    <tr>
+      <td>parameter</td>
+      <td>string</td>
+      <td>The name of the parameter that is a media file. e.g., ‘stimulus’</td>
+    </tr>
+    <tr>
+      <td>media_type</td>
+      <td>string</td>
+      <td>The type of media, either ‘image’ or ‘audio’.</td>
+    </tr>
+    <tr>
+      <td>conditional_function</td>
+      <td>function</td>
+      <td>Only run the preload for a trial if this function returns true, or if this function does not exist.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="return-value-11">Return value</h3>
+
+<p>Nothing.</p>
+
+<h3 id="description-11">Description</h3>
+
+<p>Use this method in a plugin file to mark a parameter as containing an element that should be preloaded. The method should be called in the plugin file such that it gets called when the file is loaded.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">conditional_function</code> function is passed a single argument containing the trial object.</p>
+
+<h3 id="example">Example</h3>
+
+<p>For an example, see the <a href="https://github.com/jodeleeuw/jsPsych/blob/master/plugins/jspsych-image-keyboard-response.js">image-keyboard-response</a> and <a href="https://github.com/jodeleeuw/jsPsych/blob/master/plugins/jspsych-audio-keyboard-response.js">audio-keyboard-response</a> plugins.</p>
+
+<hr />
+<h2 id="jspsychpluginapisettimeout">jsPsych.pluginAPI.setTimeout</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jsPsych.pluginAPI.setTimeout(callback, delay)
+</code></pre></div></div>
+
+<h3 id="parameters-12">Parameters</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>callback</td>
+      <td>function</td>
+      <td>A function to execute after waiting for delay.</td>
+    </tr>
+    <tr>
+      <td>delay</td>
+      <td>integer</td>
+      <td>Time to wait in milliseconds.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="return-value-12">Return value</h3>
+
+<p>Returns the ID of the setTimeout handle.</p>
+
+<h3 id="description-12">Description</h3>
+
+<p>This is simply a call to the standard setTimeout function in JavaScript with the added benefit of registering the setTimeout call in a central list. This is useful for scenarios where some other event (the trial ending, aborting the experiment) should stop the execution of queued timeouts.</p>
+
+<h3 id="examples-10">Examples</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// print the time</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">())</span>
+
+<span class="c1">// print the time 1s later</span>
+<span class="nx">jsPsych</span><span class="p">.</span><span class="nx">pluginAPI</span><span class="p">.</span><span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">())</span>
+<span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+</code></pre></div></div>
+
+
+    </section>
+
+  </div>
+
+  
+</body>
+</html>

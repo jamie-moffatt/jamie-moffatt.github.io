@@ -277,7 +277,7 @@ section #title .credits.right { float: right; }
   #header nav li:not(:first-child) { display: none; }
   #header nav li.icon { float: right; display: block; }
   #header nav.responsive { position: relative; }
-  #header nav.responsive li.icon { position: absolute; right: 10; top: 0; }
+  #header nav.responsive li.icon { position: absolute; right: 10px; top: 0; }
   #header nav.responsive li { float: none; display: block; text-align: left; }
   #header { height: auto; } }
 * { box-sizing: border-box; }

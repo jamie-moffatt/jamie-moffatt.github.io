@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>jspsych-serial-reaction-time-mouse plugin | Jamie Moffatt</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="jspsych-serial-reaction-time-mouse plugin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Jamie is a psychology PhD student based at the University of Sussex." />
+<meta property="og:description" content="Jamie is a psychology PhD student based at the University of Sussex." />
+<link rel="canonical" href="http://localhost:4000/Digit%20Span/jsPsych-master-6.1/docs/plugins/jspsych-serial-reaction-time-mouse.html" />
+<meta property="og:url" content="http://localhost:4000/Digit%20Span/jsPsych-master-6.1/docs/plugins/jspsych-serial-reaction-time-mouse.html" />
+<meta property="og:site_name" content="Jamie Moffatt" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="jspsych-serial-reaction-time-mouse plugin" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"jspsych-serial-reaction-time-mouse plugin","description":"Jamie is a psychology PhD student based at the University of Sussex.","url":"http://localhost:4000/Digit%20Span/jsPsych-master-6.1/docs/plugins/jspsych-serial-reaction-time-mouse.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/assets/css/style.css?v=">
+  <link rel="stylesheet" href="assets/css/social-circles.min.css"> <!-- Social media buttons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- icons -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <script src="/assets/js/respond.js"></script>
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 8]>
+  <link rel="stylesheet" href="/assets/css/ie.css">
+  <![endif]-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  <script>
+  function verticalNav() {
+    var x = document.getElementById("mytopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+</script>
+
+
+
+</head>
+<body>
+  <div id="header">
+    <nav id = "mytopnav" class = "topnav">
+      <li class = "active"><a href = 'https://jamie-moffatt.github.io'>Home</a></li>
+      <li><a href = "/publications">Publications</a></li>
+      <li><a href = "/jspsych">jsPsych Tutorials</a></li>
+      <li><a href="">View On GitHub</a></li>
+      <li class="icon"><a href="javascript:void(0);" onclick="verticalNav()"><i class="fa fa-bars"></i></a></li>
+      
+    </nav>
+  </div><!-- end header -->
+
+  <div class="wrapper">
+
+    <section>
+      <div id="title">
+        <div id = "title-container">
+        <div id="title-text">
+        <h1>Jamie Moffatt</h1>
+        <p>Jamie is a psychology PhD student based at the University of Sussex.</p>
+      </div>
+      <div id = "title-img">
+        <img src="/assets/img/test_profile.jpg" class = "profile">
+      </div>
+    </div>
+        <hr>
+        <span class="credits left">Project maintained by <a href=""></a></span>
+        <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></span>
+      </div>
+      
+
+      <h1 id="jspsych-serial-reaction-time-mouse-plugin">jspsych-serial-reaction-time-mouse plugin</h1>
+
+<p>The serial reaction time mouse plugin implements a generalized version of the SRT task <a href="https://doi.org/10.1016%2F0010-0285%2887%2990002-8">(Nissen &amp; Bullmer, 1987)</a>. Squares are displayed in a grid-based system on the screen, and one square changes color. The participant must click on the square that changes color.</p>
+
+<h2 id="parameters">Parameters</h2>
+
+<p>Parameters with a default value of <em>undefined</em> must be specified. Other parameters can be left unspecified if the default value is acceptable.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Default Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>target</td>
+      <td>array</td>
+      <td><em>undefined</em></td>
+      <td>The location of the target. The array should be the <code class="language-plaintext highlighter-rouge">[row, column]</code> of the target.</td>
+    </tr>
+    <tr>
+      <td>grid</td>
+      <td>array</td>
+      <td><code class="language-plaintext highlighter-rouge">[[1,1,1,1]]</code></td>
+      <td>This array represents the grid of boxes shown on the screen. Each inner array represents a single row. The entries in the inner arrays represent the columns. If an entry is <code class="language-plaintext highlighter-rouge">1</code> then a square will be drawn at that location on the grid. If an entry is <code class="language-plaintext highlighter-rouge">0</code> then the corresponding location on the grid will be empty. Thus, by mixing <code class="language-plaintext highlighter-rouge">1</code>s and <code class="language-plaintext highlighter-rouge">0</code>s it is possible to create many different grid-based arrangements.</td>
+    </tr>
+    <tr>
+      <td>grid_square_size</td>
+      <td>numeric</td>
+      <td>100</td>
+      <td>The width and height in pixels of each square in the grid.</td>
+    </tr>
+    <tr>
+      <td>target_color</td>
+      <td>hex color code</td>
+      <td><code class="language-plaintext highlighter-rouge">#999</code></td>
+      <td>The color of the target square.</td>
+    </tr>
+    <tr>
+      <td>response_ends_trial</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">true</code></td>
+      <td>If true, the trial ends after a key press. Feedback is displayed if <code class="language-plaintext highlighter-rouge">show_response_feedback</code> is true.</td>
+    </tr>
+    <tr>
+      <td>pre_target_duration</td>
+      <td>numeric</td>
+      <td>0</td>
+      <td>The number of milliseconds to display the grid <em>before</em> the target changes color.</td>
+    </tr>
+    <tr>
+      <td>trial_duration</td>
+      <td>numeric</td>
+      <td>null</td>
+      <td>The maximum length of time of the trial, not including feedback.</td>
+    </tr>
+    <tr>
+      <td>fade_duration</td>
+      <td>numeric</td>
+      <td>null</td>
+      <td>If a positive number, the target will progressively change color at the start of the trial, with the transition lasting this many milliseconds.</td>
+    </tr>
+    <tr>
+      <td>allow_nontarget_responses</td>
+      <td>boolean</td>
+      <td>false</td>
+      <td>If true, the user can make nontarget response.</td>
+    </tr>
+    <tr>
+      <td>prompt</td>
+      <td>string</td>
+      <td>null</td>
+      <td>This string can contain HTML markup. Any content here will be displayed below the stimulus. The intention is that it can be used to provide a reminder about the action the subject is supposed to take (e.g., which keys to press).</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="data-generated">Data Generated</h2>
+
+<p>In addition to the <a href="overview#datacollectedbyplugins">default data collected by all plugins</a>, this plugin collects the following data for each trial.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>grid</td>
+      <td>JSON</td>
+      <td>A JSON-encoded representation of the grid.</td>
+    </tr>
+    <tr>
+      <td>target</td>
+      <td>JSON</td>
+      <td>A JSON-encoded representation of the target on the grid.</td>
+    </tr>
+    <tr>
+      <td>rt</td>
+      <td>numeric</td>
+      <td>The response time in milliseconds for the subject to make a response. The time is measured from when the second stimulus first appears on the screen until the subject’s response.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="examples">Examples</h2>
+
+<h4 id="basic-example-with-four-squares-in-a-single-row">Basic example with four squares in a single row</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">trial</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">serial-reaction-time-mouse</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">grid</span><span class="p">:</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]],</span>
+  <span class="na">target</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="2x2-grid-with-extra-space-in-the-middle">2x2 grid with extra space in the middle</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">trial</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">serial-reaction-time</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">grid</span><span class="p">:</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]],</span>
+  <span class="na">target</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+
+    </section>
+
+  </div>
+
+  
+</body>
+</html>

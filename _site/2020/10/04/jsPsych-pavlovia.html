@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <!-- Begin Jekyll SEO tag v2.6.1 -->
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>jsPsych and Pavlovia | Jamie Moffatt</title>
 <meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="jsPsych and Pavlovia" />
@@ -16,11 +16,13 @@
 <meta property="og:site_name" content="Jamie Moffatt" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-10-04T15:47:00+01:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="jsPsych and Pavlovia" />
 <script type="application/ld+json">
-{"@type":"BlogPosting","headline":"jsPsych and Pavlovia","dateModified":"2020-10-04T15:47:00+01:00","datePublished":"2020-10-04T15:47:00+01:00","url":"http://localhost:4000/2020/10/04/jsPsych-pavlovia.html","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2020/10/04/jsPsych-pavlovia.html"},"description":"This tutorial will guide you through how to setup your study on Pavlovia. Pavlovia is a website for hosting behavioural experiments online. It was orginally created by the people who made PsychoPy, an experimental software. Originally it was designed for hosting online experiments made in PsychoPy, but it also has functionality to support jsPsych experiments.","@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","headline":"jsPsych and Pavlovia","dateModified":"2020-10-04T15:47:00+01:00","datePublished":"2020-10-04T15:47:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2020/10/04/jsPsych-pavlovia.html"},"description":"This tutorial will guide you through how to setup your study on Pavlovia. Pavlovia is a website for hosting behavioural experiments online. It was orginally created by the people who made PsychoPy, an experimental software. Originally it was designed for hosting online experiments made in PsychoPy, but it also has functionality to support jsPsych experiments.","url":"http://localhost:4000/2020/10/04/jsPsych-pavlovia.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-  <link rel="stylesheet" href="/assets/css/style.css?v=5f465e3f6af0c58a9149a2630195f9ce65dd7fb0">
+  <link rel="stylesheet" href="/assets/css/style.css?v=">
   <link rel="stylesheet" href="assets/css/social-circles.min.css"> <!-- Social media buttons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- icons -->
   <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
@@ -53,7 +55,7 @@
       <li class = "active"><a href = 'https://jamie-moffatt.github.io'>Home</a></li>
       <li><a href = "/publications">Publications</a></li>
       <li><a href = "/jspsych">jsPsych Tutorials</a></li>
-      <li><a href="https://github.com/jamie-moffatt/jamie-moffatt.github.io">View On GitHub</a></li>
+      <li><a href="">View On GitHub</a></li>
       <li class="icon"><a href="javascript:void(0);" onclick="verticalNav()"><i class="fa fa-bars"></i></a></li>
       
     </nav>
@@ -73,7 +75,7 @@
       </div>
     </div>
         <hr>
-        <span class="credits left">Project maintained by <a href="https://github.com/jamie-moffatt">jamie-moffatt</a></span>
+        <span class="credits left">Project maintained by <a href=""></a></span>
         <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></span>
       </div>
       
@@ -92,12 +94,11 @@
 
 <p>Assuming you have your jsPsych code all <a href="/2018/04/15/jsPsych-set-up">written and in working order</a>, editing the code to work with Pavlovia takes two simple steps.</p>
 
-<p>Firstly add the pavlovia plugin to your list of plugins to load in at the start of the experiment. Note that this plugin also requires jQuery - you can load this in similarly.</p>
+<p>Firstly use <code class="language-plaintext highlighter-rouge">&lt;script&gt;</code> tags to add the Pavlovia plugin to your list of plugins in the html header. This will load in the plugin at the start of the experiment. Note that this plugin also requires jQuery - a popular library for Javascript - you can load this in using a similar method.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;head&gt;</span>
   <span class="nt">&lt;title&gt;</span>My title<span class="nt">&lt;/title&gt;</span>
   <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jspsych.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"plugins/jspsych-instructions.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
   <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"css/jspsych.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;&lt;/link&gt;</span>
 
   <span class="c">&lt;!-- the Pavlovia plugin --&gt;</span>
@@ -111,7 +112,7 @@
 
 <p>Secondly, use the Pavlovia plugin to open and close a connection with Pavlovia. This requires a trial for initiating the connection, which should go at the beginning of your experiment timeline, and a trial for finishing the connection, which should go at the end of your experiment timeline.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">timeline</span> <span class="o">=</span> <span class="p">[];</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">timeline</span> <span class="o">=</span> <span class="p">[];</span>
 
 <span class="c1">// Trial for opening the link with Pavlovia</span>
 <span class="kd">var</span> <span class="nx">pavlovia_init</span> <span class="o">=</span> <span class="p">{</span>
@@ -128,20 +129,41 @@
 <span class="c1">// You should add this to the beginning of your timeline</span>
 <span class="kd">var</span> <span class="nx">timeline</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">pavlovia_init</span><span class="p">);</span>
 
+<span class="c1">// The rest of your experiment should be added to the timeline here</span>
+
+
 <span class="c1">// You should add this to the end of your timeline</span>
 <span class="kd">var</span> <span class="nx">timeline</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">pavlovia_finish</span><span class="p">);</span>
 
 </code></pre></div></div>
 
 <h1 id="3-create-a-new-project-on-pavlovia">3. Create a new project on Pavlovia</h1>
-
-<p>Signing up for Pavlovia will also have given you an account on <a href="https://gitlab.pavlovia.org/">Gitlab</a>.</p>
+<p>Signing up for Pavlovia will also have given you an account on <a href="https://gitlab.pavlovia.org/">Pavlovia’s Gitlab Repository</a>. You can think of this section as a place to store and manage the code for your experiment.</p>
 
 <p>Login to your account, and click the “New Project” button. You’ll have a lot of options for your project, including giving it a name, description and setting the privacy level for the project.</p>
 
-<p>Once you have created the project, the project page will automatically open. The page will be blank, and will give you some instructions for how to move your jsPsych project from you computer to your project repository on Pavlovia.</p>
+<p>Once you have created the project, you will be taken automatically to t the new repository for your project. This is the space where the code for your experiment will be stored.</p>
 
-<h1 id="4-testing-out-your-experiment-on-pavlovia">4. Testing out your experiment on Pavlovia</h1>
+<h1 id="4-upload-the-experiment-to-your-project">4. Upload the experiment to your project</h1>
+
+<p>At this point, you will have the experiment files on your local computer, with the project repository on Gitlab. Now, we need to get the local files uploaded into the project repository. Unfortunately, it’s not quite so simple as clicking a button to upload the files.</p>
+
+<p>Luckily, your project repository will have some instructions for how to upload your files.</p>
+
+<p>First, you will need to download the git version control program, which can be downloaded for free <a href="https://git-scm.com/">here</a>.</p>
+
+<p>Second, navigate to your experiment files on your computer. Right click on the folder and select “Git Bash Here”. Enter in the commands below:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git init
+git remote add origin https://gitlab.pavlovia.org/username/project-name.git
+git add .
+git commit -m "Initial commit"
+git push -u origin master
+</code></pre></div></div>
+
+<p>If you return to your project repository, the files should now be there!</p>
+
+<h1 id="5-piloting-and-running-your-experiment-on-pavlovia">5. Piloting and running your experiment on Pavlovia</h1>
 
 <p>Once you have uploaded your project to Pavlovia, you can pilot the task on your <a href="https://pavlovia.org/dashboard">Pavlovia dashboard</a>. Click on the “Experiments” tab, and you will see a list of your experiments. If the preceding steps have worked, your project will appear here. Click on your project and you will see a host of options for managing your experiment.</p>
 

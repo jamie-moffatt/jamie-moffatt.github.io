@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Event-related callback functions | Jamie Moffatt</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Event-related callback functions" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Jamie is a psychology PhD student based at the University of Sussex." />
+<meta property="og:description" content="Jamie is a psychology PhD student based at the University of Sussex." />
+<link rel="canonical" href="http://localhost:4000/Digit%20Span/jsPsych-master-6.1/docs/overview/callbacks.html" />
+<meta property="og:url" content="http://localhost:4000/Digit%20Span/jsPsych-master-6.1/docs/overview/callbacks.html" />
+<meta property="og:site_name" content="Jamie Moffatt" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Event-related callback functions" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"Event-related callback functions","description":"Jamie is a psychology PhD student based at the University of Sussex.","url":"http://localhost:4000/Digit%20Span/jsPsych-master-6.1/docs/overview/callbacks.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/assets/css/style.css?v=">
+  <link rel="stylesheet" href="assets/css/social-circles.min.css"> <!-- Social media buttons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- icons -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <script src="/assets/js/respond.js"></script>
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 8]>
+  <link rel="stylesheet" href="/assets/css/ie.css">
+  <![endif]-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  <script>
+  function verticalNav() {
+    var x = document.getElementById("mytopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+</script>
+
+
+
+</head>
+<body>
+  <div id="header">
+    <nav id = "mytopnav" class = "topnav">
+      <li class = "active"><a href = 'https://jamie-moffatt.github.io'>Home</a></li>
+      <li><a href = "/publications">Publications</a></li>
+      <li><a href = "/jspsych">jsPsych Tutorials</a></li>
+      <li><a href="">View On GitHub</a></li>
+      <li class="icon"><a href="javascript:void(0);" onclick="verticalNav()"><i class="fa fa-bars"></i></a></li>
+      
+    </nav>
+  </div><!-- end header -->
+
+  <div class="wrapper">
+
+    <section>
+      <div id="title">
+        <div id = "title-container">
+        <div id="title-text">
+        <h1>Jamie Moffatt</h1>
+        <p>Jamie is a psychology PhD student based at the University of Sussex.</p>
+      </div>
+      <div id = "title-img">
+        <img src="/assets/img/test_profile.jpg" class = "profile">
+      </div>
+    </div>
+        <hr>
+        <span class="credits left">Project maintained by <a href=""></a></span>
+        <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></span>
+      </div>
+      
+
+      <h1 id="event-related-callback-functions">Event-related callback functions</h1>
+
+<p>jsPsych offers the ability to call arbitrary functions in response to certain events occurring, like the end of a trial or when new data is saved. This page summarizes the different opportunities for callback functions and how to specify them.</p>
+
+<hr />
+
+<h2 id="on_data_update">on_data_update</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">on_data_update</code> callback can be declared in the <code class="language-plaintext highlighter-rouge">jsPsych.init</code> method. The callback triggers at the end of a data update cycle. This happens after every trial, after the on_finish (trial) and on_trial_finish events execute, allowing you to modify the data in those callbacks, and then use this callback to store the data. The function will be passed a single argument, which contains the data that was written.</p>
+
+<h4 id="sample-use">Sample use</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">jsPsych</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
+  <span class="na">timeline</span><span class="p">:</span> <span class="nx">exp</span><span class="p">,</span>
+  <span class="na">on_data_update</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Just added new data. The contents of the data are: </span><span class="dl">'</span><span class="o">+</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></div>
+<hr />
+
+<h2 id="on_finish-trial">on_finish (trial)</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">on_finish</code> callback can be added to any trial. The callback will trigger whenever the trial ends. The callback function will be passed a single argument, containing the data object from the trial.</p>
+
+<h4 id="sample-use-1">Sample use</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">trial</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">image-keyboard-response</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">stimulus</span><span class="p">:</span> <span class="dl">'</span><span class="s1">imgA.png</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">on_finish</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">The trial just ended.</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+<hr />
+
+<h2 id="on_finish-experiment">on_finish (experiment)</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">on_finish</code> callback can be declared in the <code class="language-plaintext highlighter-rouge">jsPsych.init</code> method. The callback will trigger once all trials in the experiment have been run. The method will be passed a single argument, containing all of the data generated in the experiment.</p>
+
+<h4 id="sample-use-2">Sample use</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">jsPsych</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
+  <span class="na">timeline</span><span class="p">:</span> <span class="nx">exp</span><span class="p">,</span>
+  <span class="na">on_finish</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">The experiment is over! Here is all the data: </span><span class="dl">'</span><span class="o">+</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></div>
+<hr />
+
+<h2 id="on_load">on_load</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">on_load</code> callback can be added to any trial. The callback will trigger once the trial has completed loading. For most plugins, this will occur once the display has been initially updated but before any user interactions or timed events (e.g., animations) have occurred.</p>
+
+<h4 id="sample-use-3">Sample use</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">trial</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">image-keyboard-response</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">stimulus</span><span class="p">:</span> <span class="dl">'</span><span class="s1">imgA.png</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">on_load</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">The trial just finished loading.</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+<hr />
+
+<h2 id="on_start-trial">on_start (trial)</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">on_start</code> callback can be added to any trial. The callback will trigger right before the trial begins. The callback function will be passed a single argument, containing the trial object. If any of the parameters of the trial are functions or timeline variables, these will be evaluated before <code class="language-plaintext highlighter-rouge">on_start</code> is called, and the trial object will contain the evaluated value. The trial object is modifiable, and any changes made will affect the trial.</p>
+
+<h4 id="sample-use-4">Sample use</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">trial</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">image-keyboard-response</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">stimulus</span><span class="p">:</span> <span class="dl">'</span><span class="s1">imgA.png</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">on_start</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">trial</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">The trial is about to start.</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">trial</span><span class="p">.</span><span class="nx">stimulus</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">imgB.png</span><span class="dl">'</span><span class="p">;</span> <span class="c1">// this will change what stimulus is displayed in the trial</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="on_trial_finish">on_trial_finish</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">on_trial_finish</code> callback can be declared in the <code class="language-plaintext highlighter-rouge">jsPsych.init</code> method. The callback will trigger at the end of every trial in the experiment. If you want a callback to trigger only for the end of certain trials, use the <a href="#onfinishtrial"><code class="language-plaintext highlighter-rouge">on_finish</code></a> callback on the trial object. The callback function will be passed a single argument, containing the data object from the trial.</p>
+
+<h4 id="sample-use-5">Sample use</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">jsPsych</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
+  <span class="na">timeline</span><span class="p">:</span> <span class="nx">exp</span><span class="p">,</span>
+  <span class="na">on_trial_finish</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">A trial just ended.</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></div>
+<hr />
+
+<h2 id="on_trial_start">on_trial_start</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">on_trial_start</code> callback can be declared in the <code class="language-plaintext highlighter-rouge">jsPsych.init</code> method. The callback will trigger at the start of every trial in the experiment. The function receives a single argument: a modifiable copy of the trial object that will be used to run the next trial. Changes can be made to this object to alter the parameters of the upcoming trial.</p>
+
+<h4 id="sample-use-6">Sample use</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">current_score</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// a variable that is updated throughout the experiment to keep track of the current score.</span>
+
+<span class="nx">jsPsych</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
+  <span class="na">timeline</span><span class="p">:</span> <span class="nx">exp</span><span class="p">,</span>
+  <span class="na">on_trial_start</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">trial</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">trial</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">score_at_start_of_trial</span> <span class="o">=</span> <span class="nx">current_score</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">A trial just started.</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+
+    </section>
+
+  </div>
+
+  
+</body>
+</html>

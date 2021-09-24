@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Creating a new plugin | Jamie Moffatt</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Creating a new plugin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Jamie is a psychology PhD student based at the University of Sussex." />
+<meta property="og:description" content="Jamie is a psychology PhD student based at the University of Sussex." />
+<link rel="canonical" href="http://localhost:4000/Digit%20Span/jsPsych-master-6.1/docs/plugins/creating-a-plugin.html" />
+<meta property="og:url" content="http://localhost:4000/Digit%20Span/jsPsych-master-6.1/docs/plugins/creating-a-plugin.html" />
+<meta property="og:site_name" content="Jamie Moffatt" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Creating a new plugin" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"Creating a new plugin","description":"Jamie is a psychology PhD student based at the University of Sussex.","url":"http://localhost:4000/Digit%20Span/jsPsych-master-6.1/docs/plugins/creating-a-plugin.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/assets/css/style.css?v=">
+  <link rel="stylesheet" href="assets/css/social-circles.min.css"> <!-- Social media buttons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- icons -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <script src="/assets/js/respond.js"></script>
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 8]>
+  <link rel="stylesheet" href="/assets/css/ie.css">
+  <![endif]-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  <script>
+  function verticalNav() {
+    var x = document.getElementById("mytopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+</script>
+
+
+
+</head>
+<body>
+  <div id="header">
+    <nav id = "mytopnav" class = "topnav">
+      <li class = "active"><a href = 'https://jamie-moffatt.github.io'>Home</a></li>
+      <li><a href = "/publications">Publications</a></li>
+      <li><a href = "/jspsych">jsPsych Tutorials</a></li>
+      <li><a href="">View On GitHub</a></li>
+      <li class="icon"><a href="javascript:void(0);" onclick="verticalNav()"><i class="fa fa-bars"></i></a></li>
+      
+    </nav>
+  </div><!-- end header -->
+
+  <div class="wrapper">
+
+    <section>
+      <div id="title">
+        <div id = "title-container">
+        <div id="title-text">
+        <h1>Jamie Moffatt</h1>
+        <p>Jamie is a psychology PhD student based at the University of Sussex.</p>
+      </div>
+      <div id = "title-img">
+        <img src="/assets/img/test_profile.jpg" class = "profile">
+      </div>
+    </div>
+        <hr>
+        <span class="credits left">Project maintained by <a href=""></a></span>
+        <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></span>
+      </div>
+      
+
+      <h1 id="creating-a-new-plugin">Creating a new plugin</h1>
+
+<p>Creating new plugins is the way to add new kinds of tasks to jsPsych. A task can be virtually any kind of activity. If it can be implemented in JavaScript, then it almost certainly can be turned into a plugin.</p>
+
+<h2 id="whats-in-a-plugin-file">What’s in a plugin file?</h2>
+
+<p>Plugin files follow a specific template. Adherence to the template is what allows jsPsych to run a plugin without knowing anything about what the plugin is doing. What makes plugins so flexible is that the template imposes very few requirements on the code. Here’s what an empty plugin template looks like:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jsPsych.plugins['plugin-name'] = (function(){
+
+  var plugin = {};
+
+  plugin.info = {
+    name: 'plugin-name',
+    parameters: {
+    }
+  }
+
+  plugin.trial = function(display_element, trial){
+    jsPsych.finishTrial();
+  }
+
+  return plugin;
+
+})();
+</code></pre></div></div>
+
+<p>This plugin will work! It defines a plugin called ‘plugin-name’, and it does absolutely nothing. However, it won’t break the experiment, and jsPsych will understand that this is a valid plugin.</p>
+
+<p>Let’s examine it in more detail.</p>
+
+<p>The overall structure of the plugin is defined using a module JavaScript design pattern. This pattern uses a technique called an anonymous closure. This is why the first line has <code class="language-plaintext highlighter-rouge">(function(){</code> and the last line is <code class="language-plaintext highlighter-rouge">})();</code>. The details aren’t important, but if you want to learn more about it, <a href="http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html">this is a nice overview</a>. The reason this pattern is useful is because it allows for persistent state and private scope. In other words, the plugin is isolated and can’t be altered by other plugins.</p>
+
+<p>The module, created by the <code class="language-plaintext highlighter-rouge">(function(){</code>  <code class="language-plaintext highlighter-rouge">})();</code> expressions, contains an object called <code class="language-plaintext highlighter-rouge">plugin</code> that has two properties, <code class="language-plaintext highlighter-rouge">info</code> and <code class="language-plaintext highlighter-rouge">trial</code>. The <code class="language-plaintext highlighter-rouge">plugin</code> object is returned at the end of the module, which is what assigns the defined properties of <code class="language-plaintext highlighter-rouge">plugin</code> to <code class="language-plaintext highlighter-rouge">jsPsych['plugin-name']</code>.</p>
+
+<h3 id="plugintrial">plugin.trial</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">trial</code> method is responsible for running a single trial. There are two parameters that are passed into the trial method. The first, <code class="language-plaintext highlighter-rouge">display_element</code>, is the DOM element where jsPsych content is being rendered. This parameter will be an <code class="language-plaintext highlighter-rouge">HTMLElement</code>. Generally, you don’t need to worry about this parameter being in the correct format, and can assume that it is an <code class="language-plaintext highlighter-rouge">HMTLElement</code> and use methods of that class. The second, <code class="language-plaintext highlighter-rouge">trial</code>, is an object containing all of the parameters specified in the corresponding TimelineNode.</p>
+
+<p>The only requirement for the <code class="language-plaintext highlighter-rouge">trial</code> method is that it calls <code class="language-plaintext highlighter-rouge">jsPsych.finishTrial()</code> when it is done. This is how jsPsych knows to advance to the next trial in the experiment (or end the experiment if it is the last trial). The plugin can do whatever it needs to do before that point.</p>
+
+<p>Of course, there are other things that you will probably want the plugin to do besides just end. Here are some examples:</p>
+
+<h4 id="change-the-content-of-the-display">Change the content of the display</h4>
+
+<p>There are a few ways to change the content of the display. The <code class="language-plaintext highlighter-rouge">display_element</code> parameter of the trial method contains the DOM element for displaying content, so you can use various JavaScript methods for interaction with the display element. A common one is to change the <code class="language-plaintext highlighter-rouge">innerHTML</code>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">html_content</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">&lt;p&gt;This is the first paragraph&lt;/p&gt;</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">html_content</span> <span class="o">+=</span> <span class="dl">'</span><span class="s1">&lt;p&gt;This is the second paragraph&lt;/p&gt;</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="nx">display_element</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">html_content</span><span class="p">;</span>
+</code></pre></div></div>
+<p>It is often appropriate to use <code class="language-plaintext highlighter-rouge">innerHTML</code> to clear the display at the end of a trial:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// clear the display</span>
+<span class="nx">display_element</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h4 id="write-data">Write data</h4>
+
+<p>Plugins exist to collect data, so saving data is obviously a crucial thing to do. You can pass an object of data as the parameter to <code class="language-plaintext highlighter-rouge">jsPsych.finishTrial()</code>:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">correct</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="na">rt</span><span class="p">:</span> <span class="mi">350</span>
+<span class="p">}</span>
+
+<span class="nx">jsPsych</span><span class="p">.</span><span class="nx">finishTrial</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The data recorded will be that <code class="language-plaintext highlighter-rouge">correct</code> is <code class="language-plaintext highlighter-rouge">true</code> and that <code class="language-plaintext highlighter-rouge">rt</code> is <code class="language-plaintext highlighter-rouge">350</code>. Additional data for the trial will also be collected automatically by the jsPsych library.</p>
+
+<h2 id="the-plugin-template">The plugin template</h2>
+
+<p>An empty plugin template is included in the <code class="language-plaintext highlighter-rouge">plugins/template</code> folder.</p>
+
+
+    </section>
+
+  </div>
+
+  
+</body>
+</html>

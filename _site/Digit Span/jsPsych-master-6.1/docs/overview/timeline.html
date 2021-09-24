@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Creating an Experiment: The Timeline | Jamie Moffatt</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Creating an Experiment: The Timeline" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Jamie is a psychology PhD student based at the University of Sussex." />
+<meta property="og:description" content="Jamie is a psychology PhD student based at the University of Sussex." />
+<link rel="canonical" href="http://localhost:4000/Digit%20Span/jsPsych-master-6.1/docs/overview/timeline.html" />
+<meta property="og:url" content="http://localhost:4000/Digit%20Span/jsPsych-master-6.1/docs/overview/timeline.html" />
+<meta property="og:site_name" content="Jamie Moffatt" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Creating an Experiment: The Timeline" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"Creating an Experiment: The Timeline","description":"Jamie is a psychology PhD student based at the University of Sussex.","url":"http://localhost:4000/Digit%20Span/jsPsych-master-6.1/docs/overview/timeline.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/assets/css/style.css?v=">
+  <link rel="stylesheet" href="assets/css/social-circles.min.css"> <!-- Social media buttons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- icons -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <script src="/assets/js/respond.js"></script>
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 8]>
+  <link rel="stylesheet" href="/assets/css/ie.css">
+  <![endif]-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  <script>
+  function verticalNav() {
+    var x = document.getElementById("mytopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+</script>
+
+
+
+</head>
+<body>
+  <div id="header">
+    <nav id = "mytopnav" class = "topnav">
+      <li class = "active"><a href = 'https://jamie-moffatt.github.io'>Home</a></li>
+      <li><a href = "/publications">Publications</a></li>
+      <li><a href = "/jspsych">jsPsych Tutorials</a></li>
+      <li><a href="">View On GitHub</a></li>
+      <li class="icon"><a href="javascript:void(0);" onclick="verticalNav()"><i class="fa fa-bars"></i></a></li>
+      
+    </nav>
+  </div><!-- end header -->
+
+  <div class="wrapper">
+
+    <section>
+      <div id="title">
+        <div id = "title-container">
+        <div id="title-text">
+        <h1>Jamie Moffatt</h1>
+        <p>Jamie is a psychology PhD student based at the University of Sussex.</p>
+      </div>
+      <div id = "title-img">
+        <img src="/assets/img/test_profile.jpg" class = "profile">
+      </div>
+    </div>
+        <hr>
+        <span class="credits left">Project maintained by <a href=""></a></span>
+        <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></span>
+      </div>
+      
+
+      <h1 id="creating-an-experiment-the-timeline">Creating an Experiment: The Timeline</h1>
+
+<p>To create an experiment using jsPsych, you need to specify a timeline that describes the structure of the experiment. The timeline is an ordered set of trials. You must create the timeline before launching the experiment. Most of the code you will write for an experiment will be code to create the timeline. This page walks through the creation of timelines, including very basic examples and more advanced features.</p>
+
+<h2 id="a-single-trial">A single trial</h2>
+
+<p>To create a trial, you need to create an object that describes the trial. The most important feature of this object is the <code class="language-plaintext highlighter-rouge">type</code> parameter. This tells jsPsych which plugin file to use to run the trial. For example, if you want to use the text plugin to display a short message, the trial object would look like this:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">trial</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">html-keyboard-response</span><span class="dl">'</span><span class="p">,</span>
+	<span class="na">stimulus</span><span class="p">:</span> <span class="dl">'</span><span class="s1">hello world!</span><span class="dl">'</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The parameters for this object will depend on the plugin that you choose. Each plugin defines the set of parameters that are needed to run a trial with that plugin. Visit the documentation for a plugin to learn about the parameters that you can use with that plugin.</p>
+
+<p>To create a timeline with the single trial and run the experiment, just embed the trial object in an array. A timeline is simply an array of trials.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">timeline</span> <span class="o">=</span> <span class="p">[</span><span class="nx">trial</span><span class="p">];</span>
+
+<span class="nx">jsPsych</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
+	<span class="na">timeline</span><span class="p">:</span> <span class="nx">timeline</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>To actually create and run this simple example, complete the <a href="../tutorials/hello-world.md">hello world tutorial</a>.</p>
+
+<h2 id="multiple-trials">Multiple trials</h2>
+
+<p>Scaling up to multiple trials is straightforward. Just create an object for each trial, and add each object to the timeline array.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// with lots of trials, it might be easier to add the trials</span>
+<span class="c1">// to the timeline array as they are defined.</span>
+<span class="kd">var</span> <span class="nx">timeline</span> <span class="o">=</span> <span class="p">[];</span>
+
+<span class="kd">var</span> <span class="nx">trial_1</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">html-keyboard-response</span><span class="dl">'</span><span class="p">,</span>
+	<span class="na">stimulus</span><span class="p">:</span> <span class="dl">'</span><span class="s1">This is trial 1.</span><span class="dl">'</span>
+<span class="p">}</span>
+<span class="nx">timeline</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">trial_1</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">trial_2</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">html-keyboard-response</span><span class="dl">'</span><span class="p">,</span>
+	<span class="na">stimulus</span><span class="p">:</span> <span class="dl">'</span><span class="s1">This is trial 2.</span><span class="dl">'</span>
+<span class="p">}</span>
+<span class="nx">timeline</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">trial_2</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">trial_3</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">html-keyboard-response</span><span class="dl">'</span><span class="p">,</span>
+	<span class="na">stimulus</span><span class="p">:</span> <span class="dl">'</span><span class="s1">This is trial 3.</span><span class="dl">'</span>
+<span class="p">}</span>
+<span class="nx">timeline</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">trial_3</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="nested-timelines">Nested timelines</h2>
+
+<p>Each object on the timeline can also have it’s own timeline. This is useful for many reasons. One is that it allows you to define common parameters across trials once and have them apply to all the trials on the nested timeline. The example below creates a series of trials using the image-keyboard-response plugin, where the only thing that changes from trial-to-trial is the image file being displayed on the screen.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">judgment_trials</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">image-keyboard-response</span><span class="dl">'</span><span class="p">,</span>
+	<span class="na">prompt</span><span class="p">:</span> <span class="dl">'</span><span class="s1">&lt;p&gt;Press a number 1-7 to indicate how unusual the image is.&lt;/p&gt;</span><span class="dl">'</span><span class="p">,</span>
+	<span class="na">choices</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">1</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">2</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">3</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">4</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">5</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">6</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">7</span><span class="dl">'</span><span class="p">],</span>
+	<span class="na">timeline</span><span class="p">:</span> <span class="p">[</span>
+		<span class="p">{</span><span class="na">stimulus</span><span class="p">:</span> <span class="dl">'</span><span class="s1">image1.png</span><span class="dl">'</span><span class="p">},</span>
+		<span class="p">{</span><span class="na">stimulus</span><span class="p">:</span> <span class="dl">'</span><span class="s1">image2.png</span><span class="dl">'</span><span class="p">},</span>
+		<span class="p">{</span><span class="na">stimulus</span><span class="p">:</span> <span class="dl">'</span><span class="s1">image3.png</span><span class="dl">'</span><span class="p">}</span>
+	<span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>In the above code, the <code class="language-plaintext highlighter-rouge">type</code>, <code class="language-plaintext highlighter-rouge">prompt</code>, and <code class="language-plaintext highlighter-rouge">choices</code> parameters are automatically applied to all of the objects in the <code class="language-plaintext highlighter-rouge">timeline</code> array. This creates three trials with the same <code class="language-plaintext highlighter-rouge">type</code>, <code class="language-plaintext highlighter-rouge">prompt</code>, and <code class="language-plaintext highlighter-rouge">choices</code> parameters, but different values for the <code class="language-plaintext highlighter-rouge">stimulus</code> parameter.</p>
+
+<p>You can also override the values by declaring a new value in the <code class="language-plaintext highlighter-rouge">timeline</code> array. In the example below, the second trial will display a different prompt message.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">judgment_trials</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">image-keyboard-response</span><span class="dl">'</span><span class="p">,</span>
+	<span class="na">prompt</span><span class="p">:</span> <span class="dl">'</span><span class="s1">&lt;p&gt;Press a number 1-7 to indicate how unusual the image is.&lt;/p&gt;</span><span class="dl">'</span><span class="p">,</span>
+	<span class="na">choices</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">1</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">2</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">3</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">4</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">5</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">6</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">7</span><span class="dl">'</span><span class="p">],</span>
+	<span class="na">timeline</span><span class="p">:</span> <span class="p">[</span>
+		<span class="p">{</span><span class="na">stimulus</span><span class="p">:</span> <span class="dl">'</span><span class="s1">image1.png</span><span class="dl">'</span><span class="p">},</span>
+		<span class="p">{</span><span class="na">stimulus</span><span class="p">:</span> <span class="dl">'</span><span class="s1">image2.png</span><span class="dl">'</span><span class="p">,</span> <span class="na">prompt</span><span class="p">:</span> <span class="dl">'</span><span class="s1">&lt;p&gt;Press 1 for this trial.&lt;/p&gt;</span><span class="dl">'</span><span class="p">},</span>
+		<span class="p">{</span><span class="na">stimulus</span><span class="p">:</span> <span class="dl">'</span><span class="s1">image3.png</span><span class="dl">'</span><span class="p">}</span>
+	<span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Timelines can be nested any number of times.</p>
+
+<h2 id="timeline-variables">Timeline variables</h2>
+
+<p>A common pattern in behavioral experiments is to repeat the same procedure many times with different stimuli. A procedure might be a single trial, but it also might be a series of trials. One shortcut to implement this pattern is with the approach described in the previous section, but this only works if all the trials use the same plugin type. Timeline variables are a more general solution. With timeline variables, you define the procedure once (as a timeline), and specify a set of parameters and their values for each iteration through the timeline.</p>
+
+<p>What follows is an example of how to use timeline variables. The <a href="../tutorials/rt-task.md">simple reaction time tutorial</a> also explains how to use timeline variables.</p>
+
+<p>Suppose we want to create an experiment where people see a set of faces with names displayed below the face. In between each face, a fixation cross is displayed on the screen. Without timeline variables, we would need to add many trials to the timeline, alternating between trials showing the fixation cross and trials showing the face and name. This could be done efficiently in a loop or function, but timeline variables make it even easier - as well as adding extra features like sampling and randomization.</p>
+
+<p>Here’s a basic version of the task with timeline variables.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">face_name_procedure</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="na">timeline</span><span class="p">:</span> <span class="p">[</span>
+		<span class="p">{</span>
+			<span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">html-keyboard-response</span><span class="dl">'</span><span class="p">,</span>
+			<span class="na">stimulus</span><span class="p">:</span> <span class="dl">'</span><span class="s1">+</span><span class="dl">'</span><span class="p">,</span>
+			<span class="na">choices</span><span class="p">:</span> <span class="nx">jsPsych</span><span class="p">.</span><span class="nx">NO_KEYS</span><span class="p">,</span>
+			<span class="na">timing_response</span><span class="p">:</span> <span class="mi">500</span>
+		<span class="p">},</span>
+		<span class="p">{</span>
+			<span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">image-keyboard-response</span><span class="dl">'</span><span class="p">,</span>
+			<span class="na">stimulus</span><span class="p">:</span> <span class="nx">jsPsych</span><span class="p">.</span><span class="nx">timelineVariable</span><span class="p">(</span><span class="dl">'</span><span class="s1">face</span><span class="dl">'</span><span class="p">),</span>
+			<span class="na">prompt</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){</span> <span class="k">return</span> <span class="dl">"</span><span class="s2">This person's name is </span><span class="dl">"</span><span class="o">+</span><span class="nx">jsPsych</span><span class="p">.</span><span class="nx">timelineVariable</span><span class="p">(</span><span class="dl">'</span><span class="s1">name</span><span class="dl">'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span> <span class="p">},</span>
+			<span class="na">choices</span><span class="p">:</span> <span class="nx">jsPsych</span><span class="p">.</span><span class="nx">NO_KEYS</span><span class="p">,</span>
+			<span class="na">timing_response</span><span class="p">:</span> <span class="mi">2500</span>
+		<span class="p">}</span>
+	<span class="p">],</span>
+	<span class="na">timeline_variables</span><span class="p">:</span> <span class="p">[</span>
+		<span class="p">{</span> <span class="na">face</span><span class="p">:</span> <span class="dl">'</span><span class="s1">person-1.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Alex</span><span class="dl">'</span> <span class="p">},</span>
+		<span class="p">{</span> <span class="na">face</span><span class="p">:</span> <span class="dl">'</span><span class="s1">person-2.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Beth</span><span class="dl">'</span> <span class="p">},</span>
+		<span class="p">{</span> <span class="na">face</span><span class="p">:</span> <span class="dl">'</span><span class="s1">person-3.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Chad</span><span class="dl">'</span> <span class="p">},</span>
+		<span class="p">{</span> <span class="na">face</span><span class="p">:</span> <span class="dl">'</span><span class="s1">person-4.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Dave</span><span class="dl">'</span> <span class="p">}</span>
+	<span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>In the above version, there are four separate trials defined in the <code class="language-plaintext highlighter-rouge">timeline_variables</code> parameter. Each trial has a variable <code class="language-plaintext highlighter-rouge">face</code> and a variable <code class="language-plaintext highlighter-rouge">name</code>. The <code class="language-plaintext highlighter-rouge">timeline</code> defines a procedure of showing a fixation cross for 500ms followed by the face and name for 2500ms.  This procedure will repeat four times, with the first trial showing Alex, the second Beth, and so on. The variables are referenced in the procedure by calling the <code class="language-plaintext highlighter-rouge">jsPsych.timelineVariable()</code> method. Note that the call to this method is wrapped in a function, as we want the method to execute during the experiment, not during the declaration of the timeline.</p>
+
+<h3 id="random-orders-of-trials">Random orders of trials</h3>
+
+<p>If we want to randomize the order of the trials, we can set <code class="language-plaintext highlighter-rouge">randomize_order</code> to <code class="language-plaintext highlighter-rouge">true</code>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">face_name_procedure</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="c1">// timeline parameter hidden to save space ...</span>
+	<span class="na">timeline_variables</span><span class="p">:</span> <span class="p">[</span>
+		<span class="p">{</span> <span class="na">face</span><span class="p">:</span> <span class="dl">'</span><span class="s1">person-1.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Alex</span><span class="dl">'</span> <span class="p">},</span>
+		<span class="p">{</span> <span class="na">face</span><span class="p">:</span> <span class="dl">'</span><span class="s1">person-2.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Beth</span><span class="dl">'</span> <span class="p">},</span>
+		<span class="p">{</span> <span class="na">face</span><span class="p">:</span> <span class="dl">'</span><span class="s1">person-3.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Chad</span><span class="dl">'</span> <span class="p">},</span>
+		<span class="p">{</span> <span class="na">face</span><span class="p">:</span> <span class="dl">'</span><span class="s1">person-4.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Dave</span><span class="dl">'</span> <span class="p">}</span>
+	<span class="p">],</span>
+	<span class="na">randomize_order</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="repeating-trials">Repeating trials</h3>
+
+<p>If we want to repeat the set of trials multiple times, then we can set <code class="language-plaintext highlighter-rouge">repetitions</code> to an integer. If <code class="language-plaintext highlighter-rouge">randomize_order</code> is also <code class="language-plaintext highlighter-rouge">true</code>, the order will re-randomize before every repetition.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">face_name_procedure</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="c1">// timeline parameter hidden to save space ...</span>
+	<span class="na">timeline_variables</span><span class="p">:</span> <span class="p">[</span>
+		<span class="p">{</span> <span class="na">face</span><span class="p">:</span> <span class="dl">'</span><span class="s1">person-1.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Alex</span><span class="dl">'</span> <span class="p">},</span>
+		<span class="p">{</span> <span class="na">face</span><span class="p">:</span> <span class="dl">'</span><span class="s1">person-2.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Beth</span><span class="dl">'</span> <span class="p">},</span>
+		<span class="p">{</span> <span class="na">face</span><span class="p">:</span> <span class="dl">'</span><span class="s1">person-3.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Chad</span><span class="dl">'</span> <span class="p">},</span>
+		<span class="p">{</span> <span class="na">face</span><span class="p">:</span> <span class="dl">'</span><span class="s1">person-4.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Dave</span><span class="dl">'</span> <span class="p">}</span>
+	<span class="p">],</span>
+	<span class="na">randomize_order</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+	<span class="na">repetitions</span><span class="p">:</span> <span class="mi">3</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="sampling-methods">Sampling methods</h3>
+
+<p>There are also a set of sampling methods that can be used to select a set of trials from the timeline_variables. Sampling is declared by creating a <code class="language-plaintext highlighter-rouge">sample</code> parameter.</p>
+
+<h4 id="sampling-with-replacement">Sampling with replacement</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">face_name_procedure</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="c1">// timeline parameter hidden to save space ...</span>
+	<span class="na">timeline_variables</span><span class="p">:</span> <span class="p">[</span>
+		<span class="p">{</span> <span class="na">face</span><span class="p">:</span> <span class="dl">'</span><span class="s1">person-1.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Alex</span><span class="dl">'</span> <span class="p">},</span>
+		<span class="p">{</span> <span class="na">face</span><span class="p">:</span> <span class="dl">'</span><span class="s1">person-2.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Beth</span><span class="dl">'</span> <span class="p">},</span>
+		<span class="p">{</span> <span class="na">face</span><span class="p">:</span> <span class="dl">'</span><span class="s1">person-3.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Chad</span><span class="dl">'</span> <span class="p">},</span>
+		<span class="p">{</span> <span class="na">face</span><span class="p">:</span> <span class="dl">'</span><span class="s1">person-4.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Dave</span><span class="dl">'</span> <span class="p">}</span>
+	<span class="p">],</span>
+	<span class="na">sample</span><span class="p">:</span> <span class="p">{</span>
+		<span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">with-replacement</span><span class="dl">'</span><span class="p">,</span>
+		<span class="na">size</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="c1">// 10 trials, with replacement</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="sampling-with-replacement-unequal-probabilities">Sampling with replacement, unequal probabilities</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">face_name_procedure</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="c1">// timeline parameter hidden to save space ...</span>
+	<span class="na">timeline_variables</span><span class="p">:</span> <span class="p">[</span>
+		<span class="p">{</span> <span class="na">face</span><span class="p">:</span> <span class="dl">'</span><span class="s1">person-1.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Alex</span><span class="dl">'</span> <span class="p">},</span>
+		<span class="p">{</span> <span class="na">face</span><span class="p">:</span> <span class="dl">'</span><span class="s1">person-2.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Beth</span><span class="dl">'</span> <span class="p">},</span>
+		<span class="p">{</span> <span class="na">face</span><span class="p">:</span> <span class="dl">'</span><span class="s1">person-3.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Chad</span><span class="dl">'</span> <span class="p">},</span>
+		<span class="p">{</span> <span class="na">face</span><span class="p">:</span> <span class="dl">'</span><span class="s1">person-4.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Dave</span><span class="dl">'</span> <span class="p">}</span>
+	<span class="p">],</span>
+	<span class="na">sample</span><span class="p">:</span> <span class="p">{</span>
+		<span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">with-replacement</span><span class="dl">'</span><span class="p">,</span>
+		<span class="na">size</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="c1">// 10 trials, with replacement</span>
+		<span class="na">weights</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="c1">// The Alex trial is three times as likely to be sampled as the others.</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="sampling-without-replacement">Sampling without replacement</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">face_name_procedure</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="c1">// timeline parameter hidden to save space ...</span>
+	<span class="na">timeline_variables</span><span class="p">:</span> <span class="p">[</span>
+		<span class="p">{</span> <span class="na">face</span><span class="p">:</span> <span class="dl">'</span><span class="s1">person-1.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Alex</span><span class="dl">'</span> <span class="p">},</span>
+		<span class="p">{</span> <span class="na">face</span><span class="p">:</span> <span class="dl">'</span><span class="s1">person-2.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Beth</span><span class="dl">'</span> <span class="p">},</span>
+		<span class="p">{</span> <span class="na">face</span><span class="p">:</span> <span class="dl">'</span><span class="s1">person-3.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Chad</span><span class="dl">'</span> <span class="p">},</span>
+		<span class="p">{</span> <span class="na">face</span><span class="p">:</span> <span class="dl">'</span><span class="s1">person-4.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Dave</span><span class="dl">'</span> <span class="p">}</span>
+	<span class="p">],</span>
+	<span class="na">sample</span><span class="p">:</span> <span class="p">{</span>
+		<span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">without-replacement</span><span class="dl">'</span><span class="p">,</span>
+		<span class="na">size</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="c1">// 3 trials, without replacement</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="repeating-each-trial-a-fixed-number-of-times-in-a-random-order">Repeating each trial a fixed number of times in a random order</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">face_name_procedure</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="c1">// timeline parameter hidden to save space ...</span>
+	<span class="na">timeline_variables</span><span class="p">:</span> <span class="p">[</span>
+		<span class="p">{</span> <span class="na">face</span><span class="p">:</span> <span class="dl">'</span><span class="s1">person-1.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Alex</span><span class="dl">'</span> <span class="p">},</span>
+		<span class="p">{</span> <span class="na">face</span><span class="p">:</span> <span class="dl">'</span><span class="s1">person-2.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Beth</span><span class="dl">'</span> <span class="p">},</span>
+		<span class="p">{</span> <span class="na">face</span><span class="p">:</span> <span class="dl">'</span><span class="s1">person-3.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Chad</span><span class="dl">'</span> <span class="p">},</span>
+		<span class="p">{</span> <span class="na">face</span><span class="p">:</span> <span class="dl">'</span><span class="s1">person-4.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Dave</span><span class="dl">'</span> <span class="p">}</span>
+	<span class="p">],</span>
+	<span class="na">sample</span><span class="p">:</span> <span class="p">{</span>
+		<span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">fixed-repetitions</span><span class="dl">'</span><span class="p">,</span>
+		<span class="na">size</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="c1">// 3 repetitions of each trial, 12 total trials, order is randomized.</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="custom-sampling-function">Custom sampling function</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">face_name_procedure</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="c1">// timeline parameter hidden to save space ...</span>
+	<span class="na">timeline_variables</span><span class="p">:</span> <span class="p">[</span>
+		<span class="p">{</span> <span class="na">face</span><span class="p">:</span> <span class="dl">'</span><span class="s1">person-1.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Alex</span><span class="dl">'</span> <span class="p">},</span>
+		<span class="p">{</span> <span class="na">face</span><span class="p">:</span> <span class="dl">'</span><span class="s1">person-2.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Beth</span><span class="dl">'</span> <span class="p">},</span>
+		<span class="p">{</span> <span class="na">face</span><span class="p">:</span> <span class="dl">'</span><span class="s1">person-3.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Chad</span><span class="dl">'</span> <span class="p">},</span>
+		<span class="p">{</span> <span class="na">face</span><span class="p">:</span> <span class="dl">'</span><span class="s1">person-4.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Dave</span><span class="dl">'</span> <span class="p">}</span>
+	<span class="p">],</span>
+	<span class="na">sample</span><span class="p">:</span> <span class="p">{</span>
+		<span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">custom</span><span class="dl">'</span><span class="p">,</span>
+		<span class="na">fn</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">t</span><span class="p">){</span>
+			<span class="c1">// the first parameter to this function call is an array of integers</span>
+			<span class="c1">// from 0 to n-1, where n is the number of trials.</span>
+			<span class="c1">// the method needs to return an array of integers specifying the order</span>
+			<span class="c1">// that the trials should be executed. this array does not need to</span>
+			<span class="c1">// contain all of the integers.</span>
+
+			<span class="k">return</span> <span class="nx">t</span><span class="p">.</span><span class="nx">reverse</span><span class="p">();</span> <span class="c1">// show the trials in the reverse order</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="looping-timelines">Looping timelines</h2>
+
+<p>Any timeline can be looped using the <code class="language-plaintext highlighter-rouge">loop_function</code> option. The loop function should be a function that evaluates to <code class="language-plaintext highlighter-rouge">true</code> if the timeline should repeat, and <code class="language-plaintext highlighter-rouge">false</code> if the timeline should end. It receives a single parameter: the DataCollection object with all of the data from the trials executed in the last iteration of the timeline. The loop function will be evaluated after the timeline is completed.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">trial</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">html-keyboard-response</span><span class="dl">'</span><span class="p">,</span>
+	<span class="na">stimulus</span><span class="p">:</span> <span class="dl">'</span><span class="s1">This trial is in a loop. Press R to repeat this trial, or C to continue.</span><span class="dl">'</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">loop_node</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="na">timeline</span><span class="p">:</span> <span class="p">[</span><span class="nx">trial</span><span class="p">],</span>
+	<span class="na">loop_function</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
+		<span class="k">if</span><span class="p">(</span><span class="nx">jsPsych</span><span class="p">.</span><span class="nx">pluginAPI</span><span class="p">.</span><span class="nx">convertKeyCharacterToKeyCode</span><span class="p">(</span><span class="dl">'</span><span class="s1">r</span><span class="dl">'</span><span class="p">)</span> <span class="o">==</span> <span class="nx">data</span><span class="p">.</span><span class="nx">values</span><span class="p">()[</span><span class="mi">0</span><span class="p">].</span><span class="nx">key_press</span><span class="p">){</span>
+			<span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+			<span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="conditional-timelines">Conditional timelines</h2>
+
+<p>A timeline can be skipped based on the evaluation of a function using the <code class="language-plaintext highlighter-rouge">conditional_function</code> option. If the conditional function evaluates to <code class="language-plaintext highlighter-rouge">true</code>, the timeline will execute normally. If the conditional function evaluates to <code class="language-plaintext highlighter-rouge">false</code>, then the timeline will be skipped. The conditional function is evaluated whenever the timeline is about to run the first trial.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">pre_if_trial</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">html-keyboard-response</span><span class="dl">'</span><span class="p">,</span>
+	<span class="na">stimulus</span><span class="p">:</span> <span class="dl">'</span><span class="s1">The next trial is in a conditional statement. Press S to skip it, or V to view it.</span><span class="dl">'</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">if_trial</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">html-keyboard-response</span><span class="dl">'</span><span class="p">,</span>
+	<span class="na">stimulus</span><span class="p">:</span> <span class="dl">'</span><span class="s1">You chose to view the trial. Press any key to continue.</span><span class="dl">'</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">if_node</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="na">timeline</span><span class="p">:</span> <span class="p">[</span><span class="nx">if_trial</span><span class="p">],</span>
+	<span class="na">conditional_function</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
+		<span class="c1">// get the data from the previous trial,</span>
+		<span class="c1">// and check which key was pressed</span>
+		<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">jsPsych</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="kd">get</span><span class="p">().</span><span class="nx">last</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nx">values</span><span class="p">()[</span><span class="mi">0</span><span class="p">];</span>
+		<span class="k">if</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">key_press</span> <span class="o">==</span> <span class="nx">jsPsych</span><span class="p">.</span><span class="nx">pluginAPI</span><span class="p">.</span><span class="nx">convertKeyCharacterToKeyCode</span><span class="p">(</span><span class="dl">'</span><span class="s1">s</span><span class="dl">'</span><span class="p">)){</span>
+			<span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+			<span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">after_if_trial</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">html-keyboard-response</span><span class="dl">'</span><span class="p">,</span>
+	<span class="na">stimulus</span><span class="p">:</span> <span class="dl">'</span><span class="s1">This is the trial after the conditional.</span><span class="dl">'</span>
+<span class="p">}</span>
+
+<span class="nx">jsPsych</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
+	<span class="na">timeline</span><span class="p">:</span> <span class="p">[</span><span class="nx">pre_if_trial</span><span class="p">,</span> <span class="nx">if_node</span><span class="p">,</span> <span class="nx">after_if_trial</span><span class="p">],</span>
+	<span class="na">on_finish</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){</span><span class="nx">jsPsych</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">displayData</span><span class="p">();</span> <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+
+    </section>
+
+  </div>
+
+  
+</body>
+</html>

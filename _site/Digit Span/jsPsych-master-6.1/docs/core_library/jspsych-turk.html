@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>jsPsych.turk | Jamie Moffatt</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="jsPsych.turk" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Jamie is a psychology PhD student based at the University of Sussex." />
+<meta property="og:description" content="Jamie is a psychology PhD student based at the University of Sussex." />
+<link rel="canonical" href="http://localhost:4000/Digit%20Span/jsPsych-master-6.1/docs/core_library/jspsych-turk.html" />
+<meta property="og:url" content="http://localhost:4000/Digit%20Span/jsPsych-master-6.1/docs/core_library/jspsych-turk.html" />
+<meta property="og:site_name" content="Jamie Moffatt" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="jsPsych.turk" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"jsPsych.turk","description":"Jamie is a psychology PhD student based at the University of Sussex.","url":"http://localhost:4000/Digit%20Span/jsPsych-master-6.1/docs/core_library/jspsych-turk.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/assets/css/style.css?v=">
+  <link rel="stylesheet" href="assets/css/social-circles.min.css"> <!-- Social media buttons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- icons -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <script src="/assets/js/respond.js"></script>
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 8]>
+  <link rel="stylesheet" href="/assets/css/ie.css">
+  <![endif]-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  <script>
+  function verticalNav() {
+    var x = document.getElementById("mytopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+</script>
+
+
+
+</head>
+<body>
+  <div id="header">
+    <nav id = "mytopnav" class = "topnav">
+      <li class = "active"><a href = 'https://jamie-moffatt.github.io'>Home</a></li>
+      <li><a href = "/publications">Publications</a></li>
+      <li><a href = "/jspsych">jsPsych Tutorials</a></li>
+      <li><a href="">View On GitHub</a></li>
+      <li class="icon"><a href="javascript:void(0);" onclick="verticalNav()"><i class="fa fa-bars"></i></a></li>
+      
+    </nav>
+  </div><!-- end header -->
+
+  <div class="wrapper">
+
+    <section>
+      <div id="title">
+        <div id = "title-container">
+        <div id="title-text">
+        <h1>Jamie Moffatt</h1>
+        <p>Jamie is a psychology PhD student based at the University of Sussex.</p>
+      </div>
+      <div id = "title-img">
+        <img src="/assets/img/test_profile.jpg" class = "profile">
+      </div>
+    </div>
+        <hr>
+        <span class="credits left">Project maintained by <a href=""></a></span>
+        <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></span>
+      </div>
+      
+
+      <h1 id="jspsychturk">jsPsych.turk</h1>
+
+<p>The jsPsych.turk module contains functions for interacting with Mechanical Turk.</p>
+
+<hr />
+<h2 id="jspsychturksubmittoturk">jsPsych.turk.submitToTurk</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jsPsych.turk.submitToTurk(data)
+</code></pre></div></div>
+
+<h3 id="parameters">Parameters</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>data</td>
+      <td>object</td>
+      <td>The <code class="language-plaintext highlighter-rouge">data</code> parameter is an object of <code class="language-plaintext highlighter-rouge">key: value</code> pairs. Any pairs in the <code class="language-plaintext highlighter-rouge">data</code> parameter will be saved by Mechanical Turk, and can be downloaded in a CSV file through the Mechanical Turk interface.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="return-value">Return value</h3>
+
+<p>Returns nothing.</p>
+
+<h3 id="description">Description</h3>
+
+<p>This method will submit a HIT to Mechanical Turk, causing the HIT to finish.</p>
+
+<p>This method will only work when called from within the mechanical turk website. If you are using an external HIT to send workers to your own server, this method will not work on an externally hosted page. It will work if your external content is loaded in the iframe on the Mechanical Turk website.</p>
+
+<h3 id="example">Example</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;p&gt;</span>Enter the code you were given:<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"code"</span><span class="nt">&gt;&lt;/input&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">onclick=</span><span class="s">"sendData();"</span><span class="nt">&gt;</span>Submit HIT<span class="nt">&lt;/button&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+<span class="c1">// this content must be loaded in the iframe on the mechanical turk website.</span>
+<span class="c1">// usually, this means that the content is part of your 'recruitment ad', the</span>
+<span class="c1">// page the workers can see when they are deciding whether or not to accept a HIT.</span>
+<span class="c1">// one option is to include a simple form on this page that workers submit, with a</span>
+<span class="c1">// special code that they get at the end of the experiment.</span>
+
+<span class="kd">function</span> <span class="nx">sendData</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">jsPsych</span><span class="p">.</span><span class="nx">turk</span><span class="p">.</span><span class="nx">submitToTurk</span><span class="p">({</span>
+    <span class="na">code</span><span class="p">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">code</span><span class="dl">'</span><span class="p">).</span><span class="nx">value</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="jspsychturkturkinfo">jsPsych.turk.turkInfo</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jsPsych.turk.turkInfo()
+</code></pre></div></div>
+
+<h3 id="parameters-1">Parameters</h3>
+
+<p>None.</p>
+
+<h3 id="return-value-1">Return value</h3>
+
+<p>Returns an object with six properties:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">.assignmentId</code> contains the assignment ID string of the HIT.</li>
+  <li><code class="language-plaintext highlighter-rouge">.hitId</code> contains the HIT ID.</li>
+  <li><code class="language-plaintext highlighter-rouge">.workerId</code> contains the worker ID of the worker completing the HIT.</li>
+  <li><code class="language-plaintext highlighter-rouge">.turkSubmitTo</code> contains the URL for submitting the HIT. This parameter is used in the <code class="language-plaintext highlighter-rouge">jsPsych.turk.submitToTurk</code> method, and is probably not useful outside of that context.</li>
+  <li><code class="language-plaintext highlighter-rouge">.previewMode</code> is a boolean value indicating whether or not the worker has accepted the HIT yet. If the page is viewed inside Mechancial Turk and the worker has not clicked ‘Accept HIT’ then this will be true. If the page is viewed outside Mechanical Turk or the worker has acccepted the HIT, then it will be false.</li>
+  <li><code class="language-plaintext highlighter-rouge">.outsideTurk</code> is a boolean value indicating if the page is being viewed within Mechanical Turk, or if it is being viewed from another source (e.g., someone directly going to the page URL instead of going through mturk).</li>
+</ul>
+
+<h3 id="description-1">Description</h3>
+
+<p>This method returns basic information about the current Mechanical Turk session, including the worker ID, assignment ID, and HIT ID.</p>
+
+<h3 id="example-1">Example</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">var</span> <span class="nx">turkInfo</span> <span class="o">=</span> <span class="nx">jsPsych</span><span class="p">.</span><span class="nx">turk</span><span class="p">.</span><span class="nx">turkInfo</span><span class="p">();</span>
+
+<span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">Worker ID is: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">turkInfo</span><span class="p">.</span><span class="nx">workerId</span><span class="p">);</span>
+
+<span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">Assignment ID is: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">turkInfo</span><span class="p">.</span><span class="nx">assignmentId</span><span class="p">);</span>
+
+<span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">HIT ID is: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">turkInfo</span><span class="p">.</span><span class="nx">hitId</span><span class="p">);</span>
+
+<span class="c1">// true if the page is viewed within Mechanical Turk, </span>
+<span class="c1">// but worker has not accepted the HIT yet.</span>
+<span class="c1">// false if the page is viewed outside Mechanical Turk,</span>
+<span class="c1">// OR the worker has accepted the HIT.</span>
+<span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">Preview mode? </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">turkInfo</span><span class="p">.</span><span class="nx">previewMode</span><span class="p">);</span> 
+
+<span class="c1">// true if the page is viewed outside mechanical turk,</span>
+<span class="c1">// false otherwise.</span>
+<span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">Outside turk? </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">turkInfo</span><span class="p">.</span><span class="nx">outsideTurk</span><span class="p">);</span>
+</code></pre></div></div>
+
+
+
+    </section>
+
+  </div>
+
+  
+</body>
+</html>

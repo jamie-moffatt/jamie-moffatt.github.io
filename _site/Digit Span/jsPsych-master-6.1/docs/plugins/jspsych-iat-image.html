@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>jspsych-iat-image plugin | Jamie Moffatt</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="jspsych-iat-image plugin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Jamie is a psychology PhD student based at the University of Sussex." />
+<meta property="og:description" content="Jamie is a psychology PhD student based at the University of Sussex." />
+<link rel="canonical" href="http://localhost:4000/Digit%20Span/jsPsych-master-6.1/docs/plugins/jspsych-iat-image.html" />
+<meta property="og:url" content="http://localhost:4000/Digit%20Span/jsPsych-master-6.1/docs/plugins/jspsych-iat-image.html" />
+<meta property="og:site_name" content="Jamie Moffatt" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="jspsych-iat-image plugin" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"jspsych-iat-image plugin","description":"Jamie is a psychology PhD student based at the University of Sussex.","url":"http://localhost:4000/Digit%20Span/jsPsych-master-6.1/docs/plugins/jspsych-iat-image.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/assets/css/style.css?v=">
+  <link rel="stylesheet" href="assets/css/social-circles.min.css"> <!-- Social media buttons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- icons -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <script src="/assets/js/respond.js"></script>
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 8]>
+  <link rel="stylesheet" href="/assets/css/ie.css">
+  <![endif]-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  <script>
+  function verticalNav() {
+    var x = document.getElementById("mytopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+</script>
+
+
+
+</head>
+<body>
+  <div id="header">
+    <nav id = "mytopnav" class = "topnav">
+      <li class = "active"><a href = 'https://jamie-moffatt.github.io'>Home</a></li>
+      <li><a href = "/publications">Publications</a></li>
+      <li><a href = "/jspsych">jsPsych Tutorials</a></li>
+      <li><a href="">View On GitHub</a></li>
+      <li class="icon"><a href="javascript:void(0);" onclick="verticalNav()"><i class="fa fa-bars"></i></a></li>
+      
+    </nav>
+  </div><!-- end header -->
+
+  <div class="wrapper">
+
+    <section>
+      <div id="title">
+        <div id = "title-container">
+        <div id="title-text">
+        <h1>Jamie Moffatt</h1>
+        <p>Jamie is a psychology PhD student based at the University of Sussex.</p>
+      </div>
+      <div id = "title-img">
+        <img src="/assets/img/test_profile.jpg" class = "profile">
+      </div>
+    </div>
+        <hr>
+        <span class="credits left">Project maintained by <a href=""></a></span>
+        <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></span>
+      </div>
+      
+
+      <h1 id="jspsych-iat-image-plugin">jspsych-iat-image plugin</h1>
+
+<p>This plugin runs a single trial of the <a href="https://implicit.harvard.edu/implicit/iatdetails.html">implicit association test (IAT)</a>, using an image as the stimulus.</p>
+
+<h2 id="parameters">Parameters</h2>
+
+<p>Parameters with a default value of <em>undefined</em> must be specified. Other parameters can be left unspecified if the default value is acceptable.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Default Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>stimulus</td>
+      <td>string</td>
+      <td><em>undefined</em></td>
+      <td>The stimulus to display. The path to an image.</td>
+    </tr>
+    <tr>
+      <td>htm_when_wrong</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;span style="color: red; font-size: 80px"&gt;X&lt;/span&gt;</code></td>
+      <td>The image to display when a user presses the wrong key.</td>
+    </tr>
+    <tr>
+      <td>bottom_instructions</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;p&gt;If you press the wrong key, a red X will appear. Press any key to continue.&lt;/p&gt;</code></td>
+      <td>Instructions about making a wrong key press and whether another key press is needed to continue.</td>
+    </tr>
+    <tr>
+      <td>force_correct_key_press</td>
+      <td>boolean</td>
+      <td>false</td>
+      <td>If this is true and the user presses the wrong key then they have to press the other key to continue. An example would be two keys ‘E’ and ‘I’. If the key associated with the stimulus is ‘E’ and key ‘I’ was pressed, then pressing ‘E’ is needed to continue the trial. When this is true, then parameter key_to_move_forward is not used.</td>
+    </tr>
+    <tr>
+      <td>display_feedback</td>
+      <td>boolean</td>
+      <td>false</td>
+      <td>If true, then image_when_wrong and wrong_image_name is required. If false, timing_response is needed and trial will continue automatically.</td>
+    </tr>
+    <tr>
+      <td>left_category_key</td>
+      <td>string</td>
+      <td>‘E’</td>
+      <td>Key press that is associated with the left_category_label.</td>
+    </tr>
+    <tr>
+      <td>right_category_key</td>
+      <td>string</td>
+      <td>‘I’</td>
+      <td>Key press that is associated with the right_category_label.</td>
+    </tr>
+    <tr>
+      <td>left_category_label</td>
+      <td>string</td>
+      <td>[‘left’]</td>
+      <td>An array that contains the words/labels associated with a certain stimulus. The labels are aligned to the left side of the page.</td>
+    </tr>
+    <tr>
+      <td>right_category_label</td>
+      <td>string</td>
+      <td>[‘right’]</td>
+      <td>An array that contains the words/labels associated with a certain stimulus. The labels are aligned to the right side of the page.</td>
+    </tr>
+    <tr>
+      <td>stim_key_association</td>
+      <td>string</td>
+      <td>‘undefined’</td>
+      <td>Inputs are either ‘left’ or ‘right’. It will associate the stimulus with the key presses on the left or right side of the page(left_category_key or right_category_key).</td>
+    </tr>
+    <tr>
+      <td>key_to_move_forward</td>
+      <td>array of characters</td>
+      <td>[jsPsych.ALL_KEYS]</td>
+      <td>This array contains the characters the subject is allowed to press to move on to the next trial if their key press was incorrect and feedback was displayed. Can also have ‘other key’ as an option which will only allow the user to select the right key to move forward.</td>
+    </tr>
+    <tr>
+      <td>timing_response</td>
+      <td>numeric</td>
+      <td>null</td>
+      <td>How long to wait for the subject to make a response before ending the trial in milliseconds. If the subject fails to make a response before this timer is reached, the subject’s response will be recorded as null for the trial and the trial will end. If the value of this parameter is null, then the trial will wait for a response indefinitely.</td>
+    </tr>
+    <tr>
+      <td>response_ends_trial</td>
+      <td>boolean</td>
+      <td>true</td>
+      <td>If true, then the trial will end whenever the subject makes a response (assuming they make their response before the cutoff specified by the <code class="language-plaintext highlighter-rouge">timing_response</code> parameter). If false, then the trial will continue until the value for <code class="language-plaintext highlighter-rouge">timing_response</code> is reached. You can use this parameter to force the subject to view a stimulus for a fixed amount of time, even if they respond before the time is complete.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="data-generated">Data Generated</h2>
+
+<p>In addition to the <a href="overview#datacollectedbyplugins">default data collected by all plugins</a>, this plugin collects the following data for each trial.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>stimulus</td>
+      <td>string</td>
+      <td>Either the path to the image file or the string containing the HTML formatted content that the subject saw on this trial.</td>
+    </tr>
+    <tr>
+      <td>key_press</td>
+      <td>numeric</td>
+      <td>Indicates which key the subject pressed. The value is the <a href="http://www.cambiaresearch.com/articles/15/javascript-char-codes-key-codes">numeric key code</a> corresponding to the subject’s response.</td>
+    </tr>
+    <tr>
+      <td>rt</td>
+      <td>numeric</td>
+      <td>The response time in milliseconds for the subject to make a response. The time is measured from when the stimulus first appears on the screen until the subject’s response.</td>
+    </tr>
+    <tr>
+      <td>correct</td>
+      <td>boolean</td>
+      <td>boolean of whether the user’s key press was correct for the given image or incorrect.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="examples">Examples</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">trial_block</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">iat-image</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">stimulus</span><span class="p">:</span> <span class="dl">'</span><span class="s1">img/blue.png</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">stim_key_association</span><span class="p">:</span> <span class="dl">'</span><span class="s1">left</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">html_when_wrong</span><span class="p">:</span> <span class="dl">'</span><span class="s1">&lt;span style="color: red; font-size: 80px"&gt;X&lt;/span&gt;</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">bottom_instructions</span><span class="p">:</span> <span class="dl">'</span><span class="s1">&lt;p&gt;If you press the wrong key, a red X will appear. Press the other key to continue&lt;/p&gt;</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">force_correct_key_press</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="na">display_feedback</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="na">timing_response</span><span class="p">:</span> <span class="mi">3000</span><span class="p">,</span> <span class="c1">//Only if display_feedback is false</span>
+  <span class="na">left_category_key</span><span class="p">:</span> <span class="dl">'</span><span class="s1">E</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">right_category_key</span><span class="p">:</span> <span class="dl">'</span><span class="s1">I</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">left_category_label</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">OLD</span><span class="dl">'</span><span class="p">],</span>
+  <span class="na">right_category_label</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">YOUNG</span><span class="dl">'</span><span class="p">],</span>
+  <span class="na">response_ends_trial</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">timeline</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="nx">timeline</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">trial_block</span><span class="p">);</span>
+
+<span class="nx">jsPsych</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
+  <span class="na">timeline</span><span class="p">:</span> <span class="nx">timeline</span><span class="p">,</span>
+  <span class="na">on_finish</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">jsPsych</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">displayData</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+
+    </section>
+
+  </div>
+
+  
+</body>
+</html>

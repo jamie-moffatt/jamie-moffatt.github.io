@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>jspsych-external-html plugin | Jamie Moffatt</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="jspsych-external-html plugin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Jamie is a psychology PhD student based at the University of Sussex." />
+<meta property="og:description" content="Jamie is a psychology PhD student based at the University of Sussex." />
+<link rel="canonical" href="http://localhost:4000/Digit%20Span/jsPsych-master-6.1/docs/plugins/jspsych-external-html.html" />
+<meta property="og:url" content="http://localhost:4000/Digit%20Span/jsPsych-master-6.1/docs/plugins/jspsych-external-html.html" />
+<meta property="og:site_name" content="Jamie Moffatt" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="jspsych-external-html plugin" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"jspsych-external-html plugin","description":"Jamie is a psychology PhD student based at the University of Sussex.","url":"http://localhost:4000/Digit%20Span/jsPsych-master-6.1/docs/plugins/jspsych-external-html.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/assets/css/style.css?v=">
+  <link rel="stylesheet" href="assets/css/social-circles.min.css"> <!-- Social media buttons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- icons -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <script src="/assets/js/respond.js"></script>
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 8]>
+  <link rel="stylesheet" href="/assets/css/ie.css">
+  <![endif]-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  <script>
+  function verticalNav() {
+    var x = document.getElementById("mytopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+</script>
+
+
+
+</head>
+<body>
+  <div id="header">
+    <nav id = "mytopnav" class = "topnav">
+      <li class = "active"><a href = 'https://jamie-moffatt.github.io'>Home</a></li>
+      <li><a href = "/publications">Publications</a></li>
+      <li><a href = "/jspsych">jsPsych Tutorials</a></li>
+      <li><a href="">View On GitHub</a></li>
+      <li class="icon"><a href="javascript:void(0);" onclick="verticalNav()"><i class="fa fa-bars"></i></a></li>
+      
+    </nav>
+  </div><!-- end header -->
+
+  <div class="wrapper">
+
+    <section>
+      <div id="title">
+        <div id = "title-container">
+        <div id="title-text">
+        <h1>Jamie Moffatt</h1>
+        <p>Jamie is a psychology PhD student based at the University of Sussex.</p>
+      </div>
+      <div id = "title-img">
+        <img src="/assets/img/test_profile.jpg" class = "profile">
+      </div>
+    </div>
+        <hr>
+        <span class="credits left">Project maintained by <a href=""></a></span>
+        <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></span>
+      </div>
+      
+
+      <h1 id="jspsych-external-html-plugin">jspsych-external-html plugin</h1>
+
+<p>The HTML plugin displays an external HTML document (often a consent form). Either a keyboard response or a button press can be used to continue to the next trial. It allows the experimenter to check if conditions are met (such as indicating informed consent) before continuing.</p>
+
+<h2 id="parameters">Parameters</h2>
+
+<p>Parameters with a default value of <em>undefined</em> must be specified. Other parameters can be left unspecified if the default value is acceptable.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Default Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>url</td>
+      <td>string</td>
+      <td><em>undefined</em></td>
+      <td>The URL of the page to display.</td>
+    </tr>
+    <tr>
+      <td>cont_key</td>
+      <td>numeric</td>
+      <td>null</td>
+      <td>The key code a key to advance to the next trial. If left as null, then the subject will not be able to advance trials using the keyboard.</td>
+    </tr>
+    <tr>
+      <td>cont_btn</td>
+      <td>string</td>
+      <td>null</td>
+      <td>The ID of a clickable element on the page. When the element is clicked, the trial will advance.</td>
+    </tr>
+    <tr>
+      <td>check_fn</td>
+      <td>function</td>
+      <td><code class="language-plaintext highlighter-rouge">function(){ return true; }</code></td>
+      <td>This function is called with the jsPsych <code class="language-plaintext highlighter-rouge">display_element</code> as the only argument when the subject attempts to advance the trial. The trial will only advance if the function return <code class="language-plaintext highlighter-rouge">true</code>. This can be used to verify that the subject has correctly filled out a form before continuing, for example.</td>
+    </tr>
+    <tr>
+      <td>force_refresh</td>
+      <td>boolean</td>
+      <td>false</td>
+      <td>If <code class="language-plaintext highlighter-rouge">true</code>, then the plugin will avoid using the cached version of the HTML page to load if one exists.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="data-generated">Data Generated</h2>
+
+<p>In addition to the <a href="overview#datacollectedbyplugins">default data collected by all plugins</a>, this plugin collects the following data for each trial.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>url</td>
+      <td>string</td>
+      <td>The URL of the page.</td>
+    </tr>
+    <tr>
+      <td>rt</td>
+      <td>numeric</td>
+      <td>The response time in milliseconds for the subject to finish the trial.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="loading-a-consent-form">Loading a consent form</h3>
+
+<h5 id="this-content-would-be-in-a-file-called-external_pagehtml">This content would be in a file called ‘external_page.html’</h5>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"consent"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;p&gt;</span>
+    This is a demo experiment, with this minimal consent form being loaded
+    as an external html document. To continue, click the checkbox below
+    and hit "Start Experiment".
+  <span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;p&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"consent_checkbox"</span> <span class="nt">/&gt;</span>
+    I agree to take part in this study.
+  <span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">id=</span><span class="s">"start"</span><span class="nt">&gt;</span>Start Experiment<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<h5 id="jspsych-code-to-load-above-page">jsPsych code to load above page.</h5>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// sample function that might be used to check if a subject has given</span>
+<span class="c1">// consent to participate.</span>
+<span class="kd">var</span> <span class="nx">check_consent</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">elem</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#consent_checkbox</span><span class="dl">'</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="dl">'</span><span class="s1">:checked</span><span class="dl">'</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">If you wish to participate, you must check the box next to the statement 'I agree to participate in this study.'</span><span class="dl">"</span><span class="p">);</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">};</span>
+
+
+<span class="c1">// declare the block.</span>
+<span class="kd">var</span> <span class="nx">trial</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">type</span><span class="p">:</span><span class="dl">'</span><span class="s1">external-html</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="dl">"</span><span class="s2">external_page.html</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">cont_btn</span><span class="p">:</span> <span class="dl">"</span><span class="s2">start</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">check_fn</span><span class="p">:</span> <span class="nx">check_consent</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+
+    </section>
+
+  </div>
+
+  
+</body>
+</html>

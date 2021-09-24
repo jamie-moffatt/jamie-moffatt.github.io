@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>jspsych-vsl-grid-scene plugin | Jamie Moffatt</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="jspsych-vsl-grid-scene plugin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Jamie is a psychology PhD student based at the University of Sussex." />
+<meta property="og:description" content="Jamie is a psychology PhD student based at the University of Sussex." />
+<link rel="canonical" href="http://localhost:4000/Digit%20Span/jsPsych-master-6.1/docs/plugins/jspsych-vsl-grid-scene.html" />
+<meta property="og:url" content="http://localhost:4000/Digit%20Span/jsPsych-master-6.1/docs/plugins/jspsych-vsl-grid-scene.html" />
+<meta property="og:site_name" content="Jamie Moffatt" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="jspsych-vsl-grid-scene plugin" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"jspsych-vsl-grid-scene plugin","description":"Jamie is a psychology PhD student based at the University of Sussex.","url":"http://localhost:4000/Digit%20Span/jsPsych-master-6.1/docs/plugins/jspsych-vsl-grid-scene.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/assets/css/style.css?v=">
+  <link rel="stylesheet" href="assets/css/social-circles.min.css"> <!-- Social media buttons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- icons -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <script src="/assets/js/respond.js"></script>
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 8]>
+  <link rel="stylesheet" href="/assets/css/ie.css">
+  <![endif]-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  <script>
+  function verticalNav() {
+    var x = document.getElementById("mytopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+</script>
+
+
+
+</head>
+<body>
+  <div id="header">
+    <nav id = "mytopnav" class = "topnav">
+      <li class = "active"><a href = 'https://jamie-moffatt.github.io'>Home</a></li>
+      <li><a href = "/publications">Publications</a></li>
+      <li><a href = "/jspsych">jsPsych Tutorials</a></li>
+      <li><a href="">View On GitHub</a></li>
+      <li class="icon"><a href="javascript:void(0);" onclick="verticalNav()"><i class="fa fa-bars"></i></a></li>
+      
+    </nav>
+  </div><!-- end header -->
+
+  <div class="wrapper">
+
+    <section>
+      <div id="title">
+        <div id = "title-container">
+        <div id="title-text">
+        <h1>Jamie Moffatt</h1>
+        <p>Jamie is a psychology PhD student based at the University of Sussex.</p>
+      </div>
+      <div id = "title-img">
+        <img src="/assets/img/test_profile.jpg" class = "profile">
+      </div>
+    </div>
+        <hr>
+        <span class="credits left">Project maintained by <a href=""></a></span>
+        <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></span>
+      </div>
+      
+
+      <h1 id="jspsych-vsl-grid-scene-plugin">jspsych-vsl-grid-scene plugin</h1>
+
+<p>The VSL (visual statistical learning) grid scene plugin displays images arranged in a grid. This plugin can be used to replicate the experiments described in:</p>
+
+<p>Fiser, J., &amp; Aslin, R. N. (2001). Unsupervised statistical learning of higher-order spatial structures from visual scenes. <em>Psychological Science, 12</em>(6), 499-504.</p>
+
+<h2 id="parameters">Parameters</h2>
+
+<p>Parameters with a default value of <em>undefined</em> must be specified. Other parameters can be left unspecified if the default value is acceptable.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Default Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>stimuli</td>
+      <td>array</td>
+      <td><em>undefined</em></td>
+      <td>An array that defines a grid. Grids should be declared as two dimensional arrays in <code class="language-plaintext highlighter-rouge">[row][col]</code> order, with paths to image files in the locations where images are displayed, and 0 in blank spaces. See example below.</td>
+    </tr>
+    <tr>
+      <td>image_size</td>
+      <td>array</td>
+      <td><code class="language-plaintext highlighter-rouge">[100, 100]</code></td>
+      <td>Array specifying the width and height of the images to show. Grid cells will also be this size, with 10% padding.</td>
+    </tr>
+    <tr>
+      <td>timing_duration</td>
+      <td>numeric</td>
+      <td>2000</td>
+      <td>How long to show the stimulus for in milliseconds.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="data-generated">Data Generated</h2>
+
+<p>In addition to the <a href="overview#datacollectedbyplugins">default data collected by all plugins</a>, this plugin collects the following data for each trial.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>stimulus</td>
+      <td>JSON string</td>
+      <td>JSON encoded array of the stimulus shown on the trial.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="stimulus-creation-method">Stimulus Creation Method</h3>
+
+<p>The plugin also includes a public method for generating the grid scene stimuli that the plugin uses. You can use this method to create HTML strings that produce the stimuli, and then incorporate the stimuli in other plugins. To use this method, include the plugin script on the page and then call the method like this:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">var</span> <span class="nx">pattern</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">[</span><span class="dl">"</span><span class="s2">img/1.gif</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">img/2.gif</span><span class="dl">"</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+  <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="dl">"</span><span class="s2">img/3.gif</span><span class="dl">"</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+  <span class="p">[</span><span class="dl">"</span><span class="s2">img/5.gif</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">img/4.gif</span><span class="dl">"</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="p">];</span>
+
+<span class="kd">var</span> <span class="nx">image_size</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span> <span class="c1">// pixels</span>
+
+<span class="kd">var</span> <span class="nx">grid_stimulus</span> <span class="o">=</span> <span class="nx">jsPsych</span><span class="p">.</span><span class="nx">plugins</span><span class="p">[</span><span class="dl">'</span><span class="s1">vsl-grid-scene</span><span class="dl">'</span><span class="p">].</span><span class="nx">generate_stimulus</span><span class="p">(</span><span class="nx">pattern</span><span class="p">,</span> <span class="nx">image_size</span><span class="p">);</span>
+
+<span class="c1">// grid_stimulus will now contain a string (NOT an HTML DOM object) that you can</span>
+<span class="c1">// pass into other plugins that accept HTML stimuli as input, such as jspsych-html-keyboard-response.</span>
+
+</code></pre></div></div>
+
+<h2 id="example">Example</h2>
+
+<h4 id="basic-example">Basic example</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">scene</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">[</span><span class="dl">"</span><span class="s2">img/1.gif</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">img/2.gif</span><span class="dl">"</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+  <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="dl">"</span><span class="s2">img/3.gif</span><span class="dl">"</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+  <span class="p">[</span><span class="dl">"</span><span class="s2">img/5.gif</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">img/4.gif</span><span class="dl">"</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="kd">var</span> <span class="nx">trial</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">vsl-grid-scene</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">stimuli</span><span class="p">:</span> <span class="nx">scene</span>
+<span class="p">};</span>
+
+</code></pre></div></div>
+
+
+    </section>
+
+  </div>
+
+  
+</body>
+</html>

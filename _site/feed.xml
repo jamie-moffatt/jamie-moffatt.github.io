@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-10-04T19:34:57+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jamie Moffatt</title><subtitle>Jamie is a psychology PhD student based at the University of Sussex.</subtitle><entry><title type="html">jsPsych and Pavlovia</title><link href="http://localhost:4000/2020/10/04/jsPsych-pavlovia.html" rel="alternate" type="text/html" title="jsPsych and Pavlovia" /><published>2020-10-04T15:47:00+01:00</published><updated>2020-10-04T15:47:00+01:00</updated><id>http://localhost:4000/2020/10/04/jsPsych-pavlovia</id><content type="html" xml:base="http://localhost:4000/2020/10/04/jsPsych-pavlovia.html">&lt;p&gt;This tutorial will guide you through how to setup your study on &lt;a href=&quot;https://pavlovia.org&quot;&gt;Pavlovia&lt;/a&gt;. Pavlovia is a website for hosting behavioural experiments online. It was orginally created by the people who made PsychoPy, an experimental software. Originally it was designed for hosting online experiments made in PsychoPy, but it also has functionality to support jsPsych experiments.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-09-24T15:38:00+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jamie Moffatt</title><subtitle>Jamie is a psychology PhD student based at the University of Sussex.</subtitle><entry><title type="html">jsPsych and Pavlovia</title><link href="http://localhost:4000/2020/10/04/jsPsych-pavlovia.html" rel="alternate" type="text/html" title="jsPsych and Pavlovia" /><published>2020-10-04T15:47:00+01:00</published><updated>2020-10-04T15:47:00+01:00</updated><id>http://localhost:4000/2020/10/04/jsPsych-pavlovia</id><content type="html" xml:base="http://localhost:4000/2020/10/04/jsPsych-pavlovia.html">&lt;p&gt;This tutorial will guide you through how to setup your study on &lt;a href=&quot;https://pavlovia.org&quot;&gt;Pavlovia&lt;/a&gt;. Pavlovia is a website for hosting behavioural experiments online. It was orginally created by the people who made PsychoPy, an experimental software. Originally it was designed for hosting online experiments made in PsychoPy, but it also has functionality to support jsPsych experiments.&lt;/p&gt;
 
 &lt;!--more--&gt;
 
@@ -12,12 +12,11 @@
 
 &lt;p&gt;Assuming you have your jsPsych code all &lt;a href=&quot;/2018/04/15/jsPsych-set-up&quot;&gt;written and in working order&lt;/a&gt;, editing the code to work with Pavlovia takes two simple steps.&lt;/p&gt;
 
-&lt;p&gt;Firstly add the pavlovia plugin to your list of plugins to load in at the start of the experiment. Note that this plugin also requires jQuery - you can load this in similarly.&lt;/p&gt;
+&lt;p&gt;Firstly use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;script&amp;gt;&lt;/code&gt; tags to add the Pavlovia plugin to your list of plugins in the html header. This will load in the plugin at the start of the experiment. Note that this plugin also requires jQuery - a popular library for Javascript - you can load this in using a similar method.&lt;/p&gt;
 
 &lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;My title&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;jspsych.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;plugins/jspsych-instructions.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;css/jspsych.css&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/css&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/link&amp;gt;&lt;/span&gt;
 
   &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- the Pavlovia plugin --&amp;gt;&lt;/span&gt;
@@ -31,7 +30,7 @@
 
 &lt;p&gt;Secondly, use the Pavlovia plugin to open and close a connection with Pavlovia. This requires a trial for initiating the connection, which should go at the beginning of your experiment timeline, and a trial for finishing the connection, which should go at the end of your experiment timeline.&lt;/p&gt;
 
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;timeline&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;timeline&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;// Trial for opening the link with Pavlovia&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;pavlovia_init&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -48,20 +47,41 @@
 &lt;span class=&quot;c1&quot;&gt;// You should add this to the beginning of your timeline&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;timeline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pavlovia_init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 
+&lt;span class=&quot;c1&quot;&gt;// The rest of your experiment should be added to the timeline here&lt;/span&gt;
+
+
 &lt;span class=&quot;c1&quot;&gt;// You should add this to the end of your timeline&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;timeline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pavlovia_finish&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;3-create-a-new-project-on-pavlovia&quot;&gt;3. Create a new project on Pavlovia&lt;/h1&gt;
-
-&lt;p&gt;Signing up for Pavlovia will also have given you an account on &lt;a href=&quot;https://gitlab.pavlovia.org/&quot;&gt;Gitlab&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Signing up for Pavlovia will also have given you an account on &lt;a href=&quot;https://gitlab.pavlovia.org/&quot;&gt;Pavlovia’s Gitlab Repository&lt;/a&gt;. You can think of this section as a place to store and manage the code for your experiment.&lt;/p&gt;
 
 &lt;p&gt;Login to your account, and click the “New Project” button. You’ll have a lot of options for your project, including giving it a name, description and setting the privacy level for the project.&lt;/p&gt;
 
-&lt;p&gt;Once you have created the project, the project page will automatically open. The page will be blank, and will give you some instructions for how to move your jsPsych project from you computer to your project repository on Pavlovia.&lt;/p&gt;
+&lt;p&gt;Once you have created the project, you will be taken automatically to t the new repository for your project. This is the space where the code for your experiment will be stored.&lt;/p&gt;
 
-&lt;h1 id=&quot;4-testing-out-your-experiment-on-pavlovia&quot;&gt;4. Testing out your experiment on Pavlovia&lt;/h1&gt;
+&lt;h1 id=&quot;4-upload-the-experiment-to-your-project&quot;&gt;4. Upload the experiment to your project&lt;/h1&gt;
+
+&lt;p&gt;At this point, you will have the experiment files on your local computer, with the project repository on Gitlab. Now, we need to get the local files uploaded into the project repository. Unfortunately, it’s not quite so simple as clicking a button to upload the files.&lt;/p&gt;
+
+&lt;p&gt;Luckily, your project repository will have some instructions for how to upload your files.&lt;/p&gt;
+
+&lt;p&gt;First, you will need to download the git version control program, which can be downloaded for free &lt;a href=&quot;https://git-scm.com/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Second, navigate to your experiment files on your computer. Right click on the folder and select “Git Bash Here”. Enter in the commands below:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git init
+git remote add origin https://gitlab.pavlovia.org/username/project-name.git
+git add .
+git commit -m &quot;Initial commit&quot;
+git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If you return to your project repository, the files should now be there!&lt;/p&gt;
+
+&lt;h1 id=&quot;5-piloting-and-running-your-experiment-on-pavlovia&quot;&gt;5. Piloting and running your experiment on Pavlovia&lt;/h1&gt;
 
 &lt;p&gt;Once you have uploaded your project to Pavlovia, you can pilot the task on your &lt;a href=&quot;https://pavlovia.org/dashboard&quot;&gt;Pavlovia dashboard&lt;/a&gt;. Click on the “Experiments” tab, and you will see a list of your experiments. If the preceding steps have worked, your project will appear here. Click on your project and you will see a host of options for managing your experiment.&lt;/p&gt;
 
@@ -101,7 +121,7 @@
   &lt;span class=&quot;c1&quot;&gt;// Type of jsPsych plugin to use&lt;/span&gt;
   &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;image-button-response&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
   &lt;span class=&quot;c1&quot;&gt;// Path to the image that you want to use&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;stimulus&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;img/dog.png&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;stimulus&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;img/dog.png&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
   &lt;span class=&quot;c1&quot;&gt;// List of choices that the participant will have in responding&lt;/span&gt;
   &lt;span class=&quot;na&quot;&gt;choices&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Yes&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;No&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
   &lt;span class=&quot;c1&quot;&gt;// Text that will appear above the Image - can put in a question here&lt;/span&gt;
@@ -228,17 +248,17 @@
 
 &lt;p&gt;This code creates a new variable (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;var&lt;/code&gt;) called instructions_page. This variable defines a single trial of our experiment. Within this variable, we can define certain parameters which will affect how the trial will run. These should be written in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{}&lt;/code&gt; tags, with a comma separating each parameter.&lt;/p&gt;
 
-&lt;p&gt;The first parameter of any trial should always be &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;type:&lt;/code&gt; followed by the name of plugin you wish to use, in quotation marks. Here we set &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;type: 'instructions'&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The first parameter of any trial should always be &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;type:&lt;/code&gt; followed by the name of plugin you wish to use, in quotation marks. Here we set &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;type: &apos;instructions&apos;&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;In the instructions plugin, text is defined using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pages:&lt;/code&gt;, with the text you want to write in quotation marks, within [] brackets. So here we set &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pages: ['Hello! Welcome to the experiment.']&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;In the instructions plugin, text is defined using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pages:&lt;/code&gt;, with the text you want to write in quotation marks, within [] brackets. So here we set &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pages: [&apos;Hello! Welcome to the experiment.&apos;]&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;This should look something like this (don’t forget the comma to separate each line!):&lt;/p&gt;
 
 &lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
 
 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;instructions_page&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;instructions&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;pages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Hello! Welcome to the experiment.&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;instructions&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;pages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Hello! Welcome to the experiment.&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
@@ -277,7 +297,7 @@
 
 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;instructions_page&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;instructions&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;pages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Hello! Welcome to the experiment.&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;pages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Hello! Welcome to the experiment.&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
 &lt;span class=&quot;nx&quot;&gt;jsPsych&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
