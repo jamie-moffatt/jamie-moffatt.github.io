@@ -1,3 +1,7 @@
+
+
+## Digit Span Task
+
 <html>
 <head>
   <title>Digit Span</title>
@@ -7,16 +11,18 @@
   <script src = "Digit Span/jsPsych-master-6.1/plugins/jspsych-html-keyboard-response.js"></script>
   <script src = "Digit Span/jsPsych-master-6.1/plugins/jspsych-html-button-response.js"></script>
   <script src = "Digit Span/jsPsych-master-6.1/plugins/jspsych-call-function.js"></script>
-  <script src = "Digit Span/jsPsych-master-6.1/plugins/jspsych-fullscreen.js"></script>
   <script src = "Digit Span/jsPsych-master-6.1/plugins/jspsych-external-html.js"></script>
   <script src = "Digit Span/jsPsych-master-6.1/plugins/edited/jspsych-multi-html-no-response.js"></script>
   <script src = "Digit Span/jsPsych-master-6.1/plugins/edited/jspsych-html-button-multi-response.js"></script>
-  <link href="Digit Span/jsPsych-master-6.1/css/jspsych.css" rel="stylesheet" type="text/css"></link>
+  <link href="Digit Span/jsPsych-master-6.1/css/jspsych.css" rel="stylesheet" type="text/css">
 
   <script src = "Digit Span/tasks/digit_span.js"></script>
 </head>
 
 <body>
+<div id="jspsych-display" style="border: 1px solid red;">
+</div>
+
 </body>
 
 <script>
@@ -24,13 +30,6 @@
 /************* Timeline *************/
 var timeline = [];
 var browser_interactions = [];
-
-// Set to fullscreen
-timeline.push({
-  type: 'fullscreen',
-  fullscreen_mode: true
-});
-
 
 //Define the experiment timeline
 // Digit Span
@@ -83,7 +82,8 @@ var log_interactions = {
 // Push these at the end of the experiment
 timeline.push(log_interactions);
 jsPsych.init({
-  timeline: timeline
+  timeline: timeline,
+  display_element: "jspsych-display"
 })
 
 </script>
