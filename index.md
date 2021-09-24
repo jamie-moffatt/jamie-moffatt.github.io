@@ -15,3 +15,7 @@ My other research interests include coding and developing behavioural tasks for 
 
 <a class="icon-twitter social-button borderless" href="http://twitter.com/JAMoffatt"></a>
 <!-- <a href="mailto:jamie.moffatt@sussex.ac.uk">Email</a> -->
+
+## Tasks
+
+<a href = "/digit_span">Digit Span</a> 
