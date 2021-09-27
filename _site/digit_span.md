@@ -1,6 +1,9 @@
 
-
 ## Digit Span Task
+
+The digit span task is a memory task. You will see a series of numbers, and will then be asked to enter the numbers again in reverse order. Try to test your memory by not writing down the numbers as you go!
+
+The task will get a bit harder with each correct answer, but will also get easier if you are struggling.
 
 <html>
 <head>
@@ -20,7 +23,7 @@
 </head>
 
 <body>
-<div id="jspsych-display" style="border: 1px solid red;">
+<div id="jspsych-display" style="border: 1px solid red; min-height: 400px;">
 </div>
 
 </body>

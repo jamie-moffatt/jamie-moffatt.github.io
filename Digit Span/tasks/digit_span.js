@@ -78,8 +78,8 @@ var DS_accuracy; // Tracks accuracy of response on each trial
 
 var DS_instructions = {
   type: "instructions",
-  pages: ["<h2>Number Memory Task Instructions</h2><p>This task is a memory task. You're going to be presented with a series of numbers, and then asked to enter the numbers again backwards.</p><p>After each series of numbers, you'll see a keypad on the screen, and you just need to enter the numbers you saw, in reverse order. So, for example, if you saw the numbers 1-9 you would enter 9-1. If you saw 2-5-3-1, you would then click 1-3-5-2. After you have entered entered your answer, press the 'Submit' button to submit your answer - you do not need to press 'Submit' until you have entered all the digits that you think were in the sequence. You will have up to 60 seconds to submit your answer.</p>" +
-  "<p>The amount of numbers will increase as the task goes on.</p><p>Please do not cheat by using a pen and paper to write down the answers as you go along! By doing so you will make it harder for us to learn about memory and how people perform on the task. The task is supposed to be tricky, so please don't worry if you find it challenging.</p><p>Click 'Continue' to start a short practice task."],
+  pages: ["<p>You will see a series of numbers, and will then be asked to recall the numbers in reverse order.</p><p>So, for example, if you saw the number 1, then the number 9, you would enter 9, 1 at the answer screen. If you saw the series 2-5-3-1, you would then enter 1-3-5-2 at the answer screen. After you have entered your answer, press the 'Submit' button to submit your answer. You will have up to 60 seconds to submit your answer.</p>" +
+  "<p>Click 'Continue' to start a short practice task."],
   show_clickable_nav: true
 }
 
