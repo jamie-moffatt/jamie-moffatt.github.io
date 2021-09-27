@@ -103,7 +103,7 @@
 <span class="p">});</span>
 </code></pre></div></div>
 
-<p>To actually create and run this simple example, complete the <a href="../tutorials/hello-world.md">hello world tutorial</a>.</p>
+<p>To actually create and run this simple example, complete the <a href="/Digit%20Span/jsPsych-master-6.1/docs/tutorials/hello-world.html">hello world tutorial</a>.</p>
 
 <h2 id="multiple-trials">Multiple trials</h2>
 
@@ -170,7 +170,7 @@
 
 <p>A common pattern in behavioral experiments is to repeat the same procedure many times with different stimuli. A procedure might be a single trial, but it also might be a series of trials. One shortcut to implement this pattern is with the approach described in the previous section, but this only works if all the trials use the same plugin type. Timeline variables are a more general solution. With timeline variables, you define the procedure once (as a timeline), and specify a set of parameters and their values for each iteration through the timeline.</p>
 
-<p>What follows is an example of how to use timeline variables. The <a href="../tutorials/rt-task.md">simple reaction time tutorial</a> also explains how to use timeline variables.</p>
+<p>What follows is an example of how to use timeline variables. The <a href="/Digit%20Span/jsPsych-master-6.1/docs/tutorials/rt-task.html">simple reaction time tutorial</a> also explains how to use timeline variables.</p>
 
 <p>Suppose we want to create an experiment where people see a set of faces with names displayed below the face. In between each face, a fixation cross is displayed on the screen. Without timeline variables, we would need to add many trials to the timeline, alternating between trials showing the fixation cross and trials showing the face and name. This could be done efficiently in a loop or function, but timeline variables make it even easier - as well as adding extra features like sampling and randomization.</p>
 
