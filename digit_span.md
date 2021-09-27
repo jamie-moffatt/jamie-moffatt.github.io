@@ -5,6 +5,8 @@ The digit span task is a memory task. You will see a series of numbers, and will
 
 The task will get a bit harder with each correct answer, but will also get easier if you are struggling.
 
+Download code [here](https://github.com/jamie-moffatt/jspsych-tasks).
+
 <html>
 <head>
   <title>Digit Span</title>
