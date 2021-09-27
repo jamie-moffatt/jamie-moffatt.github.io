@@ -178,7 +178,7 @@ var DS_feedback_trial = {
     if (DS_accuracy) {
       return '<p style="font-size: 48px; color: rgb(0, 153, 51)">Correct</p><p>You responded correctly! The main task is exactly the same, except you will not receive feedback. Press the button below to begin the main task.</p>'
     } else {
-      return '<p style="font-size: 48px; color: rgb(204, 0, 0)">Incorrect</p><p>Remember, you just need to enter the numbers you saw, in reverse order. For example, if you saw the numbers 1-9 you would enter 9-1. When you have entered the numbers, press "Submit" to submit your answer. Please press the button below to try the practice task again.</p>'
+      return '<p style="font-size: 48px; color: rgb(204, 0, 0)">Incorrect</p><p>Remember, you just need to enter the numbers you saw, in reverse order. For example, if you saw the numbers 1, 9 you would enter 9, 1. When you have entered the numbers, press "Submit" to submit your answer. Please press the button below to try the practice again.</p>'
     }
   },
   trial_duration: 100000,
