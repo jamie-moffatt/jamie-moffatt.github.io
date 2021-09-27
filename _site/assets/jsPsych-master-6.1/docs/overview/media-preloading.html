@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Media Preloading | Jamie Moffatt</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Media Preloading" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Jamie is a psychology PhD student based at the University of Sussex." />
+<meta property="og:description" content="Jamie is a psychology PhD student based at the University of Sussex." />
+<link rel="canonical" href="http://localhost:4000/assets/jsPsych-master-6.1/docs/overview/media-preloading.html" />
+<meta property="og:url" content="http://localhost:4000/assets/jsPsych-master-6.1/docs/overview/media-preloading.html" />
+<meta property="og:site_name" content="Jamie Moffatt" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Media Preloading" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"Media Preloading","description":"Jamie is a psychology PhD student based at the University of Sussex.","url":"http://localhost:4000/assets/jsPsych-master-6.1/docs/overview/media-preloading.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/assets/css/style.css?v=">
+  <link rel="stylesheet" href="assets/css/social-circles.min.css"> <!-- Social media buttons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- icons -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <script src="/assets/js/respond.js"></script>
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 8]>
+  <link rel="stylesheet" href="/assets/css/ie.css">
+  <![endif]-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  <script>
+  function verticalNav() {
+    var x = document.getElementById("mytopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+</script>
+
+
+
+</head>
+<body>
+  <div id="header">
+    <nav id = "mytopnav" class = "topnav">
+      <li class = "active"><a href = 'https://jamie-moffatt.github.io'>Home</a></li>
+      <li><a href = "/publications">Publications</a></li>
+      <li><a href = "/jspsych">jsPsych Tutorials</a></li>
+      <li><a href="">View On GitHub</a></li>
+      <li class="icon"><a href="javascript:void(0);" onclick="verticalNav()"><i class="fa fa-bars"></i></a></li>
+      
+    </nav>
+  </div><!-- end header -->
+
+  <div class="wrapper">
+
+    <section>
+      <div id="title">
+        <div id = "title-container">
+        <div id="title-text">
+        <h1>Jamie Moffatt</h1>
+        <p>Jamie is a psychology PhD student based at the University of Sussex.</p>
+      </div>
+      <div id = "title-img">
+        <img src="/assets/img/test_profile.jpg" class = "profile">
+      </div>
+    </div>
+        <hr>
+        <span class="credits left">Project maintained by <a href=""></a></span>
+        <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></span>
+      </div>
+      
+
+      <h1 id="media-preloading">Media Preloading</h1>
+
+<p>If an experiment uses images or audio files as stimuli, it is a good idea to preload the files before running the experiment. Preloading files means that the subject’s browser will download all of the files and store them in local memory on the subject’s computer. This is important because loading an image file is much faster if it is already in memory on the subject’s computer. Without preloading, there will be noticeable delays in the display of media, which will affect any timing measurements (such as how long an image is displayed, or a subject’s response time since first viewing an image).</p>
+
+<h2 id="automatic-preloading">Automatic Preloading</h2>
+
+<p>jsPsych will automatically preload audio and image files that are used as parameters for the standard set of plugins.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// the image file img/file1.png is</span>
+<span class="c1">// automatically preloaded before the experiment begins</span>
+<span class="kd">var</span> <span class="nx">trial</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">image-keyboard-response</span><span class="dl">'</span><span class="p">,</span>
+	<span class="na">stimulus</span><span class="p">:</span> <span class="dl">'</span><span class="s1">img/file1.png</span><span class="dl">'</span>
+<span class="p">}</span>
+
+<span class="c1">// the sound file is also preloaded automatically</span>
+<span class="kd">var</span> <span class="nx">sound_trial</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">audio-keyboard-response</span><span class="dl">'</span><span class="p">,</span>
+	<span class="na">stimulus</span><span class="p">:</span> <span class="dl">'</span><span class="s1">audio/hello.mp3</span><span class="dl">'</span>
+<span class="p">}</span>
+
+<span class="nx">jsPsych</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
+	<span class="na">timeline</span><span class="p">:</span> <span class="p">[</span><span class="nx">trial</span><span class="p">]</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h2 id="manual-preloading">Manual preloading</h2>
+
+<p>If you are using images or audio in your experiment but they are not being passed directly as parameters to the trials (e.g., because you are using functions as parameters that return the image or audio), then you can manually specify the files to preload.</p>
+
+<p>You can specify an array of image files (<code class="language-plaintext highlighter-rouge">preload_images</code>) and an array of audio files (<code class="language-plaintext highlighter-rouge">preload_audio</code>) for preloading in the <code class="language-plaintext highlighter-rouge">jsPsych.init()</code> method. These files will load before the experiment starts.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// this trial will not preload the images, because the image file is being used</span>
+<span class="c1">// in an HTML string</span>
+<span class="kd">var</span> <span class="nx">trial</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">html-keyboard-response</span><span class="dl">'</span><span class="p">,</span>
+	<span class="na">stimulus</span><span class="p">:</span> <span class="dl">'</span><span class="s1">&lt;img src="img/file1.png"&gt;&lt;/img&gt;</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">audio_trial</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">audio-keyboard-response</span><span class="dl">'</span><span class="p">,</span>
+	<span class="na">stimulus</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="dl">'</span><span class="s1">audio/foo.mp3</span><span class="dl">'</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// an array of paths to images that need to be loaded</span>
+<span class="kd">var</span> <span class="nx">images</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">img/file1.png</span><span class="dl">'</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">audio</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">audio/foo.mp3</span><span class="dl">'</span><span class="p">];</span>
+
+<span class="nx">jsPsych</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
+	<span class="na">timeline</span><span class="p">:</span> <span class="p">[</span><span class="nx">trial</span><span class="p">],</span>
+	<span class="na">preload_audio</span><span class="p">:</span> <span class="nx">audio</span><span class="p">,</span>
+	<span class="na">preload_images</span><span class="p">:</span> <span class="nx">images</span>
+<span class="p">});</span>
+
+</code></pre></div></div>
+
+<h2 id="preloading-progress-bar">Preloading progress bar</h2>
+
+<p>By default, jsPsych will display a small progress bar while files are being preloaded. This progress bar represents all files that are being automatically preloaded or preloaded from the <code class="language-plaintext highlighter-rouge">preload_audio</code> and <code class="language-plaintext highlighter-rouge">preload_images</code> arrays. You may wish to turn this off if you are only loading a small number of files, as it will disappear so quickly that the participant may be confused about what it was. You can control whether the preloading progress bar appears by setting the <code class="language-plaintext highlighter-rouge">show_preload_progress_bar</code> parameter in <code class="language-plaintext highlighter-rouge">jsPsych.init()</code></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">jsPsych</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
+	<span class="na">timeline</span><span class="p">:</span> <span class="nx">timeline</span><span class="p">,</span>
+	<span class="na">show_preload_progress_bar</span><span class="p">:</span> <span class="kc">false</span> <span class="c1">// hide preload progress bar</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+
+    </section>
+
+  </div>
+
+  
+</body>
+</html>

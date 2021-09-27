@@ -1,0 +1,1980 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>jspsych-form | Jamie Moffatt</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="jspsych-form" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Jamie is a psychology PhD student based at the University of Sussex." />
+<meta property="og:description" content="Jamie is a psychology PhD student based at the University of Sussex." />
+<link rel="canonical" href="http://localhost:4000/assets/jsPsych-master-6.1/docs/plugins/jspsych-form.html" />
+<meta property="og:url" content="http://localhost:4000/assets/jsPsych-master-6.1/docs/plugins/jspsych-form.html" />
+<meta property="og:site_name" content="Jamie Moffatt" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="jspsych-form" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"jspsych-form","description":"Jamie is a psychology PhD student based at the University of Sussex.","url":"http://localhost:4000/assets/jsPsych-master-6.1/docs/plugins/jspsych-form.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/assets/css/style.css?v=">
+  <link rel="stylesheet" href="assets/css/social-circles.min.css"> <!-- Social media buttons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- icons -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <script src="/assets/js/respond.js"></script>
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 8]>
+  <link rel="stylesheet" href="/assets/css/ie.css">
+  <![endif]-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  <script>
+  function verticalNav() {
+    var x = document.getElementById("mytopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+</script>
+
+
+
+</head>
+<body>
+  <div id="header">
+    <nav id = "mytopnav" class = "topnav">
+      <li class = "active"><a href = 'https://jamie-moffatt.github.io'>Home</a></li>
+      <li><a href = "/publications">Publications</a></li>
+      <li><a href = "/jspsych">jsPsych Tutorials</a></li>
+      <li><a href="">View On GitHub</a></li>
+      <li class="icon"><a href="javascript:void(0);" onclick="verticalNav()"><i class="fa fa-bars"></i></a></li>
+      
+    </nav>
+  </div><!-- end header -->
+
+  <div class="wrapper">
+
+    <section>
+      <div id="title">
+        <div id = "title-container">
+        <div id="title-text">
+        <h1>Jamie Moffatt</h1>
+        <p>Jamie is a psychology PhD student based at the University of Sussex.</p>
+      </div>
+      <div id = "title-img">
+        <img src="/assets/img/test_profile.jpg" class = "profile">
+      </div>
+    </div>
+        <hr>
+        <span class="credits left">Project maintained by <a href=""></a></span>
+        <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></span>
+      </div>
+      
+
+      <h1 id="jspsych-form">jspsych-form</h1>
+
+<p>This plugin creates a form from a JSON schema.</p>
+
+<h2 id="parameters">Parameters</h2>
+
+<p>Parameters with a default value of <em>undefined</em> must be specified. Other parameters can be left unspecified if the default value is acceptable.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Default Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>schema</td>
+      <td>object</td>
+      <td>{}</td>
+      <td>A JSON schema that holds the values of settings for creating a form.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="json-schema"><em>JSON</em> schema</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Default Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>form</td>
+      <td><a href="#Form"><em>Class</em> Form</a></td>
+      <td>{}</td>
+      <td>Values of settings for the form layout.</td>
+    </tr>
+    <tr>
+      <td>“any question string”</td>
+      <td><a href="#Dropdown"><em>Classes</em> start from here</a></td>
+      <td><em>undefined</em></td>
+      <td>Take the key string as the question title, and the value as question settings.</td>
+    </tr>
+    <tr>
+      <td>onSubmit</td>
+      <td><a href="#Button"><em>Class</em> Button</a></td>
+      <td>{label: “Submit”}</td>
+      <td>Values of settings for the button in the form.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="function">Function</h2>
+
+<h3 id="createform">createForm</h3>
+
+<p>INPUTS: display_element {string}, 
+		schema {object}<br />
+OUTPUTS: an array, [<em>Object</em> Form, [<em>Object</em> Tag], <em>Object</em> Button]<br />
+SIDE EFFECT: Render the form.<br /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>schema.type</th>
+      <th>Effect</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>“short answer/text”</td>
+      <td>Instantiate a <a href="#InputText">InputText</a> object.</td>
+    </tr>
+    <tr>
+      <td>“long answer/textarea”</td>
+      <td>Instantiate a <a href="#Textarea">Textarea</a> object.</td>
+    </tr>
+    <tr>
+      <td>dropdown</td>
+      <td>Instantiate a <a href="#Dropdown">Dropdown</a> object.</td>
+    </tr>
+    <tr>
+      <td>“checkbox/switch/radio”</td>
+      <td>Instantiate a <a href="#ToggleGroup">ToggleGroup</a> object according to its toggle type.</td>
+    </tr>
+    <tr>
+      <td>range</td>
+      <td>Instantiate its according object (<a href="#Class">see Class</a>)</td>
+    </tr>
+    <tr>
+      <td>date</td>
+      <td>Instantiate its according object (<a href="#Class">see Class</a>)</td>
+    </tr>
+    <tr>
+      <td>datetime</td>
+      <td>Instantiate its according object (<a href="#Class">see Class</a>)</td>
+    </tr>
+    <tr>
+      <td>datetime-local</td>
+      <td>Instantiate its according object (<a href="#Class">see Class</a>)</td>
+    </tr>
+    <tr>
+      <td>email</td>
+      <td>Instantiate its according object (<a href="#Class">see Class</a>)</td>
+    </tr>
+    <tr>
+      <td>file</td>
+      <td>Instantiate its according object (<a href="#Class">see Class</a>)</td>
+    </tr>
+    <tr>
+      <td>month</td>
+      <td>Instantiate its according object (<a href="#Class">see Class</a>)</td>
+    </tr>
+    <tr>
+      <td>password</td>
+      <td>Instantiate its according object (<a href="#Class">see Class</a>)</td>
+    </tr>
+    <tr>
+      <td>search</td>
+      <td>Instantiate its according object (<a href="#Class">see Class</a>)</td>
+    </tr>
+    <tr>
+      <td>telephone</td>
+      <td>Instantiate its according object (<a href="#Class">see Class</a>)</td>
+    </tr>
+    <tr>
+      <td>time</td>
+      <td>Instantiate its according object (<a href="#Class">see Class</a>)</td>
+    </tr>
+    <tr>
+      <td>url</td>
+      <td>Instantiate its according object (<a href="#Class">see Class</a>)</td>
+    </tr>
+    <tr>
+      <td>week</td>
+      <td>Instantiate its according object (<a href="#Class">see Class</a>)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="class-">Class <a name="Class"></a></h2>
+
+<p>If the value is in <strong>bold</strong>, then it is final. <br />
+If the value is <em>undefined</em>, then it must be specified.<br />
+For MDL color attributes, <a href="http://blog.jonathanargentiero.com/material-design-lite-color-classes-list/">see MDL colors</a>.<br />
+For MDL icons, <a href="https://material.google.com/style/icons.html">see MDL icons</a>.<br />
+For html color attributes, <a href="http://htmlcolorcodes.com/">see html colors</a>.<br />
+Mainly used:<br />
+<a href="#Form">Form</a>,<br />
+<a href="#Dropdown">Dropdown</a><br />
+<a href="#Text">InputText</a>,<br />
+<a href="#Textarea">Textarea</a><br />
+<a href="#ToggleGroup">ToggleGroup</a></p>
+
+<h3 id="form-">Form <a name="Form"></a></h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Default Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>display_element</em></td>
+      <td>string</td>
+      <td><em>undefined</em></td>
+      <td>Indicate where the form is displayed.</td>
+    </tr>
+    <tr>
+      <td><em>id</em><a name="FormId"></a></td>
+      <td>numeric</td>
+      <td><strong>Automactically Assigned</strong></td>
+      <td>The id of the form.</td>
+    </tr>
+    <tr>
+      <td><em>type</em></td>
+      <td>string</td>
+      <td><strong>“form”</strong></td>
+      <td>The type of the form.</td>
+    </tr>
+    <tr>
+      <td>item</td>
+      <td>object</td>
+      <td>{}</td>
+      <td>Values of settings for the form layout.</td>
+    </tr>
+    <tr>
+      <td>item.layout_color</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">white-300</code></td>
+      <td>The background color of the layout.</td>
+    </tr>
+    <tr>
+      <td>item.boxShadow</td>
+      <td>numeric</td>
+      <td>4</td>
+      <td>The darkness of shadow for the box. 0 - 17</td>
+    </tr>
+    <tr>
+      <td>item.form_title</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">"Untitled Form"</code></td>
+      <td>The title of the form.</td>
+    </tr>
+    <tr>
+      <td>item.form_title_size</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">40px</code></td>
+      <td>The font size of the title.</td>
+    </tr>
+    <tr>
+      <td>item.form_title_color</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">black-800</code></td>
+      <td>The font color of the title.</td>
+    </tr>
+    <tr>
+      <td>item.form_description</td>
+      <td>string</td>
+      <td>””</td>
+      <td>The description of the form.</td>
+    </tr>
+    <tr>
+      <td>item.form_description_size</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">14px</code></td>
+      <td>The font size of the description of the form.</td>
+    </tr>
+    <tr>
+      <td>item.form_description_color</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">grey-600</code></td>
+      <td>The font color of the description of the form.</td>
+    </tr>
+    <tr>
+      <td>item.ribbon_color</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">white-300</code></td>
+      <td>The background color of the ribbon.</td>
+    </tr>
+    <tr>
+      <td>item.ribbon_height</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">40vh</code></td>
+      <td>The height of the ribbon.</td>
+    </tr>
+    <tr>
+      <td>item.ribbon_bg</td>
+      <td>string</td>
+      <td>””</td>
+      <td>The background picture of the ribbon.</td>
+    </tr>
+    <tr>
+      <td>item.ribbon_bg_size</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">background-size: contain cover;</code></td>
+      <td>The background picture’s size of the ribbon.</td>
+    </tr>
+    <tr>
+      <td>item.content_bg_color</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">white-300</code></td>
+      <td>The background color of the content.</td>
+    </tr>
+    <tr>
+      <td>item.content_text_color</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">black-800</code></td>
+      <td>The font color of the text in the content.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="button">Button</h3>
+<p><em>Inheritence:</em> <a href="#Tag">Tag</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Default Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>parent_id</em></td>
+      <td>numeric</td>
+      <td><a href="#FormId">Form.id</a></td>
+      <td>The id of its parent element.</td>
+    </tr>
+    <tr>
+      <td>item</td>
+      <td>object</td>
+      <td>{}</td>
+      <td>An object of values for setting.</td>
+    </tr>
+    <tr>
+      <td>item.type</td>
+      <td>string</td>
+      <td><strong>“button”</strong></td>
+      <td>The type of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.id</td>
+      <td>string</td>
+      <td><strong>Automactically Assigned</strong></td>
+      <td>The id of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.needQuestion</td>
+      <td>boolean</td>
+      <td><strong>False</strong></td>
+      <td>Whether Displaying Question Title.</td>
+    </tr>
+    <tr>
+      <td>item.onclick</td>
+      <td>function</td>
+      <td>undefined</td>
+      <td>Add customized submit actions. If it has output, the output will occupy the key “#Customized Output#” in trial_data. (Pre-defined actions are: 1. check if all required fields are filled 2. Compare inputs with expected answers if provided)</td>
+    </tr>
+    <tr>
+      <td>item.label</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">"Submit"</code></td>
+      <td>The label for the button.</td>
+    </tr>
+    <tr>
+      <td>item.buttonStyle</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">"raise"</code></td>
+      <td><a href="https://getmdl.io/components/index.html#buttons-section">see MDL attribute</a></td>
+    </tr>
+    <tr>
+      <td>item.color</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">True</code></td>
+      <td><a href="https://getmdl.io/components/index.html#buttons-section">see MDL attribute</a></td>
+    </tr>
+    <tr>
+      <td>item.primary</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">False</code></td>
+      <td><a href="https://getmdl.io/components/index.html#buttons-section">see MDL attribute</a></td>
+    </tr>
+    <tr>
+      <td>item.accent</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">False</code></td>
+      <td><a href="https://getmdl.io/components/index.html#buttons-section">see MDL attribute</a></td>
+    </tr>
+    <tr>
+      <td>item.ripple</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">True</code></td>
+      <td><a href="https://getmdl.io/components/index.html#buttons-section">see MDL attribute</a></td>
+    </tr>
+    <tr>
+      <td>item.icon</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">""</code></td>
+      <td><a href="https://getmdl.io/components/index.html#buttons-section">see MDL attribute</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="dropdown-">Dropdown <a name="Dropdown"></a></h3>
+<p><em>Inheritence:</em> <a href="#Tag">Tag</a><br />
+Drop down a list of option.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Default Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>parent_id</em></td>
+      <td>numeric</td>
+      <td><a href="#FormId">Form.id</a></td>
+      <td>The id of its parent element.</td>
+    </tr>
+    <tr>
+      <td>item</td>
+      <td>object</td>
+      <td>{}</td>
+      <td>An object of values for setting.</td>
+    </tr>
+    <tr>
+      <td>item.type</td>
+      <td>string</td>
+      <td><strong>“select”</strong></td>
+      <td>The type of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.id</td>
+      <td>string</td>
+      <td><strong>Automactically Assigned</strong></td>
+      <td>The id of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.needQuestion</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">True</code></td>
+      <td>Whether Displaying Question Title.</td>
+    </tr>
+    <tr>
+      <td>item.options</td>
+      <td>array</td>
+      <td>[]</td>
+      <td>An array of options.</td>
+    </tr>
+    <tr>
+      <td>item.choose_prompt</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">"CHOOSE"</code></td>
+      <td>Prompt for choosing.</td>
+    </tr>
+    <tr>
+      <td>item.dropRight</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">True</code></td>
+      <td>From which direction the list drops down.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="inputdate">InputDate</h3>
+<p><em>Inheritence:</em> <a href="#InputTextField">InputTextField</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Default Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>parent_id</em></td>
+      <td>numeric</td>
+      <td><a href="#FormId">Form.id</a></td>
+      <td>The id of its parent element.</td>
+    </tr>
+    <tr>
+      <td>item</td>
+      <td>object</td>
+      <td>{}</td>
+      <td>An object of values for setting.</td>
+    </tr>
+    <tr>
+      <td>item.type</td>
+      <td>string</td>
+      <td><strong>“date”</strong></td>
+      <td>The type of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.id</td>
+      <td>string</td>
+      <td><strong>Automactically Assigned</strong></td>
+      <td>The id of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.needQuestion</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">True</code></td>
+      <td>Whether Displaying Question Title.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="inputdatetime">InputDatetime</h3>
+<p><em>Inheritence:</em> <a href="#InputTextField">InputTextField</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Default Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>parent_id</em></td>
+      <td>numeric</td>
+      <td><a href="#FormId">Form.id</a></td>
+      <td>The id of its parent element.</td>
+    </tr>
+    <tr>
+      <td>item</td>
+      <td>object</td>
+      <td>{}</td>
+      <td>An object of values for setting.</td>
+    </tr>
+    <tr>
+      <td>item.type</td>
+      <td>string</td>
+      <td><strong>“datetime”</strong></td>
+      <td>The type of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.id</td>
+      <td>string</td>
+      <td><strong>Automactically Assigned</strong></td>
+      <td>The id of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.needQuestion</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">True</code></td>
+      <td>Whether Displaying Question Title.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="inputdatetimelocal">InputDatetimeLocal</h3>
+<p><em>Inheritence:</em> <a href="#InputTextField">InputTextField</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Default Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>parent_id</em></td>
+      <td>numeric</td>
+      <td><a href="#FormId">Form.id</a></td>
+      <td>The id of its parent element.</td>
+    </tr>
+    <tr>
+      <td>item</td>
+      <td>object</td>
+      <td>{}</td>
+      <td>An object of values for setting.</td>
+    </tr>
+    <tr>
+      <td>item.type</td>
+      <td>string</td>
+      <td><strong>“datetime-local”</strong></td>
+      <td>The type of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.id</td>
+      <td>string</td>
+      <td><strong>Automactically Assigned</strong></td>
+      <td>The id of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.needQuestion</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">True</code></td>
+      <td>Whether Displaying Question Title.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="inputemail">InputEmail</h3>
+<p><em>Inheritence:</em> <a href="#InputTextField">InputTextField</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Default Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>parent_id</em></td>
+      <td>numeric</td>
+      <td><a href="#FormId">Form.id</a></td>
+      <td>The id of its parent element.</td>
+    </tr>
+    <tr>
+      <td>item</td>
+      <td>object</td>
+      <td>{}</td>
+      <td>An object of values for setting.</td>
+    </tr>
+    <tr>
+      <td>item.type</td>
+      <td>string</td>
+      <td><strong>“email”</strong></td>
+      <td>The type of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.id</td>
+      <td>string</td>
+      <td><strong>Automactically Assigned</strong></td>
+      <td>The id of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.needQuestion</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">True</code></td>
+      <td>Whether Displaying Question Title.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="inputmonth">InputMonth</h3>
+<p><em>Inheritence:</em> <a href="#InputTextField">InputTextField</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Default Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>parent_id</em></td>
+      <td>numeric</td>
+      <td><a href="#FormId">Form.id</a></td>
+      <td>The id of its parent element.</td>
+    </tr>
+    <tr>
+      <td>item</td>
+      <td>object</td>
+      <td>{}</td>
+      <td>An object of values for setting.</td>
+    </tr>
+    <tr>
+      <td>item.type</td>
+      <td>string</td>
+      <td><strong>“month”</strong></td>
+      <td>The type of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.id</td>
+      <td>string</td>
+      <td><strong>Automactically Assigned</strong></td>
+      <td>The id of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.needQuestion</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">True</code></td>
+      <td>Whether Displaying Question Title.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="inputnumber">InputNumber</h3>
+<p><em>Inheritence:</em> <a href="#InputTextField">InputTextField</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Default Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>parent_id</em></td>
+      <td>numeric</td>
+      <td><a href="#FormId">Form.id</a></td>
+      <td>The id of its parent element.</td>
+    </tr>
+    <tr>
+      <td>item</td>
+      <td>object</td>
+      <td>{}</td>
+      <td>An object of values for setting.</td>
+    </tr>
+    <tr>
+      <td>item.type</td>
+      <td>string</td>
+      <td><strong>“number”</strong></td>
+      <td>The type of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.id</td>
+      <td>string</td>
+      <td><strong>Automactically Assigned</strong></td>
+      <td>The id of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.needQuestion</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">True</code></td>
+      <td>Whether Displaying Question Title.</td>
+    </tr>
+    <tr>
+      <td>item.label</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">"Please enter a number..."</code></td>
+      <td>General inner html content.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="inputemail-1">InputEmail</h3>
+<p><em>Inheritence:</em> <a href="#InputTextField">InputTextField</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Default Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>parent_id</em></td>
+      <td>numeric</td>
+      <td><a href="#FormId">Form.id</a></td>
+      <td>The id of its parent element.</td>
+    </tr>
+    <tr>
+      <td>item</td>
+      <td>object</td>
+      <td>{}</td>
+      <td>An object of values for setting.</td>
+    </tr>
+    <tr>
+      <td>item.type</td>
+      <td>string</td>
+      <td><strong>“email”</strong></td>
+      <td>The type of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.id</td>
+      <td>string</td>
+      <td><strong>Automactically Assigned</strong></td>
+      <td>The id of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.needQuestion</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">True</code></td>
+      <td>Whether Displaying Question Title.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="inputpassword">InputPassword</h3>
+<p><em>Inheritence:</em> <a href="#InputTextField">InputTextField</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Default Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>parent_id</em></td>
+      <td>numeric</td>
+      <td><a href="#FormId">Form.id</a></td>
+      <td>The id of its parent element.</td>
+    </tr>
+    <tr>
+      <td>item</td>
+      <td>object</td>
+      <td>{}</td>
+      <td>An object of values for setting.</td>
+    </tr>
+    <tr>
+      <td>item.type</td>
+      <td>string</td>
+      <td><strong>“password”</strong></td>
+      <td>The type of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.id</td>
+      <td>string</td>
+      <td><strong>Automactically Assigned</strong></td>
+      <td>The id of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.needQuestion</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">False</code></td>
+      <td>Whether Displaying Question Title.</td>
+    </tr>
+    <tr>
+      <td>item.floating</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">True</code></td>
+      <td><a href="https://getmdl.io/components/index.html#textfields-section">see MDL attribute</a></td>
+    </tr>
+    <tr>
+      <td>item.label</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">"Please your password..."</code></td>
+      <td>General inner html content.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="inputsearch">InputSearch</h3>
+<p><em>Inheritence:</em> <a href="#InputTextField">InputTextField</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Default Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>parent_id</em></td>
+      <td>numeric</td>
+      <td><a href="#FormId">Form.id</a></td>
+      <td>The id of its parent element.</td>
+    </tr>
+    <tr>
+      <td>item</td>
+      <td>object</td>
+      <td>{}</td>
+      <td>An object of values for setting.</td>
+    </tr>
+    <tr>
+      <td>item.type</td>
+      <td>string</td>
+      <td><strong>“email”</strong></td>
+      <td>The type of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.id</td>
+      <td>string</td>
+      <td><strong>Automactically Assigned</strong></td>
+      <td>The id of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.needQuestion</td>
+      <td>boolean</td>
+      <td><strong>False</strong></td>
+      <td>Whether Displaying Question Title.</td>
+    </tr>
+    <tr>
+      <td>item.icon</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">"search"</code></td>
+      <td><a href="https://getmdl.io/components/index.html#textfields-section">see MDL attribute</a></td>
+    </tr>
+    <tr>
+      <td>item.expandable</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">True</code></td>
+      <td><a href="https://getmdl.io/components/index.html#textfields-section">see MDL attribute</a></td>
+    </tr>
+    <tr>
+      <td>item.floating</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">True</code></td>
+      <td><a href="https://getmdl.io/components/index.html#textfields-section">see MDL attribute</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="inputtel">InputTel</h3>
+<p><em>Inheritence:</em> <a href="#InputTextField">InputTextField</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Default Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>parent_id</em></td>
+      <td>numeric</td>
+      <td><a href="#FormId">Form.id</a></td>
+      <td>The id of its parent element.</td>
+    </tr>
+    <tr>
+      <td>item</td>
+      <td>object</td>
+      <td>{}</td>
+      <td>An object of values for setting.</td>
+    </tr>
+    <tr>
+      <td>item.type</td>
+      <td>string</td>
+      <td><strong>“tel”</strong></td>
+      <td>The type of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.id</td>
+      <td>string</td>
+      <td><strong>Automactically Assigned</strong></td>
+      <td>The id of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.needQuestion</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">True</code></td>
+      <td>Whether Displaying Question Title.</td>
+    </tr>
+    <tr>
+      <td>item.label</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">"Please your telephone number..."</code></td>
+      <td>General inner html content.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="inputtext-">InputText <a name="Text"></a></h3>
+<p><em>Inheritence:</em> <a href="#InputTextField">InputTextField</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Default Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>parent_id</em></td>
+      <td>numeric</td>
+      <td><a href="#FormId">Form.id</a></td>
+      <td>The id of its parent element.</td>
+    </tr>
+    <tr>
+      <td>item</td>
+      <td>object</td>
+      <td>{}</td>
+      <td>An object of values for setting.</td>
+    </tr>
+    <tr>
+      <td>item.type</td>
+      <td>string</td>
+      <td><strong>“text”</strong></td>
+      <td>The type of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.id</td>
+      <td>string</td>
+      <td><strong>Automactically Assigned</strong></td>
+      <td>The id of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.needQuestion</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">True</code></td>
+      <td>Whether Displaying Question Title.</td>
+    </tr>
+    <tr>
+      <td>item.label</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">"Please enter some texts..."</code></td>
+      <td>General inner html content.</td>
+    </tr>
+    <tr>
+      <td>item.pattern</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">".*"</code></td>
+      <td><a href="http://www.w3schools.com/tags/ref_attributes.asp">see html attribute</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="inputtime">InputTime</h3>
+<p><em>Inheritence:</em> <a href="#InputTextField">InputTextField</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Default Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>parent_id</em></td>
+      <td>numeric</td>
+      <td><a href="#FormId">Form.id</a></td>
+      <td>The id of its parent element.</td>
+    </tr>
+    <tr>
+      <td>item</td>
+      <td>object</td>
+      <td>{}</td>
+      <td>An object of values for setting.</td>
+    </tr>
+    <tr>
+      <td>item.type</td>
+      <td>string</td>
+      <td><strong>“time”</strong></td>
+      <td>The type of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.id</td>
+      <td>string</td>
+      <td><strong>Automactically Assigned</strong></td>
+      <td>The id of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.needQuestion</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">True</code></td>
+      <td>Whether Displaying Question Title.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="inputurl">InputUrl</h3>
+<p><em>Inheritence:</em> <a href="#InputTextField">InputTextField</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Default Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>parent_id</em></td>
+      <td>numeric</td>
+      <td><a href="#FormId">Form.id</a></td>
+      <td>The id of its parent element.</td>
+    </tr>
+    <tr>
+      <td>item</td>
+      <td>object</td>
+      <td>{}</td>
+      <td>An object of values for setting.</td>
+    </tr>
+    <tr>
+      <td>item.type</td>
+      <td>string</td>
+      <td><strong>“url”</strong></td>
+      <td>The type of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.id</td>
+      <td>string</td>
+      <td><strong>Automactically Assigned</strong></td>
+      <td>The id of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.needQuestion</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">True</code></td>
+      <td>Whether Displaying Question Title.</td>
+    </tr>
+    <tr>
+      <td>item.label</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">"Please enter the url..."</code></td>
+      <td>General inner html content.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="inputweek">InputWeek</h3>
+<p><em>Inheritence:</em> <a href="#InputTextField">InputTextField</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Default Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>parent_id</em></td>
+      <td>numeric</td>
+      <td><a href="#FormId">Form.id</a></td>
+      <td>The id of its parent element.</td>
+    </tr>
+    <tr>
+      <td>item</td>
+      <td>object</td>
+      <td>{}</td>
+      <td>An object of values for setting.</td>
+    </tr>
+    <tr>
+      <td>item.type</td>
+      <td>string</td>
+      <td><strong>“week”</strong></td>
+      <td>The type of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.id</td>
+      <td>string</td>
+      <td><strong>Automactically Assigned</strong></td>
+      <td>The id of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.needQuestion</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">True</code></td>
+      <td>Whether Displaying Question Title.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="range">Range</h3>
+<p><em>Inheritence:</em> <a href="#Tag">Tag</a><br />
+Generate a slider.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Default Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>parent_id</em></td>
+      <td>numeric</td>
+      <td><a href="#FormId">Form.id</a></td>
+      <td>The id of its parent element.</td>
+    </tr>
+    <tr>
+      <td>item</td>
+      <td>object</td>
+      <td>{}</td>
+      <td>An object of values for setting.</td>
+    </tr>
+    <tr>
+      <td>item.type</td>
+      <td>string</td>
+      <td><strong>“range”</strong></td>
+      <td>The type of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.id</td>
+      <td>string</td>
+      <td><strong>Automactically Assigned</strong></td>
+      <td>The id of the tag</td>
+    </tr>
+    <tr>
+      <td>item.needQuestion</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">True</code></td>
+      <td>Whether Displaying Question Title.</td>
+    </tr>
+    <tr>
+      <td>item.value_prompt</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">"value: "</code></td>
+      <td>Prompt for the value.</td>
+    </tr>
+    <tr>
+      <td>item.width</td>
+      <td>string</td>
+      <td>300px</td>
+      <td><a href="http://www.w3schools.com/tags/ref_attributes.asp">see html attribute</a></td>
+    </tr>
+    <tr>
+      <td>item.max</td>
+      <td>numeric</td>
+      <td>100</td>
+      <td><a href="http://www.w3schools.com/tags/ref_attributes.asp">see html attribute</a></td>
+    </tr>
+    <tr>
+      <td>item.min</td>
+      <td>numeric</td>
+      <td>0</td>
+      <td><a href="http://www.w3schools.com/tags/ref_attributes.asp">see html attribute</a></td>
+    </tr>
+    <tr>
+      <td>item.step</td>
+      <td>numeric</td>
+      <td>1</td>
+      <td><a href="http://www.w3schools.com/tags/ref_attributes.asp">see html attribute</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="textarea-">Textarea <a name="Textarea"></a></h3>
+<p><em>Inheritence:</em> <a href="#InputTextField">InputTextField</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Default Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>parent_id</em></td>
+      <td>numeric</td>
+      <td><a href="#FormId">Form.id</a></td>
+      <td>The id of its parent element.</td>
+    </tr>
+    <tr>
+      <td>item</td>
+      <td>object</td>
+      <td>{}</td>
+      <td>An object of values for setting.</td>
+    </tr>
+    <tr>
+      <td>item.type</td>
+      <td>string</td>
+      <td><strong>“textarea”</strong></td>
+      <td>The type of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.id</td>
+      <td>string</td>
+      <td><strong>Automactically Assigned</strong></td>
+      <td>The id of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.needQuestion</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">True</code></td>
+      <td>Whether Displaying Question Title.</td>
+    </tr>
+    <tr>
+      <td>item.placeholder</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">"Text lines"</code></td>
+      <td><a href="http://www.w3schools.com/tags/ref_attributes.asp">see html attribute</a></td>
+    </tr>
+    <tr>
+      <td>item.cols</td>
+      <td>numeric</td>
+      <td>30</td>
+      <td><a href="http://www.w3schools.com/tags/ref_attributes.asp">see html attribute</a></td>
+    </tr>
+    <tr>
+      <td>item.rows</td>
+      <td>numeric</td>
+      <td>10</td>
+      <td><a href="http://www.w3schools.com/tags/ref_attributes.asp">see html attribute</a></td>
+    </tr>
+    <tr>
+      <td>item.wrap</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">""</code></td>
+      <td><a href="http://www.w3schools.com/tags/ref_attributes.asp">see html attribute</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="togglegroup-">ToggleGroup <a name="ToggleGroup"></a></h3>
+<p><em>Inheritence:</em> <a href="#Tag">Tag</a><br />
+<em>Dependency:</em> <a href="#Checkbox">Checkbox</a>, <a href="#Switch">Switch</a>, <a href="#Radio">Radio</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Default Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>parent_id</em></td>
+      <td>numeric</td>
+      <td><a href="#FormId">Form.id</a></td>
+      <td>The id of its parent element.</td>
+    </tr>
+    <tr>
+      <td>item</td>
+      <td>object</td>
+      <td>{}</td>
+      <td>An object of values for setting.</td>
+    </tr>
+    <tr>
+      <td>item.id</td>
+      <td>string</td>
+      <td><strong>Automactically Assigned</strong></td>
+      <td>The id of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.type</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">"checkbox"</code></td>
+      <td>The type of the <a href="#Toggle">toggle_type</a>.</td>
+    </tr>
+    <tr>
+      <td>item.needQuestion</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">True</code></td>
+      <td>Whether Displaying Question Title.</td>
+    </tr>
+    <tr>
+      <td>item.labels</td>
+      <td>array</td>
+      <td>[]</td>
+      <td>An array of labels for the options.</td>
+    </tr>
+    <tr>
+      <td>item.images</td>
+      <td>array</td>
+      <td>[]</td>
+      <td>An array of images for the options.</td>
+    </tr>
+    <tr>
+      <td>item.values</td>
+      <td>array</td>
+      <td>[]</td>
+      <td>An array of values for the options. If None, will take values from item.labels first and then item.images, i.e item.values.length = item.labels.length + item.images.length.</td>
+    </tr>
+    <tr>
+      <td>item.correctAnswers</td>
+      <td>array</td>
+      <td>[]</td>
+      <td>An array of expected answers.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="uploadfile">UploadFile</h3>
+<p><em>Inheritence:</em> <a href="#Tag">Tag</a><br /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Default Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>parent_id</em></td>
+      <td>numeric</td>
+      <td><a href="#FormId">Form.id</a></td>
+      <td>The id of its parent element.</td>
+    </tr>
+    <tr>
+      <td>item</td>
+      <td>object</td>
+      <td>{}</td>
+      <td>An object of values for setting.</td>
+    </tr>
+    <tr>
+      <td>item.id</td>
+      <td>string</td>
+      <td><strong>Automactically Assigned</strong></td>
+      <td>The id of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.type</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">"file"</code></td>
+      <td>The type of the <a href="#Toggle">toggle_type</a>.</td>
+    </tr>
+    <tr>
+      <td>item.needQuestion</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">False</code></td>
+      <td>Whether Displaying Question Title.</td>
+    </tr>
+    <tr>
+      <td>item.fileType</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">"Upload a file from here"</code></td>
+      <td>Prompt for uploading a file.</td>
+    </tr>
+    <tr>
+      <td>item.icon</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">"cloud_upload"</code></td>
+      <td><a href="https://material.google.com/style/icons.html">see MDL icons</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="base-class">Base Class</h2>
+
+<h3 id="tag-">Tag <a name="Tag"></a></h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Default Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>parent_id</em></td>
+      <td>numeric</td>
+      <td><a href="#FormId">Form.id</a></td>
+      <td>The id of its parent element</td>
+    </tr>
+    <tr>
+      <td>item</td>
+      <td>object</td>
+      <td>{}</td>
+      <td>An object of values for setting</td>
+    </tr>
+    <tr>
+      <td>item.type</td>
+      <td>string</td>
+      <td><strong>Automactically Assigned</strong></td>
+      <td>The type of the tag</td>
+    </tr>
+    <tr>
+      <td>item.id</td>
+      <td>string</td>
+      <td><strong>Automactically Assigned</strong></td>
+      <td>The id of the tag</td>
+    </tr>
+    <tr>
+      <td>item.needQuestion</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">True</code></td>
+      <td>Whether Displaying Question Title</td>
+    </tr>
+    <tr>
+      <td>item.label</td>
+      <td>string</td>
+      <td> </td>
+      <td>General Inner Html Content</td>
+    </tr>
+    <tr>
+      <td>item.correct</td>
+      <td>custom</td>
+      <td>undefined</td>
+      <td>The Expected Answer</td>
+    </tr>
+    <tr>
+      <td>item.question</td>
+      <td>string</td>
+      <td>“Untitled Question”</td>
+      <td>Question Title</td>
+    </tr>
+    <tr>
+      <td>item.question_description</td>
+      <td>string</td>
+      <td>””</td>
+      <td>Question Description</td>
+    </tr>
+    <tr>
+      <td>item.question_color</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">black-800</code></td>
+      <td>Color Of Question</td>
+    </tr>
+    <tr>
+      <td>item.question_description_size</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">14px</code></td>
+      <td>Font Size Of Question Description</td>
+    </tr>
+    <tr>
+      <td>item.question_description_color</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">grey-600</code></td>
+      <td>Color Of Question Description</td>
+    </tr>
+    <tr>
+      <td>item.newline</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">False</code></td>
+      <td>Whether Inserting New Line When Rendering</td>
+    </tr>
+    <tr>
+      <td>item.value</td>
+      <td>string</td>
+      <td>””</td>
+      <td><a href="http://www.w3schools.com/tags/ref_attributes.asp">see html attribute</a></td>
+    </tr>
+    <tr>
+      <td>item.name</td>
+      <td>string</td>
+      <td>””</td>
+      <td><a href="http://www.w3schools.com/tags/ref_attributes.asp">see html attribute</a></td>
+    </tr>
+    <tr>
+      <td>item.disabled</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">False</code></td>
+      <td><a href="http://www.w3schools.com/tags/ref_attributes.asp">see html attribute</a></td>
+    </tr>
+    <tr>
+      <td>item.maxlength</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">False</code></td>
+      <td><a href="http://www.w3schools.com/tags/ref_attributes.asp">see html attribute</a></td>
+    </tr>
+    <tr>
+      <td>item.readonly</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">False</code></td>
+      <td><a href="http://www.w3schools.com/tags/ref_attributes.asp">see html attribute</a></td>
+    </tr>
+    <tr>
+      <td>item.required</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">False</code></td>
+      <td><a href="http://www.w3schools.com/tags/ref_attributes.asp">see html attribute</a></td>
+    </tr>
+    <tr>
+      <td>item.autofocus</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">False</code></td>
+      <td><a href="http://www.w3schools.com/tags/ref_attributes.asp">see html attribute</a></td>
+    </tr>
+    <tr>
+      <td>item.size</td>
+      <td>string</td>
+      <td>””</td>
+      <td><a href="http://www.w3schools.com/tags/ref_attributes.asp">see html attribute</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="inputtextfield-">InputTextField <a name="InputTextField"></a></h3>
+<p><em>Inheritence:</em> <a href="#Tag">Tag</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Default Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>parent_id</em></td>
+      <td>numeric</td>
+      <td><a href="#FormId">Form.id</a></td>
+      <td>The id of its parent element</td>
+    </tr>
+    <tr>
+      <td>item</td>
+      <td>object</td>
+      <td>{}</td>
+      <td>An object of values for setting</td>
+    </tr>
+    <tr>
+      <td>item.expandable</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">False</code></td>
+      <td><a href="https://getmdl.io/components/index.html#textfields-section">see MDL attribute</a></td>
+    </tr>
+    <tr>
+      <td>item.floating</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">False</code></td>
+      <td><a href="https://getmdl.io/components/index.html#textfields-section">see MDL attribute</a></td>
+    </tr>
+    <tr>
+      <td>item.icon</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">""</code></td>
+      <td><a href="https://getmdl.io/components/index.html#textfields-section">see MDL attribute</a></td>
+    </tr>
+    <tr>
+      <td>item.errorInfo</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">"Your input is not as required!"</code></td>
+      <td><a href="https://getmdl.io/components/index.html#textfields-section">see MDL attribute</a></td>
+    </tr>
+    <tr>
+      <td>item.pattern</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">".*"</code></td>
+      <td><a href="http://www.w3schools.com/tags/ref_attributes.asp">see html attribute</a></td>
+    </tr>
+    <tr>
+      <td>item.accessKey</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">""</code></td>
+      <td><a href="http://www.w3schools.com/tags/ref_attributes.asp">see html attribute</a></td>
+    </tr>
+    <tr>
+      <td>item.defaultValue</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">""</code></td>
+      <td><a href="http://www.w3schools.com/tags/ref_attributes.asp">see html attribute</a></td>
+    </tr>
+    <tr>
+      <td>item.alt</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">""</code></td>
+      <td><a href="http://www.w3schools.com/tags/ref_attributes.asp">see html attribute</a></td>
+    </tr>
+    <tr>
+      <td>item.tabIndex</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">""</code></td>
+      <td><a href="http://www.w3schools.com/tags/ref_attributes.asp">see html attribute</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="toggle-">Toggle <a name="Toggle"></a></h3>
+<p><em>Inheritence:</em> <a href="#Tag">Tag</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Default Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>item.needQuestion</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">False</code></td>
+      <td>Whether Displaying Question Title.</td>
+    </tr>
+    <tr>
+      <td>item.toggle_type</td>
+      <td>string</td>
+      <td><code class="language-plaintext highlighter-rouge">"checkbox"</code></td>
+      <td>The toggle type.</td>
+    </tr>
+    <tr>
+      <td>item.newline</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">False</code></td>
+      <td>Whether Inserting New Line When Rendering.</td>
+    </tr>
+    <tr>
+      <td>item.ripple</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">True</code></td>
+      <td><a href="https://getmdl.io/components/index.html#toggles-section">see MDL attribute</a></td>
+    </tr>
+    <tr>
+      <td>item.value</td>
+      <td>string</td>
+      <td>item.label</td>
+      <td><a href="http://www.w3schools.com/tags/ref_attributes.asp">see html attribute</a></td>
+    </tr>
+    <tr>
+      <td>item.checked</td>
+      <td>boolean</td>
+      <td><code class="language-plaintext highlighter-rouge">False</code></td>
+      <td><a href="http://www.w3schools.com/tags/ref_attributes.asp">see html attribute</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="checkbox-">Checkbox <a name="Checkbox"></a></h3>
+<p><em>Inheritence:</em> <a href="#Toggle">Toggle</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Default Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>parent_id</em></td>
+      <td>numeric</td>
+      <td><a href="#FormId">Form.id</a></td>
+      <td>The id of its parent element.</td>
+    </tr>
+    <tr>
+      <td>item</td>
+      <td>object</td>
+      <td>{}</td>
+      <td>An object of values for setting.</td>
+    </tr>
+    <tr>
+      <td>item.type</td>
+      <td>string</td>
+      <td><strong>“checkbox”</strong></td>
+      <td>The type of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.toggle_type</td>
+      <td>string</td>
+      <td><strong>“checkbox”</strong></td>
+      <td>The type of the toggle.</td>
+    </tr>
+    <tr>
+      <td>item.id</td>
+      <td>string</td>
+      <td><strong>Automactically Assigned</strong></td>
+      <td>The id of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.label</td>
+      <td>string</td>
+      <td>Automactically Assigned</td>
+      <td>The label of the option.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="switch-">Switch <a name="Switch"></a></h3>
+<p><em>Inheritence:</em> <a href="#Toggle">Toggle</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Default Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>parent_id</em></td>
+      <td>numeric</td>
+      <td><a href="#FormId">Form.id</a></td>
+      <td>The id of its parent element.</td>
+    </tr>
+    <tr>
+      <td>item</td>
+      <td>object</td>
+      <td>{}</td>
+      <td>An object of values for setting.</td>
+    </tr>
+    <tr>
+      <td>item.type</td>
+      <td>string</td>
+      <td><strong>“checkbox”</strong></td>
+      <td>The type of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.toggle_type</td>
+      <td>string</td>
+      <td><strong>“switch”</strong></td>
+      <td>The type of the toggle.</td>
+    </tr>
+    <tr>
+      <td>item.id</td>
+      <td>string</td>
+      <td><strong>Automactically Assigned</strong></td>
+      <td>The id of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.label</td>
+      <td>string</td>
+      <td>Automactically Assigned</td>
+      <td>The label of the option.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="radio-">Radio <a name="Radio"></a></h3>
+<p><em>Inheritence:</em> <a href="#Toggle">Toggle</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Default Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>parent_id</em></td>
+      <td>numeric</td>
+      <td><a href="#FormId">Form.id</a></td>
+      <td>The id of its parent element.</td>
+    </tr>
+    <tr>
+      <td>item</td>
+      <td>object</td>
+      <td>{}</td>
+      <td>An object of values for setting.</td>
+    </tr>
+    <tr>
+      <td>item.type</td>
+      <td>string</td>
+      <td><strong>“radio”</strong></td>
+      <td>The type of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.toggle_type</td>
+      <td>string</td>
+      <td><strong>“radio”</strong></td>
+      <td>The type of the toggle.</td>
+    </tr>
+    <tr>
+      <td>item.id</td>
+      <td>string</td>
+      <td><strong>Automactically Assigned</strong></td>
+      <td>The id of the tag.</td>
+    </tr>
+    <tr>
+      <td>item.label</td>
+      <td>string</td>
+      <td>Automactically Assigned</td>
+      <td>The label of the option.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="examples">Examples</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+	<span class="kd">function</span> <span class="nx">clickToSubmit</span><span class="p">()</span> <span class="p">{</span>
+		<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">custom_id_1</span><span class="dl">"</span><span class="p">).</span><span class="nx">value</span> <span class="o">+=</span> <span class="dl">"</span><span class="s2">Customize actions when submit buttons is pressed.</span><span class="dl">"</span><span class="p">;</span>
+		<span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">This is a test. Check Question #7 to see the effect.</span><span class="dl">"</span><span class="p">);</span>
+		<span class="k">return</span> <span class="p">{</span><span class="dl">"</span><span class="s2">Customized output</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Customize actions when submit buttons is pressed.</span><span class="dl">"</span><span class="p">};</span>
+	<span class="p">}</span>
+	
+	<span class="kd">var</span> <span class="nx">schema</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="na">form</span><span class="p">:</span> <span class="p">{</span><span class="na">form_title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Test #1</span><span class="dl">'</span><span class="p">,</span> <span class="na">ribbon_bg</span><span class="p">:</span> <span class="dl">"</span><span class="s2">img/ribbon.jpg</span><span class="dl">"</span><span class="p">,</span> <span class="na">layout_color</span><span class="p">:</span> <span class="dl">"</span><span class="s2">grey-300</span><span class="dl">"</span><span class="p">,</span> <span class="na">content_bg_color</span><span class="p">:</span> <span class="dl">"</span><span class="s2">grey-100</span><span class="dl">"</span><span class="p">},</span>
+		<span class="dl">"</span><span class="s2">Question #1</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span><span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">short answer</span><span class="dl">"</span><span class="p">,</span> <span class="na">correct</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Answer #1</span><span class="dl">"</span><span class="p">,</span> <span class="na">required</span><span class="p">:</span> <span class="kc">true</span><span class="p">},</span>
+		<span class="dl">"</span><span class="s2">Question #2</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span><span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">password</span><span class="dl">"</span><span class="p">},</span>
+		<span class="dl">"</span><span class="s2">Question #3</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span><span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">checkbox</span><span class="dl">"</span><span class="p">,</span> <span class="na">labels</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">option1</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">option2</span><span class="dl">"</span><span class="p">],</span> <span class="na">correctAnswers</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">option1</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">option2</span><span class="dl">"</span><span class="p">]},</span>
+		<span class="dl">"</span><span class="s2">Question #4</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span><span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">radio</span><span class="dl">"</span><span class="p">,</span> <span class="na">labels</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">option1</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">option2</span><span class="dl">"</span><span class="p">],</span> <span class="na">correctAnswers</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">option1</span><span class="dl">"</span><span class="p">]},</span>
+		<span class="dl">"</span><span class="s2">Question #5</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span><span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">range</span><span class="dl">"</span><span class="p">},</span>
+		<span class="dl">"</span><span class="s2">Question #6</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span><span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">dropdown</span><span class="dl">"</span><span class="p">},</span>
+		<span class="dl">"</span><span class="s2">Question #7</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span><span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">long answer</span><span class="dl">"</span><span class="p">,</span> <span class="na">question_description</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Some random contents</span><span class="dl">"</span><span class="p">,</span> <span class="na">id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">custom_id_1</span><span class="dl">"</span><span class="p">},</span>
+		<span class="dl">"</span><span class="s2">Question #8&lt;p&gt;Some random contents&lt;/p&gt;</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span><span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">long answer</span><span class="dl">"</span><span class="p">,</span> <span class="na">question_description</span><span class="p">:</span> <span class="dl">""</span><span class="p">},</span>
+		<span class="dl">"</span><span class="s2">Question #9</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span><span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">file</span><span class="dl">"</span><span class="p">},</span>
+		<span class="na">onSubmit</span><span class="p">:</span> <span class="p">{</span><span class="na">label</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Submit</span><span class="dl">"</span><span class="p">,</span> <span class="na">onclick</span><span class="p">:</span> <span class="nx">clickToSubmit</span><span class="p">}</span>
+	<span class="p">}</span>
+
+	<span class="kd">var</span> <span class="nx">form_trial</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">form</span><span class="dl">'</span><span class="p">,</span>
+		<span class="na">schema</span><span class="p">:</span> <span class="nx">schema</span>
+	<span class="p">}</span>
+
+	<span class="nx">jsPsych</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
+		<span class="na">timeline</span><span class="p">:</span> <span class="p">[</span><span class="nx">form_trial</span><span class="p">],</span>
+		<span class="na">on_finish</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){</span> <span class="nx">jsPsych</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">displayData</span><span class="p">();</span> <span class="p">}</span>
+	<span class="p">});</span>
+
+</code></pre></div></div>
+
+
+    </section>
+
+  </div>
+
+  
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>jspsych-vsl-animate-occlusion plugin | Jamie Moffatt</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="jspsych-vsl-animate-occlusion plugin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Jamie is a psychology PhD student based at the University of Sussex." />
+<meta property="og:description" content="Jamie is a psychology PhD student based at the University of Sussex." />
+<link rel="canonical" href="http://localhost:4000/assets/jsPsych-master-6.1/docs/plugins/jspsych-vsl-animate-occlusion.html" />
+<meta property="og:url" content="http://localhost:4000/assets/jsPsych-master-6.1/docs/plugins/jspsych-vsl-animate-occlusion.html" />
+<meta property="og:site_name" content="Jamie Moffatt" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="jspsych-vsl-animate-occlusion plugin" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"jspsych-vsl-animate-occlusion plugin","description":"Jamie is a psychology PhD student based at the University of Sussex.","url":"http://localhost:4000/assets/jsPsych-master-6.1/docs/plugins/jspsych-vsl-animate-occlusion.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/assets/css/style.css?v=">
+  <link rel="stylesheet" href="assets/css/social-circles.min.css"> <!-- Social media buttons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- icons -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <script src="/assets/js/respond.js"></script>
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 8]>
+  <link rel="stylesheet" href="/assets/css/ie.css">
+  <![endif]-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  <script>
+  function verticalNav() {
+    var x = document.getElementById("mytopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+</script>
+
+
+
+</head>
+<body>
+  <div id="header">
+    <nav id = "mytopnav" class = "topnav">
+      <li class = "active"><a href = 'https://jamie-moffatt.github.io'>Home</a></li>
+      <li><a href = "/publications">Publications</a></li>
+      <li><a href = "/jspsych">jsPsych Tutorials</a></li>
+      <li><a href="">View On GitHub</a></li>
+      <li class="icon"><a href="javascript:void(0);" onclick="verticalNav()"><i class="fa fa-bars"></i></a></li>
+      
+    </nav>
+  </div><!-- end header -->
+
+  <div class="wrapper">
+
+    <section>
+      <div id="title">
+        <div id = "title-container">
+        <div id="title-text">
+        <h1>Jamie Moffatt</h1>
+        <p>Jamie is a psychology PhD student based at the University of Sussex.</p>
+      </div>
+      <div id = "title-img">
+        <img src="/assets/img/test_profile.jpg" class = "profile">
+      </div>
+    </div>
+        <hr>
+        <span class="credits left">Project maintained by <a href=""></a></span>
+        <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></span>
+      </div>
+      
+
+      <h1 id="jspsych-vsl-animate-occlusion-plugin">jspsych-vsl-animate-occlusion plugin</h1>
+
+<p>The VSL (visual statistical learning) animate occlusion plugin displays an animated sequence of shapes that disappear behind an occluding rectangle while they change from one shape to another. This plugin can be used to replicate the experiments described in:</p>
+
+<p>Fiser, J., &amp; Aslin, R. N. (2002). Statistical learning of higher-order temporal structure from visual shape sequences. <em>Journal of Experimental Psychology: Learning, Memory, and Cognition, 28</em>(3), 458.</p>
+
+<h2 id="dependency">Dependency</h2>
+
+<p>This plugin requires the Snap.svg library, available at <a href="http://www.snapsvg.io">http://www.snapsvg.io</a>. You must include the library in the <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code> section of your experiment page.</p>
+
+<h2 id="parameters">Parameters</h2>
+
+<p>Parameters with a default value of <em>undefined</em> must be specified. Other parameters can be left unspecified if the default value is acceptable.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Default Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>stimuli</td>
+      <td>array</td>
+      <td><em>undefined</em></td>
+      <td>Each element of the array is a stimulus. A stimulus is a path to an image file. The order of stimuli in the array determines the order of the animation sequence.</td>
+    </tr>
+    <tr>
+      <td>canvas_size</td>
+      <td>array</td>
+      <td><code class="language-plaintext highlighter-rouge">[400, 400]</code></td>
+      <td>Array specifying the width and height of the area that the animation will display in. Stimuli will move to the edges of this area, so increasing the width without increasing the <code class="language-plaintext highlighter-rouge">timing_cycle</code> parameter will speed up the images.</td>
+    </tr>
+    <tr>
+      <td>image_size</td>
+      <td>array</td>
+      <td><code class="language-plaintext highlighter-rouge">[100, 100]</code></td>
+      <td>Array specifying the width and height of the images to show. The occluding rectangle will have a width equal to the width of image_size.</td>
+    </tr>
+    <tr>
+      <td>initial_direction</td>
+      <td>string</td>
+      <td>“left”</td>
+      <td>Which direction the stimulus should move first (subsequent directions will alternate). Choices are “left” or “right”.</td>
+    </tr>
+    <tr>
+      <td>occlude_center</td>
+      <td>boolean</td>
+      <td>true</td>
+      <td>If true, display a rectangle in the center of the screen that is just wide enough to occlude the image completely as it passes behind.</td>
+    </tr>
+    <tr>
+      <td>choices</td>
+      <td>array of keycodes</td>
+      <td><code class="language-plaintext highlighter-rouge">jsPsych.ALL_KEYS</code></td>
+      <td>This array contains the keys that the subject is allowed to press in order to respond to the stimulus. Keys can be specified as their <a href="http://www.cambiaresearch.com/articles/15/javascript-char-codes-key-codes">numeric key code</a> or as characters (e.g., <code class="language-plaintext highlighter-rouge">'a'</code>, <code class="language-plaintext highlighter-rouge">'q'</code>). The default value of <code class="language-plaintext highlighter-rouge">jsPsych.ALL_KEYS</code> means that all keys will be accepted as valid responses. Specifying <code class="language-plaintext highlighter-rouge">jsPsych.NO_KEYS</code> will mean that no responses are allowed.</td>
+    </tr>
+    <tr>
+      <td>cycle_duration</td>
+      <td>numeric</td>
+      <td>1000</td>
+      <td>How long it takes for a stimulus in the sequence to make a complete cycle (move to the edge and back to the center) in milliseconds.</td>
+    </tr>
+    <tr>
+      <td>pre_movement_duration</td>
+      <td>numeric</td>
+      <td>500</td>
+      <td>How long to wait before the stimuli starts moving from behind the center rectangle.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="data-generated">Data Generated</h2>
+
+<p>In addition to the <a href="overview#datacollectedbyplugins">default data collected by all plugins</a>, this plugin collects the following data for each trial.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>stimulus</td>
+      <td>JSON string</td>
+      <td>A JSON encoded array where each element of the array is a stimulus from the sequence, in the order that they were shown.</td>
+    </tr>
+    <tr>
+      <td>responses</td>
+      <td>JSON string</td>
+      <td>A JSON encoded array containing all response information. The encoded object is an array containing one element for each valid response. Each response item has three properties: <code class="language-plaintext highlighter-rouge">key</code> the key code of the response key, <code class="language-plaintext highlighter-rouge">stimulus</code> the index of the stimulus that was displayed when the response was made, and <code class="language-plaintext highlighter-rouge">rt</code> the response time measured since the start of the sequence.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="examples">Examples</h2>
+
+<h4 id="displaying-a-simple-sequence">Displaying a simple sequence.</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">trial</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">vsl-animate-occlusion</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">stimuli</span><span class="p">:</span> <span class="p">[</span>
+    <span class="dl">"</span><span class="s2">img/1.gif</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">img/2.gif</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">img/3.gif</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">img/4.gif</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">img/5.gif</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">img/6.gif</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">img/7.gif</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">img/8.gif</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">img/9.gif</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">img/10.gif</span><span class="dl">"</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+
+    </section>
+
+  </div>
+
+  
+</body>
+</html>

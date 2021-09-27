@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>jspsych-call-function | Jamie Moffatt</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="jspsych-call-function" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Jamie is a psychology PhD student based at the University of Sussex." />
+<meta property="og:description" content="Jamie is a psychology PhD student based at the University of Sussex." />
+<link rel="canonical" href="http://localhost:4000/assets/jsPsych-master-6.1/docs/plugins/jspsych-call-function.html" />
+<meta property="og:url" content="http://localhost:4000/assets/jsPsych-master-6.1/docs/plugins/jspsych-call-function.html" />
+<meta property="og:site_name" content="Jamie Moffatt" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="jspsych-call-function" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"jspsych-call-function","description":"Jamie is a psychology PhD student based at the University of Sussex.","url":"http://localhost:4000/assets/jsPsych-master-6.1/docs/plugins/jspsych-call-function.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/assets/css/style.css?v=">
+  <link rel="stylesheet" href="assets/css/social-circles.min.css"> <!-- Social media buttons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- icons -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <script src="/assets/js/respond.js"></script>
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 8]>
+  <link rel="stylesheet" href="/assets/css/ie.css">
+  <![endif]-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  <script>
+  function verticalNav() {
+    var x = document.getElementById("mytopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+</script>
+
+
+
+</head>
+<body>
+  <div id="header">
+    <nav id = "mytopnav" class = "topnav">
+      <li class = "active"><a href = 'https://jamie-moffatt.github.io'>Home</a></li>
+      <li><a href = "/publications">Publications</a></li>
+      <li><a href = "/jspsych">jsPsych Tutorials</a></li>
+      <li><a href="">View On GitHub</a></li>
+      <li class="icon"><a href="javascript:void(0);" onclick="verticalNav()"><i class="fa fa-bars"></i></a></li>
+      
+    </nav>
+  </div><!-- end header -->
+
+  <div class="wrapper">
+
+    <section>
+      <div id="title">
+        <div id = "title-container">
+        <div id="title-text">
+        <h1>Jamie Moffatt</h1>
+        <p>Jamie is a psychology PhD student based at the University of Sussex.</p>
+      </div>
+      <div id = "title-img">
+        <img src="/assets/img/test_profile.jpg" class = "profile">
+      </div>
+    </div>
+        <hr>
+        <span class="credits left">Project maintained by <a href=""></a></span>
+        <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></span>
+      </div>
+      
+
+      <h1 id="jspsych-call-function">jspsych-call-function</h1>
+
+<p>This plugin executes a specified function. This allows the experimenter to run arbitrary code at any point during the experiment.</p>
+
+<p>The function cannot take any arguments. If arguments are needed, then an anonymous function should be used to wrap the function call (see examples below).</p>
+
+<h2 id="parameters">Parameters</h2>
+
+<p>Parameters with a default value of <em>undefined</em> must be specified. Other parameters can be left unspecified if the default value is acceptable.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Default Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>func</td>
+      <td>function</td>
+      <td><em>undefined</em></td>
+      <td>The function to call.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="data-generated">Data Generated</h2>
+
+<p>In addition to the <a href="overview#datacollectedbyplugins">default data collected by all plugins</a>, this plugin collects the following data for each trial.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>value</td>
+      <td>any</td>
+      <td>The return value of the called function.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="examples">Examples</h2>
+
+<h4 id="calling-a-simple-function">Calling a simple function</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">var</span> <span class="nx">myfunc</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="dl">'</span><span class="s1">you called?</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">block</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">call-function</span><span class="dl">'</span><span class="p">,</span>
+	<span class="na">func</span><span class="p">:</span> <span class="nx">myfunc</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="using-an-anonymous-function-to-pass-variables">Using an anonymous function to pass variables</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">var</span> <span class="nx">myfunc</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
+	<span class="c1">// data contains all the experiment data so far,</span>
+	<span class="c1">// so this function could implement code to write</span>
+	<span class="c1">// the data to a database.</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">block</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">call-function</span><span class="dl">'</span><span class="p">,</span>
+	<span class="na">func</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){</span> <span class="nx">myfunc</span><span class="p">(</span><span class="nx">jsPsych</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="kd">get</span><span class="p">())}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+
+    </section>
+
+  </div>
+
+  
+</body>
+</html>
