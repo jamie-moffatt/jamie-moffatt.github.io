@@ -5,6 +5,8 @@ The digit span task is a memory task. You will see a series of numbers, and will
 
 The task will get a bit harder with each correct answer, but will also get easier if you are struggling.
 
+Download code [here](https://github.com/jamie-moffatt/jspsych-tasks).
+
 <html>
 <head>
   <title>Digit Span</title>
@@ -23,9 +25,8 @@ The task will get a bit harder with each correct answer, but will also get easie
 </head>
 
 <body>
-<div id="jspsych-display" style=" height: 600px; border: 5px double #ffcc00; padding: 10px;">
+<div id="jspsych-display">
 </div>
-
 </body>
 
 <script>

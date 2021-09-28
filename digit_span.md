@@ -25,9 +25,8 @@ Download code [here](https://github.com/jamie-moffatt/jspsych-tasks).
 </head>
 
 <body>
-<div id="jspsych-display" style=" height: 600px; border: 5px double #ffcc00; padding: 10px;">
+<div id="jspsych-display">
 </div>
-
 </body>
 
 <script>
