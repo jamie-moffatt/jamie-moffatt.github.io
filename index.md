@@ -18,4 +18,7 @@ My other research interests include coding and developing behavioural tasks for 
 
 ## Tasks
 
-<a href = "/digit_span">Digit Span</a> 
+<ul>
+<li><a href = "/digit_span">Digit Span</a></li>
+<li><a href = "/icim">ICIM</a></li>
+</ul>
