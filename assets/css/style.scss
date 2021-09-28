@@ -61,3 +61,10 @@ section #title p {
 #header nav .icon {
   display: none;
 }
+
+// style for jspsych displays
+#jspsych-display {
+  height: 600px;
+  border: 5px double #ffcc00;
+  padding: 10px;
+}
