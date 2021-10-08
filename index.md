@@ -3,7 +3,7 @@ show_posts: false
 title: "Jamie Moffatt"
 ---
 ## About Me
-I am currently a <a href: "https://profiles.sussex.ac.uk/p445682-jamie-moffatt">PhD student</a> at the School of Psychology, University of Sussex. My supervisors are Professor Kathryn Greenwood and Professor Sarah Garfinkel, and our project aims to understand more about unusual body experiences, such as feelings of detachment from oneself or from the world.
+I am currently a <a href="https://profiles.sussex.ac.uk/p445682-jamie-moffatt">PhD student</a> at the School of Psychology, University of Sussex. My supervisors are Professor Kathryn Greenwood and Professor Sarah Garfinkel, and our project aims to understand more about unusual body experiences, such as feelings of detachment from oneself or from the world.
 
 Prior to my PhD research, I worked for two years as a research assistant for the <a href="https://hearingthevoice.org/">Hearing the Voice</a> project at Durham University. In this role I helped to conduct psychological research investigating the cognitive and neural mechanisms underlying voice-hearing experiences.
 
