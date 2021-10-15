@@ -15,9 +15,37 @@ I also studied Psychology and Psychological Research at the University of Birmin
 <li>E-mail: <a href="mailto:jamie.moffatt@sussex.ac.uk">jamie.moffatt@sussex.ac.uk</a></li>
 </ul>
 
-## Cognitive Tasks
-I create cognitive tasks for online use, mainly using <a href="https://www.jspsych.org/7.0/">jsPsych</a>. Use the links below to try out the tasks and view the code.
-<ul>
-<li><a href = "/digit_span">Digit Span</a></li>
-<li><a href = "/icim">ICIM</a></li>
-</ul>
+
+<div class="row publications" onclick="window.location='/publications'">
+<div class="column left">
+<h2>Publications</h2>
+<p>Browse my published research.</p>
+</div>
+<div class="column right">
+<img src="assets/img/coffee.png"/>
+</div>
+
+</div>
+
+<div class="row tasks" onclick="window.location='/digit_span'">
+<div class="column left">
+<h2>Cognitive tasks</h2>
+<p>I create cognitive tasks for online use, mainly using <a href="https://www.jspsych.org/7.0/">jsPsych</a>. Click here to try out the tasks and view the code.</p>
+</div>
+
+<div class="column right">
+<img src="assets/img/t_block.png"/>
+</div>
+
+</div>
+
+<div class="row tutorials" onclick="window.location='/jspsych'">
+<div class="column left">
+<h2>Tutorials</h2>
+<p>I have written some tutorials for using jsPsych. Find them here.</p>
+</div>
+<div class="column right">
+<img src="assets/img/t_block.png"/>
+</div>
+
+</div>

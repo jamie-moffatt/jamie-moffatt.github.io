@@ -303,3 +303,17 @@ section #title p { text-align: left; }
 #header nav .icon { display: none; }
 
 #jspsych-display { height: 600px; border: 5px double #ffcc00; padding: 10px; }
+
+.row { display: table; padding: 5px; margin-bottom: 5px; width: 100%; cursor: pointer; }
+
+.column { float: left; }
+
+.left { width: 75%; }
+
+.right { width: 25%; }
+
+.publications { background: linear-gradient(to right, #7A542E 60%, #252525); }
+
+.tasks { background: linear-gradient(to right, #B95F89 60%, #252525); }
+
+.tutorials { background: linear-gradient(to right, #087E8B 60%, #252525); }

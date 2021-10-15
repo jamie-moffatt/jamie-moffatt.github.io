@@ -69,3 +69,43 @@ section #title p {
   border: 5px double #ffcc00;
   padding: 10px;
 }
+
+// Style for the rows and columns
+.row {
+  display: table;
+  //border: 3px solid black;
+  padding: 5px;
+  margin-bottom: 5px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.column {
+  float: left;
+}
+
+.left {
+  // float: left;
+  width: 75%;
+}
+
+.right {
+  //float: right;
+  width: 25%;
+}
+
+.column img {
+
+}
+
+.publications {
+  background:linear-gradient(to right, #7A542E 60%, #252525);
+}
+
+.tasks {
+  background: linear-gradient(to right, #B95F89 60%, #252525);
+}
+
+.tutorials {
+  background: linear-gradient(to right, #087E8B 60%, #252525);
+}
