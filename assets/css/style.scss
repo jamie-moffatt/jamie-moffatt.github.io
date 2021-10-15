@@ -58,6 +58,14 @@ section #title p {
   text-align: center;
 }
 
+// Styling for the contact list-style
+.contacts {
+  list-style-image: none;
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
 // Hide the icon normally
 #header nav .icon {
   display: none;
@@ -92,10 +100,6 @@ section #title p {
 .right {
   //float: right;
   width: 25%;
-}
-
-.column img {
-
 }
 
 .publications {

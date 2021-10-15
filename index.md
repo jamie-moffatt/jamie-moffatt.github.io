@@ -9,13 +9,6 @@ Prior to my PhD research, I worked for two years as a research assistant for the
 
 I also studied Psychology and Psychological Research at the University of Birmingham, where I graduated with a Master in Science in July 2016.
 
-## Get in Touch
-<ul>
-<li>Twitter: <a href="http://twitter.com/JAMoffatt">@JAMoffatt</a></li>
-<li>E-mail: <a href="mailto:jamie.moffatt@sussex.ac.uk">jamie.moffatt@sussex.ac.uk</a></li>
-</ul>
-
-
 <div class="row publications" onclick="window.location='/publications'">
 <div class="column left">
 <h2>Publications</h2>

@@ -261,7 +261,7 @@ dt { color: #F0E7D5; font-family: 'OpenSansSemibold', "Helvetica Neue", Helvetic
 #header nav li.downloads { float: right; margin-left: 6px; }
 #header nav li.title { float: right; margin-right: 10px; font-size: 11px; }
 
-section { max-width: 650px; padding: 30px 0px 50px 0px; margin: 20px 0; margin-top: 70px; }
+section { max-width: 650px; padding: 30px 0px 50px 0px; margin: 20px 0; margin-top: 0px; }
 section #title { border: 0; outline: none; margin: 0 0 10px 0; padding: 0 0 5px 0; }
 section #title h1 { font-family: 'OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: normal; font-size: 40px; text-align: center; line-height: 36px; }
 section #title p { color: #d7cfbe; font-family: 'OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: normal; font-size: 18px; text-align: center; }
@@ -299,6 +299,8 @@ section #title p { text-align: left; }
 .profile { border-radius: 50%; width: 100px; height: 100px; border: 1px solid black; }
 
 .profile_container { text-align: center; }
+
+.contacts { list-style-image: none; list-style-type: none; padding-left: 0; margin-left: 0; }
 
 #header nav .icon { display: none; }
 
