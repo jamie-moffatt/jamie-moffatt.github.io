@@ -284,7 +284,7 @@ section #title .credits.right { float: right; }
 
 #header nav { background: unset; text-align: center; }
 
-#header nav li a { background: #1B4079; border: 1px solid black; }
+#header nav li a { background: #1B4079; border: 1px solid black; border-radius: 5px; }
 #header nav li a:hover { background: linear-gradient(#005C7A, #008AB8); background-color: #005C7A; border: 1px solid black; }
 
 /* Move title texts to the left */

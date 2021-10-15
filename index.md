@@ -15,8 +15,8 @@ I also studied Psychology and Psychological Research at the University of Birmin
 <li>E-mail: <a href="mailto:jamie.moffatt@sussex.ac.uk">jamie.moffatt@sussex.ac.uk</a></li>
 </ul>
 
-## Tasks
-
+## Cognitive Tasks
+I create cognitive tasks for online use, mainly using <a href="https://www.jspsych.org/7.0/">jsPsych</a>. Use the links below to try out the tasks and view the code.
 <ul>
 <li><a href = "/digit_span">Digit Span</a></li>
 <li><a href = "/icim">ICIM</a></li>
