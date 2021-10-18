@@ -38,7 +38,7 @@ I also studied Psychology and Psychological Research at the University of Birmin
 <p>I have written some tutorials for using jsPsych. Find them here.</p>
 </div>
 <div class="column right">
-<img src="assets/img/t_block.png"/>
+<img src="assets/img/notebook.png"/>
 </div>
 
 </div>
