@@ -306,7 +306,7 @@ section #title p { text-align: left; }
 
 #jspsych-display { height: 600px; border: 5px double #ffcc00; padding: 10px; }
 
-.row { display: table; padding: 5px; margin-bottom: 5px; width: 100%; cursor: pointer; }
+.row { display: table; padding: 10px; margin-bottom: 5px; width: 100%; cursor: pointer; min-height: 150px; }
 
 .row:hover { box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1); }
 
@@ -316,8 +316,8 @@ section #title p { text-align: left; }
 
 .right { width: 25%; }
 
-.publications { background: linear-gradient(to right, #7A542E 60%, #252525); }
+.publications { background: #BB4430; }
 
-.tasks { background: linear-gradient(to right, #B95F89 60%, #252525); }
+.tasks { background: #BF7773; }
 
-.tutorials { background: linear-gradient(to right, #087E8B 60%, #252525); }
+.tutorials { background: #087E8B; }

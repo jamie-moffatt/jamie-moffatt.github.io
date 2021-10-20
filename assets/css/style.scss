@@ -82,10 +82,11 @@ section #title p {
 .row {
   display: table;
   //border: 3px solid black;
-  padding: 5px;
+  padding: 10px;
   margin-bottom: 5px;
   width: 100%;
   cursor: pointer;
+  min-height: 150px;
 }
 
 .row:hover {
@@ -107,13 +108,18 @@ section #title p {
 }
 
 .publications {
-  background:linear-gradient(to right, #7A542E 60%, #252525);
+  // background:linear-gradient(to right, #7A542E 60%, #252525);
+  // background: #7A542E;
+  background: #BB4430;
 }
 
 .tasks {
-  background: linear-gradient(to right, #B95F89 60%, #252525);
+  // background: linear-gradient(to right, #B95F89 60%, #252525);
+  // background: #B95F89;
+  background: #BF7773;
 }
 
 .tutorials {
-  background: linear-gradient(to right, #087E8B 60%, #252525);
+  // background: linear-gradient(to right, #087E8B 60%, #252525);
+  background: #087E8B;
 }

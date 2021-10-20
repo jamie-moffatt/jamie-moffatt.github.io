@@ -12,7 +12,7 @@ I also studied Psychology and Psychological Research at the University of Birmin
 <div class="row publications" onclick="window.location='/publications'">
 <div class="column left">
 <h2>Publications</h2>
-<p>Browse my published research.</p>
+<ul><li>Browse my published research.</li></ul>
 </div>
 <div class="column right">
 <img src="assets/img/coffee.png"/>
@@ -23,7 +23,9 @@ I also studied Psychology and Psychological Research at the University of Birmin
 <div class="row tasks" onclick="window.location='/digit_span'">
 <div class="column left">
 <h2>Cognitive tasks</h2>
-<p>I create cognitive tasks for online use, mainly using <a href="https://www.jspsych.org/7.0/">jsPsych</a>. Click here to try out the tasks and view the code.</p>
+<ul>
+<li>I create cognitive tasks for online use, mainly using <a href="https://www.jspsych.org/7.0/">jsPsych</a>. Click here to try out the tasks and view the code.</li>
+</ul>
 </div>
 
 <div class="column right">
@@ -35,7 +37,7 @@ I also studied Psychology and Psychological Research at the University of Birmin
 <div class="row tutorials" onclick="window.location='/jspsych'">
 <div class="column left">
 <h2>Tutorials</h2>
-<p>I have written some tutorials for using jsPsych. Find them here.</p>
+<ul><li>I have written some tutorials for using jsPsych. Find them here.</li></ul>
 </div>
 <div class="column right">
 <img src="assets/img/notebook.png"/>
