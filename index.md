@@ -3,7 +3,9 @@ show_posts: false
 title: "Jamie Moffatt"
 ---
 ## About Me
-I am currently a <a href="https://profiles.sussex.ac.uk/p445682-jamie-moffatt">PhD student</a> at the School of Psychology, University of Sussex. My supervisors are Professor Kathryn Greenwood and Professor Sarah Garfinkel, and our project aims to understand more about unusual body experiences, such as feelings of detachment from oneself or from the world.
+I am currently a Postdoctoral Researcher at Royal Holloway, University of London, working in the Lab of Action & Body. My research covers interoception, multi-sensory integration and feelings of dissociation.
+
+I completed my PhD in Psychology at the University of Sussex in 2022, at the School of Psychology, University of Sussex. My PhD explored perceptual mechanisms of dissociative experiences
 
 Prior to my PhD research, I worked for two years as a research assistant for the <a href="https://hearingthevoice.org/">Hearing the Voice</a> project at Durham University. In this role I helped to conduct psychological research investigating the cognitive and neural mechanisms underlying voice-hearing experiences.
 
