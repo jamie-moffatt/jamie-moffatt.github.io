@@ -22,7 +22,7 @@ Prior to my PhD research, I worked for two years as a research assistant for the
 
 </div>
 
-<div class="row tasks" onclick="window.location='/digit_span'">
+<div class="row tasks" onclick="window.location='/task_list'">
 <div class="column left">
 <h2>Cognitive tasks</h2>
 <ul>
