@@ -53,13 +53,18 @@ var pavlovia_finish = {
 };
 
 // You should add this to the beginning of your timeline
-var timeline.push(pavlovia_init);
+timeline.push(pavlovia_init);
 
 // The rest of your experiment should be added to the timeline here
 
 
 // You should add this to the end of your timeline
-var timeline.push(pavlovia_finish);
+timeline.push(pavlovia_finish);
+
+// Initiate the jsPsych experiment here
+jsPsych.init({
+  timeline: timeline
+})
 
 ```
 
