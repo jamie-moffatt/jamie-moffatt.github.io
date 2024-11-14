@@ -18,12 +18,6 @@ Interoception is the sense of our own internal bodily signals, such as the beati
 ### Virtual Reality
 In Virtual Reality, we can experience a virtual body that is radically different from our own from a first-person immersive viewpoint. I am interested in how a sense of embodiment over a virtual bodies can arise, and which aspects may help or hinder those feelings. I discuss these topics in detail at [embody.blog](https://embody.blog/).
 
-## Previous Roles
-After my PhD studies, I spent two years at the [Lab of Action & Body](http://manostsakiris.com/index.php/research/lab/) as a postdoctoral researcher studying how interoception, the sense of our internal bodily sensations such as the heartbeat influence the perception of ourselves and of others. 
-
-I completed my PhD in Psychology at the University of Sussex in 2022, at the School of Psychology, University of Sussex. My PhD mainly explored how we can study dissociation in the lab, using techniques like augmented reality.
-
-Before my PhD research I worked for two years as a research assistant for the [Hearing the Voice](https://hearingthevoice.org/) project at Durham University. In this role I helped to conduct psychological research investigating the cognitive and neural mechanisms underlying voice-hearing experiences. I also studied Psychology and Psychological Research at the University of Birmingham, where I graduated with a Master in Science in July 2016.
 
 <div class="row publications" onclick="window.location='/publications'">
 <div class="column left">
@@ -60,3 +54,12 @@ Before my PhD research I worked for two years as a research assistant for the [H
 </div>
 
 </div>
+
+
+## Previous Roles
+After my PhD studies, I spent two years at the [Lab of Action & Body](http://manostsakiris.com/index.php/research/lab/) as a postdoctoral researcher studying how interoception, the sense of our internal bodily sensations such as the heartbeat influence the perception of ourselves and of others. 
+
+I completed my PhD in Psychology at the University of Sussex in 2022, at the School of Psychology, University of Sussex. My PhD mainly explored how we can study dissociation in the lab, using techniques like augmented reality.
+
+Before my PhD research I worked for two years as a research assistant for the [Hearing the Voice](https://hearingthevoice.org/) project at Durham University. In this role I helped to conduct psychological research investigating the cognitive and neural mechanisms underlying voice-hearing experiences. I also studied Psychology and Psychological Research at the University of Birmingham, where I graduated with a Master in Science in July 2016.
+
