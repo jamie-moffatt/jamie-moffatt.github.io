@@ -1,6 +1,6 @@
 # Publications
 
-For full list and links, see my [Google Scholar profile](https://scholar.google.com/citations?user=ZMEvebsAAAAJ&hl=en).
+For a full up-to-date list and links, see my [Google Scholar profile](https://scholar.google.com/citations?user=ZMEvebsAAAAJ&hl=en).
 
 ### 2024
 
