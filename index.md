@@ -3,8 +3,22 @@ show_posts: false
 title: "Jamie Moffatt"
 ---
 ## About Me
-I am currently an ESRC-funded Postdoctoral Fellow based in the Department of Psychology at Royal Holloway, University of London. I am interested in how our perception of the external world and of our own biological signals (our interoception) inform and construct the sense of our body and self. My research circumstances in which these senses break down; in Virtual Reality, where we can experience a body wholly different to our own, and in Dissociation, a set of transdiagnostic clinical experiences that can involve feeling detached from the self, the world, or other aspects of reality. 
+I am currently an ESRC-funded Postdoctoral Fellow based in the Department of Psychology at Royal Holloway, University of London. 
 
+## My Research
+
+My research interests fall at the intersection of three areas: Dissociation, Interoception and Virtual Reality.
+
+### Dissociation
+Dissociation describes a set of experiences involving a feeling of detachment from oneself or from the wider world. I'm interested in how dissociation occurs - for example, [a study I conducted during my PhD](https://doi.org/10.31234/osf.io/e5z74) highlighted how dissociative experiences may arise from a fragmented ability to pair together senses arising from different modalities, such as vision and touch.
+
+### Interoception
+Interoception is the sense of our own internal bodily signals, such as the beating of our heart, the sense of our lungs expanding and contracting with each breath, and feelings of hunger and thirst. My research explores how interoception influences the sense of our body, by investigating how ability to sense internal signals is related to the [flexibility of our bodily perception](https://doi.org/10.1016/j.biopsycho.2024.108756).
+
+### Virtual Reality
+In Virtual Reality, we can experience a virtual body that is radically different from our own from a first-person immersive viewpoint. I am interested in how a sense of embodiment over a virtual bodies can arise, and which aspects may help or hinder those feelings. I discuss these topics in detail at [embody.blog](https://embody.blog/).
+
+## Previous Roles
 After my PhD studies, I spent two years at the [Lab of Action & Body](http://manostsakiris.com/index.php/research/lab/) as a postdoctoral researcher studying how interoception, the sense of our internal bodily sensations such as the heartbeat influence the perception of ourselves and of others. 
 
 I completed my PhD in Psychology at the University of Sussex in 2022, at the School of Psychology, University of Sussex. My PhD mainly explored how we can study dissociation in the lab, using techniques like augmented reality.
