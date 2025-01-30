@@ -3,7 +3,7 @@ show_posts: false
 title: "Jamie Moffatt"
 ---
 ## About Me
-I am currently an ESRC-funded Postdoctoral Fellow based in the Department of Psychology at Royal Holloway, University of London. 
+I am currently an a Post-doc at Durham University, UK, where I use Virtual Reality to study how adults and children learn to use virtual bodies that can be very different from their own.
 
 ## My Research
 
@@ -57,7 +57,7 @@ In Virtual Reality, we can experience a virtual body that is radically different
 
 
 ## Previous Roles
-After my PhD studies, I spent two years at the [Lab of Action & Body](http://manostsakiris.com/index.php/research/lab/) as a postdoctoral researcher studying how interoception, the sense of our internal bodily sensations such as the heartbeat influence the perception of ourselves and of others. 
+After my PhD studies, I spent three years at the [Lab of Action & Body](http://manostsakiris.com/index.php/research/lab/) as a postdoctoral researcher studying how interoception, the sense of our internal bodily sensations such as the heartbeat influence the perception of ourselves and of others. I was also awarded an ESRC Postdoctoral Fellowship to study how Virtual Reality technology can be used to understand the self.  
 
 I completed my PhD in Psychology at the University of Sussex in 2022, at the School of Psychology, University of Sussex. My PhD mainly explored how we can study dissociation in the lab, using techniques like augmented reality.
 
