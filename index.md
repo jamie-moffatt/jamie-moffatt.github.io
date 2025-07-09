@@ -3,7 +3,7 @@ show_posts: false
 title: "Jamie Moffatt"
 ---
 ## About Me
-I am currently an a Post-doc at Durham University, UK, where I use Virtual Reality to study how adults and children learn to use virtual bodies that can be very different from their own.
+I am currently a Post-doc at Durham University, UK, where I use Virtual Reality to study how adults and children learn to use virtual bodies that can be very different from their own.
 
 ## My Research
 
